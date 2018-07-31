@@ -1,4 +1,4 @@
-
+<!-- 
 <section>
   <div class="col">
     <div class="container"><div class="block">#1<span class="rellax" data-rellax-speed="2">#1</span></div></div>
@@ -37,3 +37,18 @@
     <div class="container"><div class="block">#4<span class="rellax" data-rellax-speed="-8" data-rellax-percentage="0.5">#4</span></div></div>
   </div>
 </section>
+ -->
+
+
+
+<header>
+  Smart City
+  <nav>
+    <a routerLink="">home</a>
+    <a routerLink="about">about</a>
+  </nav>
+</header>
+
+<main [@slideInOutAnimation]="o.isActivated ? o.activatedRoute : ''">
+  <router-outlet #o="outlet"></router-outlet>
+</main>
