@@ -7,6 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+	public playTitles: string[] = [
+		"Embrace \"Smart Cities\"",
+		"Cultivate Local Innovation Ecosystem",
+		"Invite Public Influence",
+		"Question Data",
+		"Imagine The Possible"
+	];
+
   constructor() { }
 
   ngOnInit() {

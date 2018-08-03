@@ -5,13 +5,10 @@ export const slideInOutAnimation =
     // trigger name for attaching this animation to an element using the [@triggerName] syntax
     trigger('slideInOutAnimation', [
          
-        transition('* <=> *', [
-            /* order */
-            /* 1 */ 
+        /*transition('* <=> *', [
             query(':enter, :leave', style({ position: 'fixed', width:'100%' })
               , { optional: true }),
             
-            /* 2 */ 
             group([  // block executes in parallel
               
               query(':enter', [
@@ -22,9 +19,24 @@ export const slideInOutAnimation =
               query(
                 ':leave', [
                     style({ transform: 'translateX(0%)' }),
-                    animate('0.5s ease-in-out', style({ transform: 'translateX(-100%)' })
+                    animate('0.5s ease-in-out', style({ transform: 'translateX(-100%)' }))
                  ], { optional: true }),
 
+            ])
+        ])*/
+
+        transition(':increment', [
+            query(':enter, :leave', style({ position: 'fixed', width: '100%', height: "100%" }), { optional: true }),
+            group([
+                query(':enter', [style({ transform: 'translateX(100%)' }), animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))], { optional: true }),
+                query(':leave', [style({ transform: 'translateX(0%)' }), animate('0.5s ease-in-out', style({ transform: 'translateX(-100%)' }))], { optional: true })
+            ])
+        ]),
+        transition(':decrement', [
+            query(':enter, :leave', style({ position: 'fixed', width: '100%', height: "100%" }), { optional: true }),
+            group([
+                query(':enter', [style({ transform: 'translateX(-100%)' }), animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))], { optional: true }),
+                query(':leave', [style({ transform: 'translateX(0%)' }), animate('0.5s ease-in-out', style({ transform: 'translateX(100%)' }))], { optional: true })
             ])
         ])
 

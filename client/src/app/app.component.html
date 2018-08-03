@@ -1,54 +1,37 @@
-<!-- 
-<section>
-  <div class="col">
-    <div class="container"><div class="block">#1<span class="rellax" data-rellax-speed="2">#1</span></div></div>
-  </div>
-  <div class="col">
-    <div class="container"><div class="block">#1<span class="rellax" data-rellax-speed="-2">#1</span></div></div>
-  </div>
-</section>
 
-
-<section>
-  <div class="col">
-    <div class="container"><div class="block">#2<span class="rellax" data-rellax-speed="4">#2</span></div></div>
-  </div>
-  <div class="col">
-    <div class="container"><div class="block">#2<span class="rellax" data-rellax-speed="-4">#2</span></div></div>
-  </div>
-</section>
-
-
-<section>
-  <div class="col">
-    <div class="container"><div class="block">#3<span class="rellax" data-rellax-speed="6" data-rellax-percentage="0.5">#3</span></div></div>
-  </div>
-  <div class="col">
-    <div class="container"><div class="block">#3<span class="rellax" data-rellax-speed="-6" data-rellax-percentage="0.5">#3</span></div></div>
-  </div>
-</section>
-
-
-<section>
-  <div class="col">
-    <div class="container"><div class="block">#4<span class="rellax" data-rellax-speed="8" data-rellax-percentage="0.5">#4</span></div></div>
-  </div>
-  <div class="col">
-    <div class="container"><div class="block">#4<span class="rellax" data-rellax-speed="-8" data-rellax-percentage="0.5">#4</span></div></div>
-  </div>
-</section>
- -->
-
-
-
-<header>
+<!-- <header>
   Smart City
   <nav>
     <a routerLink="">home</a>
     <a routerLink="about">about</a>
   </nav>
-</header>
+</header> -->
 
-<main [@slideInOutAnimation]="o.isActivated ? o.activatedRoute : ''">
-  <router-outlet #o="outlet"></router-outlet>
-</main>
+<div class="wrapper">
+  <main [@slideInOutAnimation]="o.isActivated ? getState(o) : ''">
+    <router-outlet (activate)="activateRouter($event)" #o="outlet"></router-outlet>
+  </main>
+<!-- <nav class="main-nav">
+    <ul>
+        <li><a href="">Nav 1</a></li>
+        <li><a href="">Nav 2</a></li>
+        <li><a href="">Nav 3</a></li>
+    </ul>
+</nav> -->
+  <footer>
+
+    <ul>
+      <li><a routerLink="">Cities</a></li>
+      <li><a routerLink="">Plays</a></li>
+      <li><a routerLink="">Video Testimonials</a></li>
+    </ul>
+    
+    <div id="logos">
+
+      <cdn-image cloudinaryId="logos/kf-logo-stacked.png" width="240" alt="Knight Foundation logo"></cdn-image>
+      <cdn-image cloudinaryId="logos/el-logo-black.png" width="100" alt="Engagement Lab @ Emerson College logo"></cdn-image>
+  
+    </div>
+
+  </footer>
+</div>

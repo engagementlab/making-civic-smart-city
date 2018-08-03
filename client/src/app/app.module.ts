@@ -6,10 +6,22 @@ import { RouterModule, Routes } from '@angular/router';
 
 // App components
 import { AppComponent } from './app.component';
-import { HomeComponent } from './app/home/home.component';
-import { AboutComponent } from './app/about/about.component';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { CdnImageComponent } from './cdn-image/cdn-image.component';
+
+
+// Services
+import { RouterStateService } from './routerstate.service';
 
 // NPM
+import { Cloudinary as CloudinaryCore } from 'cloudinary-core';
+import { CloudinaryConfiguration, CloudinaryModule } from '@cloudinary/angular-5.x';
+import cloudinaryConfiguration from './cdn.config';
+export const cloudinary = {
+  Cloudinary: CloudinaryCore
+};
+export const config: CloudinaryConfiguration = cloudinaryConfiguration;
 
 // App routes
 export const routes: Routes = [
@@ -22,15 +34,17 @@ export const routes: Routes = [
   declarations: [
     AppComponent,
     AboutComponent,
+    CdnImageComponent,
     HomeComponent
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule    
+    BrowserAnimationsModule,
+    CloudinaryModule.forRoot(cloudinary, config),
     RouterModule.forRoot(routes)
   ],
   exports: [RouterModule],
-  providers: [],
+  providers: [RouterStateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
