@@ -1,5 +1,6 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css?family=Cabin:400,500,700,400i');
+@import url('https://fonts.googleapis.com/css?family=Proza+Libre:400,500,700');
 @font-face {
 	font-family: 'Butler';
 	src: url('https://res.cloudinary.com/engagement-lab-home/raw/upload/v1533317921/making-smart-city/fonts/butler_bold-webfont.woff2') format('woff2'),
@@ -12,6 +13,7 @@ $off-white: #fffaf1;
 $pine: #2c5d30;
 
 // Mixins 
+@import "~src/styles/_mixins";
 $mq-breakpoints: (
     mobile:  320px,
     mobileLg:  360px,

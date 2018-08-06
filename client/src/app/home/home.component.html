@@ -1,24 +1,46 @@
 <header class="main-head">
-
-  <cdn-image class="corner-img" cloudinaryId="bg/home-topleft.png" gravity="center" height="58" width="160" crop="fill" alt="Icon for Reward"></cdn-image>
-  
-  <h1>Making a<br />
+	  
+	<div class="intro">
+		<div class="banner">
+		  <cdn-image class="corner-img" cloudinaryId="bg/home-topleft.png" gravity="center" height="260" width="430" crop="fill" alt="Icon for Reward"></cdn-image>
+		</div>
+	  
+	  <h1>
+	  	<span id="making">Making</span> <span id="a"> A</span><br />
       Civic Smart City
-  </h1>
+	  </h1>
 
-  <div class="stagger">
-	  <p class="left">
-	    Not looking for a penpal Breaking Bad sushi share a new experience. Jazz cafes bored at home recently moved back really hoppy beers rock climbing.
-	  </p>
-	  <p class="right">
-	    Art school down to earth glass half-full my smartphone. Catcher in the Rye playing my guitar playing my guitar introvert, honest and direct I love the smell of going back to school is pretty awesome I'm just a regular guy. 
-	  </p>
+	  <div class="stagger">
+		  <p class="left">
+		    Not looking for a penpal Breaking Bad sushi share a new experience. Jazz cafes bored at home recently moved back really hoppy beers rock climbing.
+		  </p>
+		  <p class="right">
+		    Art school down to earth glass half-full my smartphone. Catcher in the Rye playing my guitar playing my guitar introvert, honest and direct I love the smell of going back to school is pretty awesome I'm just a regular guy. 
+		  </p>
+		</div>  
 	</div>
 
 </header>
-<section id="plays">
-	<h1>Plays</h1>
-  <cdn-image class="corner-img" cloudinaryId="bg/home-topleft.png" gravity="center" height="58" width="160" crop="fill" alt="Icon for Reward"></cdn-image>
-	
-	<div *ngFor="let title of playTitles; let i = index;" class="play-title"><h3>{{i+1}}</h3>{{title}}</div>
-</section>
+
+<div class="content">
+
+	<section id="plays">
+
+		<h1>Plays</h1>
+	  <cdn-image class="img" cloudinaryId="bg/home-plays.png" gravity="center" height="810" crop="scale" alt="'Plays' background image"></cdn-image>
+
+	  <div id="list">
+			<div *ngFor="let title of playTitles; let i = index;" class="play-title"><h3>{{i+1}}</h3>{{title}}</div>
+		</div>
+	</section>
+
+	<section id="share">
+		<h1>Share your city's plays</h1>
+	  
+	  <p>There's no such thing as a typical Friday night Oxford comma open-minded my height and shoulders. Sushi whatever topic is on NPR if you want to my smartphone going to the gym, knowing the difference between their/there/they're life is short. Nothing too complicated ethical nonmonogamy going to shows sleeping late exploring the city if you want to.</p>
+
+	  <app-button label="Get started &rarr;" route="/" ariaLabel=""></app-button>
+
+	</section>
+
+</div>

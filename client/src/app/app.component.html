@@ -8,9 +8,15 @@
 </header> -->
 
 <div class="wrapper">
-  <main [@slideInOutAnimation]="o.isActivated ? getState(o) : ''">
+
+  <!-- <aside></aside> -->
+  
+  <main>
     <router-outlet (activate)="activateRouter($event)" #o="outlet"></router-outlet>
   </main>
+
+  <!-- <aside></aside> -->
+
 <!-- <nav class="main-nav">
     <ul>
         <li><a href="">Nav 1</a></li>
@@ -18,20 +24,20 @@
         <li><a href="">Nav 3</a></li>
     </ul>
 </nav> -->
-  <footer>
-
-    <ul>
-      <li><a routerLink="">Cities</a></li>
-      <li><a routerLink="">Plays</a></li>
-      <li><a routerLink="">Video Testimonials</a></li>
-    </ul>
-    
-    <div id="logos">
-
-      <cdn-image cloudinaryId="logos/kf-logo-stacked.png" width="240" alt="Knight Foundation logo"></cdn-image>
-      <cdn-image cloudinaryId="logos/el-logo-black.png" width="100" alt="Engagement Lab @ Emerson College logo"></cdn-image>
-  
-    </div>
-
-  </footer>
 </div>
+<footer>
+
+  <ul>
+    <li><a routerLink="">Cities</a></li>
+    <li><a routerLink="">Plays</a></li>
+    <li><a routerLink="">Video Testimonials</a></li>
+  </ul>
+
+  <div id="logos">
+
+    <cdn-image cloudinaryId="logos/kf-logo-stacked.png" width="240" alt="Knight Foundation logo"></cdn-image>
+    <cdn-image cloudinaryId="logos/el-logo-black.png" width="100" alt="Engagement Lab @ Emerson College logo"></cdn-image>
+
+  </div>
+
+</footer>

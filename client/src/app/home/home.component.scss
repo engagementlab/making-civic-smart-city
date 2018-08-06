@@ -1,4 +1,84 @@
+@import "~src/styles/_variables";
+
+header {
+	display: grid;
+  grid-template-columns: 20% auto;
+
+	@include mq($until: tabletPortrait) {
+	  grid-template-columns: 0% 80%;
+	}
+
+	z-index: 1;
+	top: 0;
+	left: 0;
+  background-color: $off-white;
+
+  .banner {
+		position: absolute;
+		top: 0;
+		left: 0;
+  }
+  .intro {
+  	margin-top: 14%;
+  	margin-left: 12%;
+  	grid-column: 2;
+
+  }
+}
+
+.content {	
+	display: grid;
+  grid-template-columns: 30% auto;
+	section {
+	  	grid-column: 2 / span 6;
+	}
+}
+
+h1 {
+	font-size: em(75px);
+	#making {
+		@include font('Proza Libre', 500);
+		font-size: .7em;
+	}
+	#a {
+		@include font('Proza Libre');
+		font-size: .5em;
+	}
+}
+
 #plays {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+
+	.img {
+		position: relative;
+		z-index: -3;
+		top: -40%;			
+		left: 20%;
+	}
+
+	#list {
+		display: grid;
+		position: relative;
+		margin-top: -43%;
+		grid-column: 1 / span 3;
+		grid-template-columns: 1fr 1fr 1fr;
+
+		div {		
+				font-size: em(24px);
+				@include font('Proza Libre', 800);
+			h3 {	
+				margin: 0;
+				font-size: em(64px);
+			  color: rgba(0, 0, 0, 0);
+			  -webkit-text-stroke: 1px #000;
+			}
+		}
+	}
+}
+
+#share {	
+	color: white;
+	padding: 10%;
+  background-color: $pine;
 }

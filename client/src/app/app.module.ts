@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { CdnImageComponent } from './cdn-image/cdn-image.component';
-
+import { ButtonComponent } from './button/button.component';
 
 // Services
 import { RouterStateService } from './routerstate.service';
@@ -34,6 +34,7 @@ export const routes: Routes = [
   declarations: [
     AppComponent,
     AboutComponent,
+    ButtonComponent,
     CdnImageComponent,
     HomeComponent
   ],
