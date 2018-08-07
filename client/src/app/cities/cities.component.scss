@@ -1,0 +1,49 @@
+@import "~src/styles/_variables";
+
+// Global overrides
+header {
+	background: white;
+	.intro {	
+		padding: 10%;
+		margin: 0;
+	}
+}
+
+#listing {
+	
+	@include phones {
+		.city {
+			min-height: 465px;
+		}
+		.banner {
+			position: absolute;
+		}
+  	grid-column: 1 / span 6;
+  }
+
+	.city {
+		display: flex;
+		flex-direction: row-reverse;
+	
+		.label {
+			@include phones {
+				position: relative;
+				height: 50%;
+				width: 80%;
+				background: white;
+				z-index: 10;
+				margin-top: 18%;
+				margin-left: 9%;
+			}
+		}
+
+		h3 {
+			font-size: em(64px);
+		}
+
+		&.reverse {
+			flex-direction: row;
+		}
+	}
+
+}

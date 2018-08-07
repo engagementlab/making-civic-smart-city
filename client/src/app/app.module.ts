@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { CdnImageComponent } from './cdn-image/cdn-image.component';
 import { ButtonComponent } from './button/button.component';
+import { NavComponent } from './nav/nav.component';
 
 // Services
 import { RouterStateService } from './routerstate.service';
@@ -18,6 +19,8 @@ import { RouterStateService } from './routerstate.service';
 import { Cloudinary as CloudinaryCore } from 'cloudinary-core';
 import { CloudinaryConfiguration, CloudinaryModule } from '@cloudinary/angular-5.x';
 import cloudinaryConfiguration from './cdn.config';
+import { CitiesComponent } from './cities/cities.component';
+import { CityComponent } from './cities/city/city.component';
 export const cloudinary = {
   Cloudinary: CloudinaryCore
 };
@@ -26,7 +29,7 @@ export const config: CloudinaryConfiguration = cloudinaryConfiguration;
 // App routes
 export const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'about', component: AboutComponent }
+  { path: 'cities', component: CitiesComponent, data: { offwhite: true } }
 ];
 
 
@@ -36,7 +39,10 @@ export const routes: Routes = [
     AboutComponent,
     ButtonComponent,
     CdnImageComponent,
-    HomeComponent
+    HomeComponent,
+    NavComponent,
+    CitiesComponent,
+    CityComponent
   ],
   imports: [
     BrowserModule,

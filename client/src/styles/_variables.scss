@@ -6,6 +6,9 @@
 	src: url('https://res.cloudinary.com/engagement-lab-home/raw/upload/v1533317921/making-smart-city/fonts/butler_bold-webfont.woff2') format('woff2'),
        url('https://res.cloudinary.com/engagement-lab-home/raw/upload/v1533317921/making-smart-city/fonts/butler_bold-webfont.woff') format('woff');
 }
+ // CDN CONFIG
+$cdn-product: 'making-smart-city';
+
 /* Color palette */
 
 $primary-blue: #0000ff;

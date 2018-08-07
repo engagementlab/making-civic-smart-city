@@ -1,0 +1,36 @@
+<section id="cities">
+
+<header class="main-head">
+	  
+	<div class="intro">	  
+	  <h1>
+	  	Cities
+	  </h1>
+	</div>
+
+</header>
+
+<div class="content">
+
+	<section id="listing">
+
+			<div *ngFor="let city of cities; let odd = odd;" class="city" [class.reverse]="odd === true">
+
+				<div class="label">
+
+					<h3 class="stroke">{{city.label}}</h3>
+					<h4>xx plays</h4>
+				  <app-button label="Go" route="cities/{{city.key}}" ariaLabel="Go to {{city.label}}" class="pine"></app-button>
+
+				</div>
+				
+				<div class="banner">
+				  <cdn-image class="img" cloudinaryId="cities/{{city.key}}.png" gravity="center" width="500" crop="scale" alt="Image of {{city.label}}"></cdn-image>
+				</div>
+
+
+			</div>
+
+	</section>
+
+</div></section>

@@ -20,10 +20,11 @@ $base-font-size: 16px;
 }
 
 // FONT HELPER
-@mixin font($name, $weight: 100) {
+@mixin font($name, $weight: 100, $size: $base-font-size) {
  
   font-family: $name, sans-serif;
   font-weight: $weight;
+  font-size: $size;
 
 }
 
@@ -182,9 +183,13 @@ $base-font-size: 16px;
   font-weight: 600;
 }
 
-@mixin mobile-only {
-  // For now, this shows content on ALL devices
-  @include mq($from: mobile) {
+@mixin phones {
+  @include mq($until: tabletPortrait) {
+    @content;
+  }
+}
+@mixin not-phones {
+  @include mq($from: tabletPortrait) {
     @content;
   }
 }

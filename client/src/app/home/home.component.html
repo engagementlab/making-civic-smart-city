@@ -2,12 +2,14 @@
 	  
 	<div class="intro">
 		<div class="banner">
-		  <cdn-image class="corner-img" cloudinaryId="bg/home-topleft.png" gravity="center" height="260" width="430" crop="fill" alt="Icon for Reward"></cdn-image>
+		  <cdn-image class="corner-img img" cloudinaryId="bg/home-topleft.png" gravity="center" height="260" width="430" crop="fill" alt="Icon for Reward" data-rellax-speed="3"></cdn-image>
 		</div>
 	  
 	  <h1>
+
 	  	<span id="making">Making</span> <span id="a"> A</span><br />
       Civic Smart City
+
 	  </h1>
 
 	  <div class="stagger">
@@ -27,20 +29,24 @@
 	<section id="plays">
 
 		<h1>Plays</h1>
-	  <cdn-image class="img" cloudinaryId="bg/home-plays.png" gravity="center" height="810" crop="scale" alt="'Plays' background image"></cdn-image>
+	  <cdn-image class="img" cloudinaryId="bg/home-plays.png" gravity="center" height="810" crop="scale" alt="'Plays' background image" data-rellax-speed="-4" data-rellax-percentage="0.5"></cdn-image>
 
 	  <div id="list">
-			<div *ngFor="let title of playTitles; let i = index;" class="play-title"><h3>{{i+1}}</h3>{{title}}</div>
+			<div *ngFor="let title of playTitles; let i = index;" class="play-title"><h3 class="">{{i+1}}</h3>{{title}}</div>
 		</div>
 	</section>
 
-	<section id="share">
-		<h1>Share your city's plays</h1>
-	  
-	  <p>There's no such thing as a typical Friday night Oxford comma open-minded my height and shoulders. Sushi whatever topic is on NPR if you want to my smartphone going to the gym, knowing the difference between their/there/they're life is short. Nothing too complicated ethical nonmonogamy going to shows sleeping late exploring the city if you want to.</p>
+	<section id="share-bg" class="img">
+		<div id="share" class="img" data-rellax-speed="2">
+			<h3>Share your city's plays</h3>
 
-	  <app-button label="Get started &rarr;" route="/" ariaLabel=""></app-button>
+			<span></span>
+		  
+		  <p>There's no such thing as a typical Friday night Oxford comma open-minded my height and shoulders. Sushi whatever topic is on NPR if you want to my smartphone going to the gym, knowing the difference between their/there/they're life is short. Nothing too complicated ethical nonmonogamy going to shows sleeping late exploring the city if you want to.</p>
 
+		  <app-button label="Get Started" route="/" ariaLabel=""></app-button>
+
+		</div>
 	</section>
 
 </div>

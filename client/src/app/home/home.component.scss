@@ -1,41 +1,30 @@
 @import "~src/styles/_variables";
 
 header {
-	display: grid;
-  grid-template-columns: 20% auto;
-
-	@include mq($until: tabletPortrait) {
-	  grid-template-columns: 0% 80%;
-	}
-
-	z-index: 1;
-	top: 0;
-	left: 0;
   background-color: $off-white;
 
   .banner {
 		position: absolute;
 		top: 0;
 		left: 0;
+
+		@include phones {
+			max-width: 160px;
+		}
   }
   .intro {
   	margin-top: 14%;
   	margin-left: 12%;
   	grid-column: 2;
 
+		@include phones {
+			margin: 0;
+	  	grid-column: 1 / span 12;
+		}
   }
 }
 
-.content {	
-	display: grid;
-  grid-template-columns: 30% auto;
-	section {
-	  	grid-column: 2 / span 6;
-	}
-}
-
 h1 {
-	font-size: em(75px);
 	#making {
 		@include font('Proza Libre', 500);
 		font-size: .7em;
@@ -49,6 +38,10 @@ h1 {
 #plays {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+
+	h2 {
+		font-size: em(72px);
+	}
 
 	.img {
 		position: relative;
@@ -70,15 +63,72 @@ h1 {
 			h3 {	
 				margin: 0;
 				font-size: em(64px);
-			  color: rgba(0, 0, 0, 0);
-			  -webkit-text-stroke: 1px #000;
 			}
 		}
 	}
 }
 
+	
+#share-bg {
+	
+	@include not-phones {
+		position: relative;
+		top: -10%;			
+		left: -10%;
+	}
+	background-image: cdn-image('bg/home-share', c_scale, w_320);	
+	background-repeat: no-repeat;
+
+}
+
 #share {	
+
+	display: grid;
+	margin-top: 10%;
+	margin-left: 10%;
+	
+	grid-auto-rows: auto;
+  grid-template-columns: 60% auto;
+  grid-template-areas:
+	  "head head"
+	  "blue blue"
+	  "txt button";
+
+	@include phones {
+		margin: 4%;
+		grid-template-areas:
+	  "head head"
+	  "blue blue"
+	  "txt txt"
+	  "button button";
+	}
+
+  align-items: center;
 	color: white;
 	padding: 10%;
   background-color: $pine;
+
+  h3 {
+  	grid-area: head;
+		@include phones {
+			font-size: em(18px);
+		}
+  }
+  span {
+  	display: block;
+  	grid-area: blue;
+		width: 25px;
+	  height: 5px;
+	  background-color: $primary-blue;
+  }
+  p {
+  	grid-area: txt;
+		@include phones {
+			font-size: em(10px);
+		}
+  } 
+  app-button {
+  	grid-area: button;
+  }
+  
 }

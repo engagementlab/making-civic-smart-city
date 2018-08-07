@@ -2,16 +2,13 @@
 
 a.btn {
 	display: inline-block;
-	border: solid 2px black;
-	font-family: 'Roboto Condensed', sans-serif;
-	font-weight: 700;
-	color: black;
-	font-stretch: condensed;
+	border: solid 2px white;
+  @include font('Proza Libre', 500, em(14px));
+	color: white;
 	font-size: em(14px);
-	text-transform: uppercase;
 	text-decoration: none;
 
-  letter-spacing: 2px;
+  // letter-spacing: 2px;
 	padding: 3%;
 	// box-shadow: 0 4px 0 0 $light-gold; 
 
@@ -21,12 +18,11 @@ a.btn {
   margin-bottom: 10px;
   padding: 20px;
   text-align: center;
-  text-transform: uppercase;
   position: relative;
-  overflow:hidden;
+  overflo: hidden;
   @include transition(all, 150ms, cubic-bezier(0.445, 0.050, 0.550, 0.950));
 
-  @include mobile-only {
+  @include phones {
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -49,7 +45,7 @@ a.btn {
     left: -10%;
     z-index: -1;
    
-    @include mobile-only {
+    @include phones {
       bottom: -16px;
       width: 124%;
       left: -22%;

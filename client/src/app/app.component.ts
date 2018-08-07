@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterOutlet, ActivatedRouteSnapshot } from '@angular/router';
+import { Component, Renderer2 } from '@angular/core';
+import { Router, RouterOutlet, ActivatedRoute, ActivatedRouteSnapshot, NavigationStart } from '@angular/router';
 
 import { TweenLite } from "gsap";
 import * as Rellax  from "rellax";
@@ -45,7 +45,19 @@ export class AppComponent {
 
 	}
 
-	constructor(private appRouterState: RouterStateService) {
+	constructor(private appRouterState: RouterStateService, private renderer: Renderer2, private router: Router, private route: ActivatedRoute) {
+
+		this.router.events
+      .subscribe((event) => {
+        if (event instanceof NavigationStart) {
+
+          this.renderer.removeClass(document.body, 'offwhite');
+          let currentUrlSlug = event.url.slice(1)
+          
+          if (currentUrlSlug === 'cities')
+            this.renderer.addClass(document.body, 'offwhite');
+        }
+      });
 
 	}
 
