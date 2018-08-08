@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ButtonComponent implements OnInit {
 
 	@Input() label: string;
+  @Input() class: string;
 	@Input() route: string;
 	@Input() href: string;
 	@Input() ariaLabel: string;

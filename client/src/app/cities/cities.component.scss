@@ -10,10 +10,15 @@ header {
 }
 
 #listing {
-	
+
+	// display: flex;
+	// flex-direction: column;
+	// justify-content: space-evenly;
+	margin-top: 30%;
+
 	@include phones {
 		.city {
-			min-height: 465px;
+			height: 465px;
 		}
 		.banner {
 			position: absolute;
@@ -24,25 +29,47 @@ header {
 	.city {
 		display: flex;
 		flex-direction: row-reverse;
-	
+
+		align-items: center;
+		justify-content: space-evenly;
+
+		margin-bottom: 45%;
+
 		.label {
+	    display: flex;
+			align-items: center;
+	    justify-content: center;
+	    flex-direction: column;
+
 			@include phones {
 				position: relative;
-				height: 50%;
-				width: 80%;
+				height: 200px;
+				width: 280px;
 				background: white;
 				z-index: 10;
-				margin-top: 18%;
-				margin-left: 9%;
+				// margin-top: 18%;
+				// right: 10%;
 			}
 		}
 
 		h3 {
-			font-size: em(64px);
+			font-size: em(36px);
+			@include not-phones {
+				font-size: em(44px);
+			}
+		}
+		h4 {
+			font-size: em(18px);
+			text-transform: uppercase;
 		}
 
 		&.reverse {
 			flex-direction: row;
+			@include phones {
+				.label {
+					// left: 9%;
+				}
+			}
 		}
 	}
 

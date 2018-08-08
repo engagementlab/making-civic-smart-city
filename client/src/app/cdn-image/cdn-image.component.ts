@@ -10,6 +10,7 @@ export class CdnImageComponent implements OnInit {
 
 	@Input() cloudinaryId: string;
 	@Input() alt: string;
+  @Input() height: number;
 	@Input() width: number;
   @Input() quality: number;
 	@Input() autoFormat: boolean = true;
