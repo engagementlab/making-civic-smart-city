@@ -1,0 +1,92 @@
+@import "~src/styles/_variables";
+
+// Global overrides
+header {
+	background-image: cdn-image('playbook/head-bg', c_scale, w_1440);	
+	background-repeat: no-repeat;
+	margin-bottom: 5%;
+
+	.intro {	
+		background: $off-white;
+	}
+}
+
+nav {
+	display: flex;
+	flex-direction: row;
+	background-color: white;
+	margin-bottom: 5%;
+
+	h3 {
+		font-size: em(18px);
+		color: $pine;
+		text-transform: uppercase;
+		margin: 0;
+	}
+	.title {
+		display: block;
+		font-size: em(14px);
+		width: 60%;
+		cursor: pointer;
+		a {
+			color: black;
+		}
+	}
+	&.sticky{
+	  position: fixed;
+	  top: 0;
+	  overflow: hidden;
+	  z-index: 10;
+	}
+}
+
+#plays {
+	grid-column: 2 / span 2;
+	div.ng-star-inserted {
+		display: grid;
+		grid-template-columns: 65% auto;
+	}
+	
+	.play {
+		display: grid;
+		grid-column: 1 / span 1;
+		grid-template-columns: 1fr 2fr;
+
+		.left {
+
+		}
+	
+	}
+
+	.ideas {
+		display: grid;
+		grid-template-columns: 20% auto 20%;
+		grid-column: 1 / span 2;
+		background: $off-white;
+
+		div {
+			grid-column: 2;
+		}
+
+		ul {
+			@include font('Cabin', 600, em(24px));
+			letter-spacing: 2.4px;
+			list-style: none;
+
+			padding: 0;
+			margin: 0;
+ 			
+ 			li {
+ 				display: flex;
+		    padding-left: 5%; 
+		    &:before {
+				  content: "*"; 
+
+				  position: relative;
+				  left: -5%;
+				  bottom: -3px;
+				}
+		  }
+		}
+	}
+}

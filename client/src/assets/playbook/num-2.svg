@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="191" height="301" viewBox="0 0 191 301">
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#FFFAF1" d="M187.391 206.882h3.158l-22.893 84.238H10.566L89.9 185.526c94.333-140.001-74.598-145.538-61.178-70.792l-6.315 3.56C-3.25 70.044 31.879 9.14 100.162 9.14c39.47 0 75.388 34.803 75.388 70.792 0 60.904-81.703 109.549-103.017 136.837l-9.867 12.655h85.255c13.42 0 30.787-6.723 39.47-22.542z"/>
+        <path stroke="#000" stroke-linecap="square" d="M171.302 229.612H68.657M150.744 287.277H27.398M21.156 276.861l78.465-86.896M118.214 169.138l50.589-56.897M172.95 56.883l-15.335-19.99M174.997 96.724V62.586M83.11 5.69L45.218 32.27M64.527 72.931L27.401 99.558"/>
+        <ellipse cx="165.412" cy="285.74" stroke="#00F" stroke-width="2" rx="13.644" ry="13.671"/>
+        <ellipse cx="107.596" cy="179.189" stroke="#00F" stroke-width="2" rx="13.644" ry="13.671"/>
+        <ellipse cx="103.463" cy="85.139" stroke="#00F" stroke-width="2" rx="6.852" ry="6.866"/>
+        <ellipse cx="38.319" cy="33.598" fill="#00F" fill-rule="nonzero" rx="10.233" ry="10.253"/>
+        <ellipse cx="65.378" cy="227.226" fill="#00F" fill-rule="nonzero" rx="6.822" ry="6.836"/>
+        <ellipse cx="21.203" cy="101.587" fill="#00F" fill-rule="nonzero" rx="6.822" ry="6.836"/>
+        <ellipse cx="114.195" cy="134.077" fill="#00F" fill-rule="nonzero" rx="6.822" ry="6.836"/>
+        <ellipse cx="68.141" cy="70.345" fill="#00F" fill-rule="nonzero" rx="4.13" ry="4.138"/>
+        <ellipse cx="86.724" cy="4.138" fill="#00F" fill-rule="nonzero" rx="4.13" ry="4.138"/>
+        <ellipse cx="175.514" cy="58.966" fill="#00F" fill-rule="nonzero" rx="4.13" ry="4.138"/>
+        <path stroke="#000" stroke-linecap="square" d="M21.916 95.21l12.337-53.327M168.56 272.582l8.223-35.704M114.084 127.759l-7.058-36.038M109.954 165l4.13-25.862M131.635 15L91.37 5.69M96.532 80.172l-25.81-9.31"/>
+        <ellipse cx="172.627" cy="105.005" fill="#00F" fill-rule="nonzero" rx="10.233" ry="10.253"/>
+        <ellipse cx="14.381" cy="285.627" fill="#00F" fill-rule="nonzero" rx="13.705" ry="13.732"/>
+        <ellipse cx="179.479" cy="229.967" fill="#00F" fill-rule="nonzero" rx="10.233" ry="10.253"/>
+        <ellipse cx="145.187" cy="23.955" stroke="#00F" stroke-width="2" rx="17.055" ry="17.089"/>
+    </g>
+</svg>

@@ -23,6 +23,7 @@
     "@angular/router": "^6.1.0",
     "@types/greensock": "^1.15.32",
     "@cloudinary/angular-5.x": "^1.0.2",
+    "@nicky-lenaers/ngx-scroll-to": "^1.0.0",
     "cloudinary-core": "^2.5.0",
     "core-js": "^2.5.4",
     "gsap": "^2.0.1",

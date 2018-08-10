@@ -8,26 +8,29 @@
 	  <line style="stroke: black;" x1="25.128" y1="46.651" x2="46.385" y2="22.371"></line>
 	</svg>
 	<section id="menu">
-		
-		<h3>Plays</h3>
-		<ul>
-			<li>1 Embrace &ldquo;Smart cities&rsquo;</li>
-			<li>2 Cultivate Local Innovation Ecosystem</li>
-			<li>3 Invite Public Influence</li>
-			<li>4 Question Data</li>
-			<li>5 Imagine the Possible</li>
-		</ul>
-
-		<h3><a routerLink="/cities">Cities</a></h3>
-		<ul>
-			<li *ngFor="let city of cities">{{city}}</li>
-		</ul>
-
-		<h3>Resources</h3>
-		<ul>
-			<li>Video Testimonials</li>
-		</ul>
-
+	
+		<div>		
+			<h3>Plays</h3>
+			<ul>
+				<li>1 Embrace &ldquo;Smart cities&rsquo;</li>
+				<li>2 Cultivate Local Innovation Ecosystem</li>
+				<li>3 Invite Public Influence</li>
+				<li>4 Question Data</li>
+				<li>5 Imagine the Possible</li>
+			</ul>
+		</div>
+			<div>
+				<h3><a routerLink="/cities">Cities</a></h3>
+				<ul>
+					<li *ngFor="let city of cities">{{city}}</li>
+				</ul>
+		</div>
+		<div>
+			<h3>Resources</h3>
+			<ul>
+				<li>Video Testimonials</li>
+			</ul>
+		</div>
 
 	</section>
 

@@ -4,6 +4,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+// Services
+import { RouterStateService } from './routerstate.service';
+
+// NPM
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+import { Cloudinary as CloudinaryCore } from 'cloudinary-core';
+import { CloudinaryConfiguration, CloudinaryModule } from '@cloudinary/angular-5.x';
+import cloudinaryConfiguration from './cdn.config';
+export const cloudinary = {
+  Cloudinary: CloudinaryCore
+};
+export const config: CloudinaryConfiguration = cloudinaryConfiguration;
+
 // App components
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -11,27 +24,16 @@ import { AboutComponent } from './about/about.component';
 import { CdnImageComponent } from './cdn-image/cdn-image.component';
 import { ButtonComponent } from './button/button.component';
 import { NavComponent } from './nav/nav.component';
-
-// Services
-import { RouterStateService } from './routerstate.service';
-
-// NPM
-import { Cloudinary as CloudinaryCore } from 'cloudinary-core';
-import { CloudinaryConfiguration, CloudinaryModule } from '@cloudinary/angular-5.x';
-import cloudinaryConfiguration from './cdn.config';
 import { CitiesComponent } from './cities/cities.component';
 import { CityComponent } from './cities/city/city.component';
-export const cloudinary = {
-  Cloudinary: CloudinaryCore
-};
-export const config: CloudinaryConfiguration = cloudinaryConfiguration;
+import { PlaybookComponent } from './playbook/playbook.component';
 
 // App routes
 export const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'playbook', component: PlaybookComponent, data: { offwhite: true } },
   { path: 'cities', component: CitiesComponent, data: { offwhite: true } }
 ];
-
 
 @NgModule({
   declarations: [
@@ -42,13 +44,15 @@ export const routes: Routes = [
     HomeComponent,
     NavComponent,
     CitiesComponent,
-    CityComponent
+    CityComponent,
+    PlaybookComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     CloudinaryModule.forRoot(cloudinary, config),
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    ScrollToModule.forRoot()
   ],
   exports: [RouterModule],
   providers: [RouterStateService],

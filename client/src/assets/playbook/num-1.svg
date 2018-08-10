@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="132" height="302" viewBox="0 0 132 302">
+    <g fill="none" fill-rule="evenodd" transform="translate(0 1)">
+        <path fill="#FFFAF1" d="M117.048 255.175c0 19.115.764 29.82 14.145 29.82v3.058h-99.78v-3.058c15.674 0 17.203-11.852 17.203-29.82v-166.3c0-35.937-37.466-7.647-37.466-7.647L9.24 78.552l72.255-63.08h35.554v239.703z"/>
+        <path stroke="#000" stroke-linecap="square" d="M110.84 17.92H93.585M109.513 289.712H61.726"/>
+        <circle cx="76.327" cy="16.593" r="16.593" stroke="#00F" stroke-width="2"/>
+        <path stroke="#000" stroke-linecap="square" d="M16.593 76.327l46.46-49.115M120.133 290.044V27.212M49.447 274.115V82.965M48.451 82.965H16.593"/>
+        <circle cx="49.115" cy="286.726" r="13.274" stroke="#00F" stroke-width="2"/>
+        <circle cx="9.956" cy="81.637" r="9.956" fill="#00F" fill-rule="nonzero"/>
+        <circle cx="49.115" cy="82.301" r="6.637" fill="#00F" fill-rule="nonzero"/>
+        <circle cx="120.133" cy="16.593" r="9.956" fill="#00F" fill-rule="nonzero"/>
+        <circle cx="120.133" cy="290.044" r="9.956" fill="#00F" fill-rule="nonzero"/>
+    </g>
+</svg>
