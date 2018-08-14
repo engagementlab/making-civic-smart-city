@@ -28,7 +28,6 @@ body {
 header {
 	display: grid;
   grid-template-columns: repeat(12, [col] 8.3%);
-  grid-template-rows: repeat(3, [row] 157px);
 
 	@include phones {
 	  grid-template-columns: 0% 80%;
@@ -39,24 +38,36 @@ header {
 	left: 0;
 
   .intro {
-  	padding-top: 14%;
-  	padding-left: 12%;
-  	grid-column: 1 / span 10;
+  	grid-column: 1 / span 9;
   	grid-row: 1 / span 2;
-
-  	display: grid;
-  	grid-template-columns: 1fr 1fr 1fr;
 
 		@include phones {
 			margin: 0;
 	  	grid-column: 1 / span 12;
+		}
+
+		.indent {
+			h1, h2 {
+				margin: 0;
+			}
+			h2 {						
+				@include font('Proza Libre', 800);
+				font-size: 3.4em;
+				@include not-phones {
+					width: 70%;
+				}
+			}
+	  	padding-top: 8%;
+			@include not-phones {
+		  	padding-left: 21%;
+			}
 		}
   }
 }
 
 h1 {
 	font-family: 'Butler';
-	font-size: em(75px);
+	font-size: em(72px);
 	@include phones {
 		font-size: em(57px);
 	}
@@ -101,16 +112,12 @@ footer {
 
 .content {	
 	display: grid;
-  grid-template-columns: 
-  											[full-start] minmax(1em, 1fr)
-  											[main-start] minmax(0, 40em)
-  											[main-end] minmax(1em, 1fr)
-  											[full-end];
+  grid-template-columns: repeat(12, [col] 8.3%);;
 	@include phones {
 	  grid-template-columns: 1fr;
 	}
 	section {
-  	grid-column: 2 / span 1;
+  	grid-column: 3 / span 7;
 	}
 }
 
@@ -120,9 +127,6 @@ app-root {
 		grid-column-start: 1;
 		grid-column-end: 13;
 		grid-row: 1;
-	  // @include phones {
-			// grid-column-end: 13;
-	  // }
 
 	}
 }
@@ -141,14 +145,4 @@ app-root {
 	img {
 		width: 50%;
 	}
-}
-
-.stagger {
-	p {
-		width: 50%;
-	}
-	.right { 
-		padding-top: 15%;
-	}
-	display: flex;
 }

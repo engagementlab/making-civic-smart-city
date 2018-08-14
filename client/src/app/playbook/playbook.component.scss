@@ -2,16 +2,19 @@
 
 // Global overrides
 header {
-	background-image: cdn-image('playbook/head-bg', c_scale, w_1440);	
+	background-image: cdn-image('bg/header-playbook', c_scale, w_1440);	
 	background-repeat: no-repeat;
+	background-size: cover;
 	margin-bottom: 5%;
+	padding-bottom: 15%;
 
 	.intro {	
 		background: $off-white;
+		padding-bottom: 15%
 	}
 }
 
-nav {
+/* nav {
 	display: flex;
 	flex-direction: row;
 	background-color: white;
@@ -32,19 +35,24 @@ nav {
 			color: black;
 		}
 	}
-	&.sticky{
+	&.sticky {
 	  position: fixed;
 	  top: 0;
 	  overflow: hidden;
 	  z-index: 10;
 	}
+} */
+
+#intro {
+	@include font('Proza Libre', 500, em(24px));
+	margin-left: 33%;
+	margin-bottom: 5%;
+  letter-spacing: 0.5px;
 }
 
 #plays {
-	grid-column: 2 / span 2;
 	div.ng-star-inserted {
 		display: grid;
-		grid-template-columns: 65% auto;
 	}
 	
 	.play {
@@ -52,6 +60,11 @@ nav {
 		grid-column: 1 / span 1;
 		grid-template-columns: 1fr 2fr;
 
+		p {
+		  letter-spacing: 2.5px;
+		  text-align: justify;
+		  font-size: em(20px);
+		}
 		.left {
 
 		}

@@ -27,6 +27,7 @@ import { NavComponent } from './nav/nav.component';
 import { CitiesComponent } from './cities/cities.component';
 import { CityComponent } from './cities/city/city.component';
 import { PlaybookComponent } from './playbook/playbook.component';
+import { LearnMoreBtnComponent } from './learn-more-btn/learn-more-btn.component';
 
 // App routes
 export const routes: Routes = [
@@ -45,7 +46,8 @@ export const routes: Routes = [
     NavComponent,
     CitiesComponent,
     CityComponent,
-    PlaybookComponent
+    PlaybookComponent,
+    LearnMoreBtnComponent
   ],
   imports: [
     BrowserModule,

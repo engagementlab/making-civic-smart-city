@@ -1,0 +1,8 @@
+@import "~src/styles/_variables";
+
+div {	
+	@include font('Butler', 800, em(24px)); 
+	a {
+		color: $primary-blue;
+	}
+}

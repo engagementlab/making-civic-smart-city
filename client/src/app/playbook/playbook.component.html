@@ -1,10 +1,12 @@
 <header class="main-head">		
 
 	<div class="intro">
-	  
-	  <h1>
-	  	Playbook
-	  </h1>
+
+		<div class="indent">
+		  <h1>
+		  	Playbook
+		  </h1>
+		</div>
 
 	</div>
 
@@ -12,7 +14,7 @@
 
 <div class="content">
 
-	<section id="playbook-nav">
+<!-- 	<section id="playbook-nav">
 		<nav #stickyMenu [class.sticky]="sticky">
 			<div *ngFor="let title of playTitles; let i = index;" class="title">
 				<a (click)="triggerScrollTo(i)">
@@ -22,6 +24,10 @@
 			</div>
 		</nav>
 	</section>
+ -->
+ <section id="intro">
+ 	<p>These five plays are actions that can be taken by the range of actors involved in the design and implementation of the smart city, prioritizing a values-first approach that can be implemented across organizations.</p>
+ </section>
 
 	<section id="plays">
 		<div *ngFor="let title of playTitles; let i = index;" id="play_{{i}}">
@@ -29,30 +35,19 @@
 			<div class="play">
 				<div class="left">
 				  <cdn-image id="open" cloudinaryId="playbook/num-{{i+1}}.svg" width="100" autoFormat="false" alt="Play #{{i+1}}"></cdn-image>
-				  <app-button label="Download PDF" route="/" ariaLabel="" class="pine"></app-button>
+				  <!-- <app-button label="Download PDF" route="/" ariaLabel="" class="pine"></app-button> -->
 				</div>
 
 				<div class="right">
 
 					<h1>{{title}}</h1>
-					<h2>Introduction</h2>
 					<p>In conversations concerning smart cities, diverse perspectives can bring many different understandings of the definition of “smart” to the table; “smart” can refer to devices, data, analytics, processes, people, or all of those things. This breadth offers opportunities to strategically usher priorities into conversations about the future of the technologically enabled city. The term “smart city” has the power to draw companies, municipalities, researchers, and publics together to transition cities from the analog past into the digital future. Public values should define the contexts, nuances, and dynamics of such transitions, which might otherwise be subject only to market values.</p>
 
+				  <learn-more-btn></learn-more-btn>
+
 				</div>
 			</div>
 
-			<div class="ideas">
-
-					<div>
-						<h3>Action Ideas</h3>
-						<ul>
-							<li>Embrace the smart city frame as an opportunity to highlight what matters in your place</li>
-							<li>Turn jargon and technical language into language accessible to publics</li>
-							<li>Use “smart” to revisit how your place engages publics</li>
-						</ul>
-				</div>
-
-			</div>
 		</div>
 	</section>
 	
