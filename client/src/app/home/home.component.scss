@@ -180,13 +180,6 @@ section {
 			font-size: em(18px);
 		}
   }
-  span {
-  	display: block;
-  	grid-area: blue;
-		width: 25px;
-	  height: 5px;
-	  background-color: $primary-blue;
-  }
   p {
   	grid-area: txt;
 		@include phones {

@@ -28,11 +28,13 @@ import { CitiesComponent } from './cities/cities.component';
 import { CityComponent } from './cities/city/city.component';
 import { PlaybookComponent } from './playbook/playbook.component';
 import { LearnMoreBtnComponent } from './learn-more-btn/learn-more-btn.component';
+import { WorkshopComponent } from './workshop/workshop.component';
 
 // App routes
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'playbook', component: PlaybookComponent, data: { offwhite: true } },
+  { path: 'workshop', component: WorkshopComponent },
   { path: 'cities', component: CitiesComponent, data: { offwhite: true } }
 ];
 
@@ -47,7 +49,8 @@ export const routes: Routes = [
     CitiesComponent,
     CityComponent,
     PlaybookComponent,
-    LearnMoreBtnComponent
+    LearnMoreBtnComponent,
+    WorkshopComponent
   ],
   imports: [
     BrowserModule,

@@ -57,7 +57,7 @@ header {
 					width: 70%;
 				}
 			}
-	  	padding-top: 8%;
+	  	padding-top: 12%;
 			@include not-phones {
 		  	padding-left: 21%;
 			}
@@ -74,6 +74,24 @@ h1 {
 }
 h3 {
 	@include font('Proza Libre', 800, em(48px));
+}
+
+p {
+	&.justify {
+		@include font('Cabin', 500, em(16px));
+	  text-align: justify;
+	  letter-spacing: 2px;
+	}
+	&.lg {
+		font-size: 1.3em;
+	}
+}
+span.blue {
+	display: block;
+	grid-area: blue;
+	width: 25px;
+  height: 5px;
+  background-color: $primary-blue;
 }
 
 footer {

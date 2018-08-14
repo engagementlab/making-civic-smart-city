@@ -59,12 +59,6 @@ header {
 		display: grid;
 		grid-column: 1 / span 1;
 		grid-template-columns: 1fr 2fr;
-
-		p {
-		  letter-spacing: 2.5px;
-		  text-align: justify;
-		  font-size: em(20px);
-		}
 		.left {
 
 		}

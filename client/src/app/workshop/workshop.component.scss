@@ -1,0 +1,65 @@
+@import "~src/styles/_variables";
+
+// Global overrides
+header {
+	background-image: cdn-image('bg/header-playbook', c_scale, w_1440);	
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-bottom: 5%;
+	padding-bottom: 15%;
+
+	.intro {	
+		background: $off-white;
+		padding-bottom: 15%
+	}
+}
+ul {
+	list-style: none;
+	li {
+    &:before {
+		  content: "*";
+			margin: 0 5px 0 -15px;
+	    height: 20px;
+	    display: block;
+	    float: left;
+	    margin-right: 5px;
+		}
+	}
+}
+
+.heading {
+	margin: 0;
+	p {
+		margin: 0;
+		text-transform: uppercase;
+		font-size: .5em;
+	}
+}
+
+#intro {
+	grid-column-end: 9;
+	@include font('Proza Libre', 800);
+
+  h2 {
+	  font-size: em(64px);
+  }
+  h4 {
+	  letter-spacing: 1.5px;
+	  font-size: em(24px);
+	  text-transform: uppercase;
+  }
+}
+
+#howto {
+	display: flex;
+	
+	div {
+		width: 50%;
+		&:nth-child(1) {
+			padding-right: 10%;
+		}
+		&:nth-child(3) {
+			width: 100%;
+		}
+	}
+}
