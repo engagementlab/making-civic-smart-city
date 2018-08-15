@@ -52,14 +52,15 @@ ul {
 
 #howto {
 	display: flex;
-	
+	flex-flow: row wrap;
+
 	div {
-		width: 50%;
-		&:nth-child(1) {
-			padding-right: 10%;
+		@include not-phones {
+			width: 50%;
 		}
 		&:nth-child(3) {
 			width: 100%;
 		}
 	}
+
 }

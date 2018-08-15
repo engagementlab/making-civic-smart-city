@@ -38,7 +38,7 @@ header {
 	left: 0;
 
   .intro {
-  	grid-column: 1 / span 9;
+  	grid-column: 1 / span 10;
   	grid-row: 1 / span 2;
 
 		@include phones {
@@ -135,7 +135,7 @@ footer {
 	  grid-template-columns: 1fr;
 	}
 	section {
-  	grid-column: 3 / span 7;
+  	grid-column: 3 / span 8;
 	}
 }
 

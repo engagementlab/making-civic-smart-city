@@ -16,7 +16,7 @@ export class PlaybookComponent implements OnInit {
 		"Imagine The Possible"
 	];
 
-	@ViewChild('stickyMenu') menuElement: ElementRef;
+	// @ViewChild('stickyMenu') menuElement: ElementRef;
   sticky: boolean = false;
 	elementPosition: any;
 
@@ -38,15 +38,15 @@ export class PlaybookComponent implements OnInit {
   }
 
   ngAfterViewInit(){
-    this.elementPosition = this.menuElement.nativeElement.offsetTop
+    // this.elementPosition = this.menuElement.nativeElement.offsetTop
 
 	}
 
-	@HostListener('window:scroll', ['$event'])
+	/*@HostListener('window:scroll', ['$event'])
   handleScroll() {
 
 		const windowScroll = window.pageYOffset;
 		this.sticky = windowScroll >= this.elementPosition;
 		console.log(this.sticky)
-	}
+	}*/
 }

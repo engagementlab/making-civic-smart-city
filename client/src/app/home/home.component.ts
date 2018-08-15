@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
 
-	  // var rellax = new Rellax('.img');
+	  var rellax = new Rellax('.img');
   }
 
 }

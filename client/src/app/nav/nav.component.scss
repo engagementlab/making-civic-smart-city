@@ -2,16 +2,20 @@
 
 nav {
 
-	#open {
+	/* #open {
 		position: fixed;
 		top: 10%;
 		right: 15%;
+	} */
+	#open, #close {
+		position: fixed;
+		z-index: 21;
+		top: 1%;
+		right: 2%;
+		cursor: pointer;
 	}
 	#close {
-		z-index: 21;
 		display: none;
-		top: 1%;
-		right: 5%;
 	}
 
 	#menu {
