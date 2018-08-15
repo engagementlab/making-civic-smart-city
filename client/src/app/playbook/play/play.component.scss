@@ -1,0 +1,111 @@
+@import "~src/styles/_variables";
+
+// Global overrides
+header {
+	margin-bottom: 5%;
+	
+	.intro {
+		grid-column: 1 / span 10;
+		background-color: $primary-blue;
+		padding-bottom: 15%;
+	}
+}
+
+/* nav {
+	display: flex;
+	flex-direction: row;
+	background-color: white;
+	margin-bottom: 5%;
+
+	h3 {
+		font-size: em(18px);
+		color: $pine;
+		text-transform: uppercase;
+		margin: 0;
+	}
+	.title {
+		display: block;
+		font-size: em(14px);
+		width: 60%;
+		cursor: pointer;
+		a {
+			color: black;
+		}
+	}
+	&.sticky {
+	  position: fixed;
+	  top: 0;
+	  overflow: hidden;
+	  z-index: 10;
+	}
+} */
+
+.content {
+	.columns {
+		display: flex;
+		flex-direction: row;
+		grid-column: 3 / span 8;
+
+		#play-nav {
+			width: 30%;
+		}
+		#text {
+			width: 100%;
+		}
+	}
+}
+
+#intro {
+	@include font('Proza Libre', 500, em(24px));
+	margin-left: 33%;
+	margin-bottom: 5%;
+  letter-spacing: 0.5px;
+}
+
+#plays {
+	div.ng-star-inserted {
+		display: grid;
+	}
+	
+	.play {
+		display: grid;
+		grid-column: 1 / span 1;
+		grid-template-columns: 1fr 2fr;
+		.left {
+
+		}
+	
+	}
+
+	.ideas {
+		display: grid;
+		grid-template-columns: 20% auto 20%;
+		grid-column: 1 / span 2;
+		background: $off-white;
+
+		div {
+			grid-column: 2;
+		}
+
+		ul {
+			@include font('Cabin', 600, em(24px));
+			letter-spacing: 2.4px;
+			list-style: none;
+
+			padding: 0;
+			margin: 0;
+ 			
+ 			li {
+ 				display: flex;
+		    padding-left: 5%; 
+		    &:before {
+				  content: "*"; 
+
+				  position: relative;
+				  left: -5%;
+				  bottom: -3px;
+				}
+		  }
+		}
+	}
+}

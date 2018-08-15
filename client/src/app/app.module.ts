@@ -29,6 +29,7 @@ import { CityComponent } from './cities/city/city.component';
 import { PlaybookComponent } from './playbook/playbook.component';
 import { LearnMoreBtnComponent } from './learn-more-btn/learn-more-btn.component';
 import { WorkshopComponent } from './workshop/workshop.component';
+import { PlayComponent } from './playbook/play/play.component';
 
 // App routes
 export const routes: Routes = [
@@ -37,6 +38,7 @@ export const routes: Routes = [
   { path: 'cities', component: CitiesComponent }
   { path: 'playbook', component: PlaybookComponent },
   { path: 'workshop', component: WorkshopComponent },
+  { path: 'play/sample', component: PlayComponent }
 ];
 
 @NgModule({
@@ -51,7 +53,8 @@ export const routes: Routes = [
     CityComponent,
     PlaybookComponent,
     LearnMoreBtnComponent,
-    WorkshopComponent
+    WorkshopComponent,
+    PlayComponent
   ],
   imports: [
     BrowserModule,
