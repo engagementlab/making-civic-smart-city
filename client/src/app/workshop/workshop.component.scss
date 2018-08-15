@@ -62,5 +62,11 @@ ul {
 			width: 100%;
 		}
 	}
+}
 
+#end {
+	grid-column: 3 / span 10;
+	padding-top: 4%;
+	padding-left: 12%;
+	background-color: $off-white;
 }

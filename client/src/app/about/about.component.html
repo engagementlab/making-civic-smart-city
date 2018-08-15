@@ -1,3 +1,87 @@
-<p>
-  about works!
-</p>
+<header class="main-head">
+
+	<div class="banner">
+	  <!-- <cdn-image class="corner-img img" cloudinaryId="bg/home-topleft.png" gravity="center" height="260" width="430" crop="fill" alt="Icon for Reward" data-rellax-speed="3"></cdn-image> -->
+	</div>
+	  
+	<div class="intro">
+	  
+	  <div class="heading">
+		  <h1>
+				<p>How do we make</p>
+				Smart Cities Civic
+		  </h1>
+		</div>
+	</div>
+
+</header>
+
+<div class="content">
+
+	<section id="img">
+		<cdn-image class="img" cloudinaryId="bg/about-top.png" gravity="center" width="453" crop="scale" alt="'About' banner background image" data-rellax-speed="-4" data-rellax-percentage="0.5"></cdn-image>
+	</section>
+
+	<section id="intro">
+
+		<h3>The dominant discourse of the smart city is focused primarily on issues of technology:</h3>
+		<h2>the integration of networked devices into the built environment of the city, the use of big data and algorithms, and the construction of smart infrastructure are all centered in our conception of what it means for a city to be smart.</h2>
+ 		
+ 		<p class="lg indent">To embrace the smart city means to leverage the enthusiasm of publics, the private sector, and government organizations for digital technologies and devices into conversations that encourage civic participation and provide public values.</p>
+
+	</section>
+
+	<section id="callout">
+		<h1>Be more effectively engaged in the process of decision-making around smart city infrastructure and tools.</h1>
+	</section>
+
+	<section id="what">
+		
+		<div class="left">
+		
+			<cdn-image class="img" cloudinaryId="bg/about-symposium.png" gravity="center" width="482" crop="scale" alt="'What We Did' background image" data-rellax-speed="-4" data-rellax-percentage="0.5"></cdn-image>
+		
+		</div>
+
+		<div class="right">
+
+		  <h3 class="heading">What We Did</h3>
+			<span class="blue"></span>
+
+			<p class="lg">On March 22—23, 2018, we convened a symposium entitled, “Right to the Smart City: Designing for Public Value and Civic Participation” at the Berkman Klein Center for Internet & Society at Harvard University. We set out to answer this question:</p>
+			<p class="lg b">On March 22—23, 2018, we convened a symposium entitled, “Right to the Smart City: Designing for Public Value and Civic Participation” at the Berkman Klein Center for Internet & Society at Harvard University. We set out to answer this question:</p>
+
+			<p class="indent">This symposium was designed to bring together diverse perspectives, inviting participation from individuals differing in geographic location, disciplinary perspective, and professional experience. We presented participants with scenarios that embodied the complex problems surrounding the civic design and implementation of the smart city, prompting them to find ways in which publics can be more effectively engaged in the process of decision-making around smart city infrastructure and tools.</p>
+
+		</div>
+
+	</section>
+
+	<section id="who">
+		
+	  <h3 class="heading stroke">Who was involved</h3>
+
+	  <div class="people">
+		  <div *ngFor="let i of getPeople()" class="person lg">
+		  	
+		  	<span class="name b">First Last</span>
+		  	<span class="title">Job Title</span>
+
+		  </div>
+		</div>
+
+
+	</section>
+
+	<section id="end">
+		<h3 class="stroke">Now it’s your turn</h3>
+
+		<p class="lg">Use our workshop guide to reproduce our process on a local level in order to ground-truth our general findings and provide local texture to the definition of smart.</p>
+		<p class="indent">The workshop we provide is in the form of a day-long symposium, adapted from the model we piloted in March of 2018.</p>
+		<p class="indent">When used in conjunction with the five plays described, this workshop is intended to help cities to define their own localized version of ‘smart’, and to construct a workable strategy to encourage greater engagement with publics in the civic processes of designing the smart city.</p>
+
+	  <app-button label="Start Workshop" route="/workshop" ariaLabel="Click to view workshop guide" class="pine indent"></app-button>
+	</section>
+
+
+</div>

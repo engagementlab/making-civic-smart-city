@@ -15,10 +15,16 @@ body {
 		color: $primary-blue;
 		text-decoration: none;
 	}
+	.lg {
+		font-size: 1.3em;
+	}
+	.b {
+		font-weight: 800;
+	}
 	@include phones {
-		&.nav {
-			overflow: hidden;
-		}
+		// &.nav {
+		// 	overflow: hidden;
+		// }
 	}
 	&.offwhite {
 		background-color: $off-white;
@@ -81,9 +87,6 @@ p {
 		@include font('Cabin', 500, em(16px));
 	  text-align: justify;
 	  letter-spacing: 2px;
-	}
-	&.lg {
-		font-size: 1.3em;
 	}
 }
 span.blue {

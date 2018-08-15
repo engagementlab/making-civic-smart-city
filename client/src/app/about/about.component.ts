@@ -12,4 +12,8 @@ export class AboutComponent implements OnInit {
   ngOnInit() {
   }
 
+  public getPeople() {
+  	return new Array(30);
+  }
+
 }

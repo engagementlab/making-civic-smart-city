@@ -33,9 +33,10 @@ import { WorkshopComponent } from './workshop/workshop.component';
 // App routes
 export const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'playbook', component: PlaybookComponent, data: { offwhite: true } },
+  { path: 'about', component: AboutComponent },
+  { path: 'cities', component: CitiesComponent }
+  { path: 'playbook', component: PlaybookComponent },
   { path: 'workshop', component: WorkshopComponent },
-  { path: 'cities', component: CitiesComponent, data: { offwhite: true } }
 ];
 
 @NgModule({
