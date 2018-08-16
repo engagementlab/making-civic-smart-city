@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'learn-more-btn',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./learn-more-btn.component.scss']
 })
 export class LearnMoreBtnComponent implements OnInit {
+
+	@Input() route: string;
 
   constructor() { }
 

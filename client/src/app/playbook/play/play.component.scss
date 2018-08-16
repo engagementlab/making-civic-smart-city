@@ -11,26 +11,9 @@ header {
 	}
 }
 
-/* nav {
-	display: flex;
-	flex-direction: row;
-	background-color: white;
-	margin-bottom: 5%;
-
-	h3 {
-		font-size: em(18px);
-		color: $pine;
-		text-transform: uppercase;
-		margin: 0;
-	}
-	.title {
-		display: block;
-		font-size: em(14px);
-		width: 60%;
+nav {
+	a {
 		cursor: pointer;
-		a {
-			color: black;
-		}
 	}
 	&.sticky {
 	  position: fixed;
@@ -38,19 +21,38 @@ header {
 	  overflow: hidden;
 	  z-index: 10;
 	}
-} */
+}
 
 .content {
 	.columns {
-		display: flex;
-		flex-direction: row;
-		grid-column: 3 / span 8;
+		display: grid;
+		grid-template-columns: 1fr 2fr 1fr;
+		grid-column: 3 / span 11;
 
 		#play-nav {
-			width: 30%;
+			grid-column: 1;
+		  text-transform: uppercase;
+		  letter-spacing: 1.1px;
+		  div {		  	
+			  padding-top: 2%;
+			  padding-bottom: 2%;
+		  }
+		  a {
+				@include font('Proza Libre', 800, 1.2em);
+			  color: $pine;
+			}
 		}
 		#text {
-			width: 100%;
+			grid-column: 2;
+		}
+		#end {
+			display: grid;
+			grid-template-columns: 1fr 2fr;
+			grid-column: 1 / span 3;
+			padding-left: 0;
+			div {
+				grid-column: 2;
+			}
 		}
 	}
 }
@@ -62,50 +64,23 @@ header {
   letter-spacing: 0.5px;
 }
 
-#plays {
-	div.ng-star-inserted {
-		display: grid;
-	}
-	
-	.play {
-		display: grid;
-		grid-column: 1 / span 1;
-		grid-template-columns: 1fr 2fr;
-		.left {
+ul {
+	@include font('Cabin', 600, em(24px));
+	letter-spacing: 2.4px;
+	list-style: none;
 
-		}
-	
-	}
+	padding: 0;
+	margin: 0;
+		
+	li {
+		display: flex;
+    padding-left: 5%; 
+    &:before {
+		  content: "*"; 
 
-	.ideas {
-		display: grid;
-		grid-template-columns: 20% auto 20%;
-		grid-column: 1 / span 2;
-		background: $off-white;
-
-		div {
-			grid-column: 2;
-		}
-
-		ul {
-			@include font('Cabin', 600, em(24px));
-			letter-spacing: 2.4px;
-			list-style: none;
-
-			padding: 0;
-			margin: 0;
- 			
- 			li {
- 				display: flex;
-		    padding-left: 5%; 
-		    &:before {
-				  content: "*"; 
-
-				  position: relative;
-				  left: -5%;
-				  bottom: -3px;
-				}
-		  }
+		  position: relative;
+		  left: -5%;
+		  bottom: -3px;
 		}
 	}
 }

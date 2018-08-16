@@ -35,7 +35,7 @@ import { PlayComponent } from './playbook/play/play.component';
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'cities', component: CitiesComponent }
+  { path: 'cities', component: CitiesComponent },
   { path: 'playbook', component: PlaybookComponent },
   { path: 'workshop', component: WorkshopComponent },
   { path: 'play/sample', component: PlayComponent }

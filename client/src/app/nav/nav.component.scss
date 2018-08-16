@@ -16,6 +16,10 @@ nav {
 	}
 	#close {
 		display: none;
+		&:before {
+    content: '\2716';
+    font-size: 20px;
+  }
 	}
 
 	#menu {
@@ -44,6 +48,7 @@ nav {
 	  h3 {
 	  	a {
 	  		color: white;
+	  		font-size: .8em;
 	  		&:hover {
 	  			text-decoration: underline;
 	  		}

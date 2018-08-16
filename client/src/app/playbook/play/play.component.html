@@ -19,18 +19,43 @@
 
 		<section id="play-nav">
 			<nav #stickyMenu [class.sticky]="sticky">
-				<div><a>Introduction</a></div>
-				<div><a>Discussion</a></div>
-				<div><a>Action Ideas</a></div>
+				<div><a (click)="triggerScrollTo('introduction')">Introduction</a></div>
+				<div><a (click)="triggerScrollTo('discussion')">Discussion</a></div>
+				<div><a (click)="triggerScrollTo('actionideas')">Action Ideas</a></div>
 			</nav>
 		</section>
 	 
 	 	<section id="text">
-	 		<h2>Introduction</h2>
+	 		<h3 id="introduction">Introduction</h3>
 			<span class="blue"></span>
 
 			<p class="lg">In conversations concerning smart cities, diverse perspectives can bring many different understandings of the definition of “smart” to the table; “smart” can refer to devices, data, analytics, processes, people, or all of those things. This breadth offers opportunities to strategically usher priorities into conversations about the future of the technologically enabled city. The term “smart city” has the power to draw companies, municipalities, researchers, and publics together to transition cities from the analog past into the digital future. Public values should define the contexts, nuances, and dynamics of such transitions, which might otherwise be subject only to market values.</p>
+
+	 		<h3 id="discussion">Discussion</h3>
+			<span class="blue"></span>
+
+			<p class="lg">The “smart city” originated as a marketing term used to sell mainframes to cities in the 1980s; it functioned as a clever and compelling articulation of streamlined city infrastructure, using accessible, everyday language. Unfortunately, this type of branding exercise too frequently comprises the extent of public outreach concerning “smart,” with cities often prioritizing technological solutions that exclude public participation and knowledge. Thus we pose the question: how might cities better leverage popular excitement about smart cities into opportunities for greater civic participation that provides public value? 
+
+			In reimagining the relationship between city governance and civic participation, how might the complexity and diversity of human experience be better included? Ceasar McDowell says that “cities are so drawn to sensor technologies because they provide easy answers. They explain complex reality using data and images, but that won’t work, because there’s much more to people than the data we collect about ourselves.” Toni Griffin agrees, saying, “I don’t believe that the data you’re able to gather through technological means is sufficient to address and discuss betterment of the city. There’s other data needed that you can’t necessarily gather through certain technologies. Not just counts of things, but qualitative things.” The phrase “smart city” often exclusively connotes technology, but participants agreed that technology was just a hook; that in fact, for a city to be smart, it needs to ground technological innovation in local knowledge. 
+
+			Many participants thought that the smart city frame should be deployed as a “Trojan horse”, that is, as a way of sneaking a civic agenda into market enthusiasm. Dan O’Brien points out that this - perhaps misguided - enthusiasm extends to the general public. “The average person thinks of smart cities as being the autonomous vehicles, the ubiquitous sensor systems, things of that nature. Those technologies we talk about are big and sexy and really expensive and really inaccessible to most populations. We need to be more concerned with the more modest day-to-day stuff that we could do with datasets that any municipality has and could have real impact tomorrow.” Here, the excitement for new smart city technologies is an opportunity to reconsider mundane, low-tech, or even analog options for solving public problems.
+
+			Lilian Coral asked, “Do we really have the right pulse on what is of value to the average city dweller? I wonder if we’re making assumptions in our own circles about what we should be working on.” The appropriate time needs to be committed, from the very beginning of a process, to inviting and facilitating public input. Indeed, the smart city should be an informed city. Layman Lee points out that it takes time to convene stakeholders and “ask what they want. What are residents afraid of? What do residents want to see?” This type of ongoing engagement can produce and refine guiding principles for what smart cities mean to a specific neighborhood. In Layman’s work with the Brownsville Innovation Lab, for example, the community filed several public requests for proposals (RFPs) about how sensors might activate community spaces. All that is knowable is not measurable. Through taking the time to talk to people about the data that exists, we can verify what we think we know and shed light on that which we do not. </p>
 	 	</section>
+
+		<section id="end">
+			<div>
+				<h3 id="actionideas">Action Ideas</h3>
+
+				<span class="blue"></span>
+				<ul>
+					<li>Embrace the smart city frame as an opportunity to highlight what matters in your place</li>
+					<li>Turn jargon and technical language into language accessible to publics</li>
+					<li>Use “smart” to revisit how your place engages publics</li>
+				</ul>
+			</div>
+
+		</section>
 
 	</div>
 </div>

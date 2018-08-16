@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, HostListener } from '@angular/core';
+import { ScrollToService } from '@nicky-lenaers/ngx-scroll-to';
 
 @Component({
   selector: 'app-play',
@@ -7,9 +8,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayComponent implements OnInit {
 
-  constructor() { }
+	@ViewChild('stickyMenu') menuElement: ElementRef;
+  sticky: boolean = false;
+	elementPosition: any;
+
+  constructor(private _scrollToService: ScrollToService) { }
 
   ngOnInit() {
   }
+
+  ngAfterViewInit(){
+    this.elementPosition = this.menuElement.nativeElement.offsetTop
+
+	}
+
+	@HostListener('window:scroll', ['$event'])
+  handleScroll() {
+
+		const windowScroll = window.pageYOffset;
+		this.sticky = windowScroll >= this.elementPosition;
+	}
+
+  public triggerScrollTo(name: string) {
+    
+    this._scrollToService
+      .scrollTo({
+        target: name,
+        offset: -100,
+        duration: 1700
+      });
+
+  }
+
 
 }

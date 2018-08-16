@@ -105,17 +105,3 @@ section {
 	}
 
 }
-
-#end {
-	grid-column: 3 / span 10;
-	padding-top: 4%;
-	padding-left: 12%;
-	padding-right: 20%;
-	background-color: $off-white;
-
-	.indent {
-		@include not-phones {
-			padding-left: 10%;
-		}
-	}
-}
