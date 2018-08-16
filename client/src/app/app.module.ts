@@ -30,11 +30,15 @@ import { PlaybookComponent } from './playbook/playbook.component';
 import { LearnMoreBtnComponent } from './learn-more-btn/learn-more-btn.component';
 import { WorkshopComponent } from './workshop/workshop.component';
 import { PlayComponent } from './playbook/play/play.component';
+import { AgendaComponent } from './agenda/agenda.component';
+import { AgendastepComponent } from './agenda/agendastep/agendastep.component';
 
 // App routes
 export const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
+  { path: 'about', component: AboutComponent },  
+  { path: 'agenda/:step', component: AgendaComponent },
+  
   { path: 'cities', component: CitiesComponent },
   { path: 'playbook', component: PlaybookComponent },
   { path: 'workshop', component: WorkshopComponent },
@@ -54,7 +58,9 @@ export const routes: Routes = [
     PlaybookComponent,
     LearnMoreBtnComponent,
     WorkshopComponent,
-    PlayComponent
+    PlayComponent,
+    AgendaComponent,
+    AgendastepComponent
   ],
   imports: [
     BrowserModule,

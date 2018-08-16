@@ -1,0 +1,31 @@
+<header class="main-head">		
+
+	<div class="intro">
+
+		<div class="indent">
+		  <h1>Agenda</h1>
+		</div>
+
+	</div>
+
+</header>
+
+<div class="content">
+
+	<section id="nav">
+		<nav #stickyMenu [class.sticky]="sticky">
+			<div *ngFor="let title of sections; let i = index;" class="section">
+				<a (click)="changeStep(title.key)">
+					<span>{{title.label}}</span>
+				</a>
+			</div>
+		</nav>
+	</section>
+	 
+ 	<section id="text">
+
+	 	<app-agendastep stepId="{{stepId}}"></app-agendastep>
+
+ 	</section>
+
+</div>

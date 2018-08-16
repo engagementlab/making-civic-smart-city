@@ -20,13 +20,10 @@ export class AppComponent {
 
 	getState(outlet: RouterOutlet) {
 	    let state: string = (<ActivatedRouteSnapshot>outlet.activatedRoute.snapshot)['_routerState'].url;
-	    console.log(outlet)
 
 	    if (this.lastState !== state) {
       
         let dir: string = this.appRouterState.getDirection(state);
-
-        console.log(dir)
         if (dir === "f")
           this.currentState++;
         else
