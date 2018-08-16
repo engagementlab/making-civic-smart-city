@@ -47,9 +47,12 @@ nav {
 		}
 		#end {
 			display: grid;
-			grid-template-columns: 1fr 2fr;
 			grid-column: 1 / span 3;
-			padding-left: 0;
+
+			@include not-phones {
+				grid-template-columns: 1fr 2fr;
+				padding-left: 0;
+			}
 			div {
 				grid-column: 2;
 			}

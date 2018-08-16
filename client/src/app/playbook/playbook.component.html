@@ -14,17 +14,6 @@
 
 <div class="content">
 
-<!-- 	<section id="playbook-nav">
-		<nav #stickyMenu [class.sticky]="sticky">
-			<div *ngFor="let title of playTitles; let i = index;" class="title">
-				<a (click)="triggerScrollTo(i)">
-					<h3>Play {{i+1}}</h3>
-					<span>{{title}}</span>
-				</a>
-			</div>
-		</nav>
-	</section>
- -->
  <section id="intro">
  	<p>These five plays are actions that can be taken by the range of actors involved in the design and implementation of the smart city, prioritizing a values-first approach that can be implemented across organizations.</p>
  </section>
@@ -33,19 +22,21 @@
 		<div *ngFor="let title of playTitles; let i = index;" id="play_{{i}}">
 
 			<div class="play">
+				
 				<div class="left">
-				  <cdn-image id="open" cloudinaryId="playbook/num-{{i+1}}.svg" width="100" autoFormat="false" alt="Play #{{i+1}}"></cdn-image>
-				  <!-- <app-button label="Download PDF" route="/" ariaLabel="" class="pine"></app-button> -->
+				  <cdn-image id="open" cloudinaryId="playbook/num-{{i+1}}.svg" width="100" autoFormat="false" alt="Play #{{i+1}} icon"></cdn-image>
 				</div>
 
-				<div class="right">
-
+				<div class="title">
 					<h1>{{title}}</h1>
+				</div>
+
+				<div class="text">
 					<p class="justify">In conversations concerning smart cities, diverse perspectives can bring many different understandings of the definition of “smart” to the table; “smart” can refer to devices, data, analytics, processes, people, or all of those things. This breadth offers opportunities to strategically usher priorities into conversations about the future of the technologically enabled city. The term “smart city” has the power to draw companies, municipalities, researchers, and publics together to transition cities from the analog past into the digital future. Public values should define the contexts, nuances, and dynamics of such transitions, which might otherwise be subject only to market values.</p>
 
 				  <learn-more-btn route="/play/sample"></learn-more-btn>
-
 				</div>
+
 			</div>
 
 		</div>

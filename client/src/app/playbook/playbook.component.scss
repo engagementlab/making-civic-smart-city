@@ -14,53 +14,42 @@ header {
 	}
 }
 
-/* nav {
-	display: flex;
-	flex-direction: row;
-	background-color: white;
-	margin-bottom: 5%;
-
-	h3 {
-		font-size: em(18px);
-		color: $pine;
-		text-transform: uppercase;
-		margin: 0;
-	}
-	.title {
-		display: block;
-		font-size: em(14px);
-		width: 60%;
-		cursor: pointer;
-		a {
-			color: black;
-		}
-	}
-	&.sticky {
-	  position: fixed;
-	  top: 0;
-	  overflow: hidden;
-	  z-index: 10;
-	}
-} */
-
 #intro {
 	@include font('Proza Libre', 500, em(24px));
-	margin-left: 33%;
+
+	@include not-phones {
+		margin-left: 33%;
+	}
+
 	margin-bottom: 5%;
   letter-spacing: 0.5px;
 }
 
 #plays {
-	div.ng-star-inserted {
-		display: grid;
-	}
-	
 	.play {
 		display: grid;
 		grid-column: 1 / span 1;
 		grid-template-columns: 1fr 2fr;
-		.left {
+		grid-template-row: 1fr 1fr;
+		
+		@include phones {
+			margin-left: 2%;
+			margin-right: 2%;
+			h1 {
+				font-size: 1em;
+			}
+		}
 
+		::ng-deep img {
+			min-width: 132px;
+			min-height: 300px;
+		}
+
+		.text {
+			grid-column: 2;
+			@include phones {
+				grid-column: 1 / span 2;
+			}
 		}
 	
 	}

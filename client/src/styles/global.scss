@@ -102,6 +102,7 @@ footer {
 
 	grid-column: 4 / span 7;
 	grid-row: 2;
+	margin-top: 10%;
 
   @include phones {
 		grid-column: 1 / span 12;
@@ -142,11 +143,16 @@ footer {
 	}
 
 	#end {
-		grid-column: 3 / span 10;
 		padding-top: 4%;
+		background-color: $off-white;
+		grid-column: 3 / span 10;
 		padding-left: 12%;
 		padding-right: 20%;
-		background-color: $off-white;
+
+		@include phones {
+			padding-left: 5%;
+			padding-right: 2%;
+		}
 
 		.indent {
 			@include not-phones {
