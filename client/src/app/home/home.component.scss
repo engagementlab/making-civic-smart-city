@@ -149,45 +149,27 @@ section {
 
 #share {	
 
-	display: grid;
+	display: flex;
 	margin-top: 10%;
 	margin-left: 10%;
 	
-	grid-auto-rows: auto;
-  grid-template-columns: 60% auto;
-  grid-template-areas:
-	  "head head"
-	  "blue blue"
-	  "txt button";
-
-	@include phones {
-		margin: 4%;
-		grid-template-areas:
-	  "head head"
-	  "blue blue"
-	  "txt txt"
-	  "button button";
-	}
-
+	// grid-auto-rows: auto;
+ //  grid-template-columns: 60% auto;
+ 
   align-items: center;
 	color: white;
-	padding: 10%;
+	padding: 3%;
   background-color: $pine;
 
   h3 {
-  	grid-area: head;
+  	width: 70%;
+		font-size: em(32px);
 		@include phones {
 			font-size: em(18px);
 		}
   }
-  p {
-  	grid-area: txt;
-		@include phones {
-			font-size: em(10px);
-		}
-  } 
   app-button {
-  	grid-area: button;
+  	grid-column: 2;
   }
   
 }

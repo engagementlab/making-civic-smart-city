@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as Rellax  from 'rellax';
 
 @Component({
   selector: 'app-about',
@@ -10,6 +11,9 @@ export class AboutComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+	  
+	  var rellax = new Rellax('.img');
+
   }
 
   public getPeople() {

@@ -2,7 +2,7 @@
 
 // Global overrides
 header {
-	background-image: cdn-image('bg/header-playbook', c_scale, w_1440);	
+	background-image: cdn-image('bg/header-workshop', c_scale, w_1440);	
 	background-repeat: no-repeat;
 	background-size: cover;
 	margin-bottom: 5%;
@@ -40,6 +40,7 @@ ul {
 	grid-column-end: 9;
 	@include font('Proza Libre', 800);
 
+  letter-spacing: 2px;
   h2 {
 	  font-size: em(64px);
   }
@@ -56,7 +57,10 @@ ul {
 
 	div {
 		@include not-phones {
-			width: 50%;
+			width: 45%;
+		}
+		&:nth-child(2) {
+			margin-left: 4%;
 		}
 		&:nth-child(3) {
 			width: 100%;

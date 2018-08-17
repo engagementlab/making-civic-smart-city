@@ -6,28 +6,37 @@
     <router-outlet (activate)="activateRouter($event)" #o="outlet"></router-outlet>
   </main>
 
-  <!-- <aside></aside> -->
-
-<!-- <nav class="main-nav">
-    <ul>
-        <li><a href="">Nav 1</a></li>
-        <li><a href="">Nav 2</a></li>
-        <li><a href="">Nav 3</a></li>
-    </ul>
-</nav> -->
 </div>
+
 <footer>
 
+  <h4>
+    <span id="making">Making</span> <span id="a"> A</span><br />
+    Civic Smart City
+  </h4>
+  <div id="contact">
+    <!-- +1 (555) 555-5555 -->
+    120 Boylston St<br />
+    Boston, MA 02116 USA<br />
+    engagementlab@emerson.edu
+  </div>
+
   <ul>
-    <li><a routerLink="">Cities</a></li>
-    <li><a routerLink="">Plays</a></li>
-    <li><a routerLink="">Video Testimonials</a></li>
+      <li><a routerLink="/about">About</a></li>
+      <li><a routerLink="/workshop">Workshop</a></li>
+      <li><a routerLink="/playbook">Playbook</a></li>
+      <li><a routerLink="/cities">Cities</a></li>
   </ul>
 
-  <div id="logos">
+  <div id="logo-left">
 
-    <cdn-image cloudinaryId="logos/kf-logo-stacked.png" width="240" alt="Knight Foundation logo"></cdn-image>
     <cdn-image cloudinaryId="logos/el-logo-black.png" width="100" alt="Engagement Lab @ Emerson College logo"></cdn-image>
+
+  </div>
+
+  <div id="logo-right">
+    <cdn-image cloudinaryId="logos/asu-center.png" width="281" alt="ASU Center for Smart Cities and Regions logo"></cdn-image>
+    <cdn-image cloudinaryId="logos/kf-logo-stacked.png" width="240" alt="Knight Foundation logo"></cdn-image>
 
   </div>
 

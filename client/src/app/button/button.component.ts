@@ -12,7 +12,8 @@ export class ButtonComponent implements OnInit {
 	@Input() route: string;
 	@Input() href: string;
 	@Input() ariaLabel: string;
-	@Input() newWindow: boolean;
+  @Input() newWindow: boolean;
+	@Input() download: boolean = false;
   constructor() { }
 
   ngOnInit() {

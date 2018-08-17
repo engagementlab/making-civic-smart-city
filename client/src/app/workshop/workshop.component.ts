@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as Rellax  from 'rellax';
 
 @Component({
   selector: 'app-workshop',
@@ -10,6 +11,9 @@ export class WorkshopComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+	  
+	  var rellax = new Rellax('.parallax');
+
   }
 
 }

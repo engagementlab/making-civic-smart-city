@@ -21,6 +21,10 @@ body {
 	.b {
 		font-weight: 800;
 	}
+	.particles {
+		position: absolute;
+	}
+
 	@include phones {
 		// &.nav {
 		// 	overflow: hidden;
@@ -100,32 +104,74 @@ span.blue {
 footer {
 	display: grid;
 
-	grid-column: 4 / span 7;
+	grid-column: 2 / span 10;
 	grid-row: 2;
-	margin-top: 10%;
+  grid-template-columns: repeat(8, [col] 12.5%);
+  grid-template-rows: 1fr 1fr 1fr;
+
+	margin-top: 5%;
 
   @include phones {
 		grid-column: 1 / span 12;
+	  grid-template-rows: 1fr 1fr 1fr 1fr;
+	  grid-template-columns: 1fr 2fr 1fr;
   }
 
-  grid-template-columns: 2fr;
-  grid-template-areas:
-  "sub-nav logos";
-	@include phones {
-	  grid-template-areas:
-	  "sub-nav"
-	  "logos";
+	h4 {
+		grid-column: 1 / span 8;
+		grid-row: 1;
+		font-size: 2em;
+		#making {
+			@include font('Proza Libre', 500);
+			font-size: .7em;
+		}
+		#a {
+			@include font('Proza Libre');
+			font-size: .5em;
+		}
 	}
-
   ul {
-  	grid-area: sub-nav;
+		grid-column: 5 / span 2;
+		grid-row: 2;
+	  @include phones {
+			grid-row: 3;
+			grid-column: 1;
+	  }
+		margin: 0;
   	padding: 0;
   	list-style: none;
+		font-size: em(24px);
+		a {
+		  letter-spacing: 3px;
+			color: $pine;
+		}
   }
 
-	#logos {
-		grid-area: logos;
-		display: flex;
+	#contact {
+		grid-column: 1 / span 8;
+		grid-row: 2;
+		font-size: em(20px);
+	  line-height: 1.6;
+	  letter-spacing: 1.5px;
+	}
+	#logo-right {
+		grid-column: 5 / span 5;
+		grid-row: 3;
+	  @include phones {
+			grid-row: 4;
+			grid-column: 2 / span 2;
+	  }
+		img {
+	  	padding-left: 2%;
+	  }
+	}
+	#logo-left {
+		grid-column: 1 / span 5;
+		grid-row: 3;
+	  @include phones {
+			grid-row: 4;
+			grid-column: 1;
+	  }
 	  img {
 	  	width: 80%;
 	  }
@@ -143,9 +189,11 @@ footer {
 	}
 
 	#end {
-		padding-top: 4%;
 		background-color: $off-white;
 		grid-column: 3 / span 10;
+
+		margin-top: 10%;
+		padding-top: 4%;
 		padding-left: 12%;
 		padding-right: 20%;
 

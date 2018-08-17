@@ -21,6 +21,8 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
 
 	  var rellax = new Rellax('.img');
+	  particlesJS.load('particles-js', 'assets/particlesjs.json', function() {
+		});
   }
 
 }

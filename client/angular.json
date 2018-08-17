@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-cli-workspace-example": {
+    "making-civic-smart-city": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-cli-workspace-example",
+            "outputPath": "dist/making-civic-smart-city",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -29,7 +29,8 @@
             "styles": [
               "src/styles/global.scss"
             ],
-            "scripts": []
+            "scripts": [
+            ]
           },
           "configurations": {
             "production": {
@@ -71,18 +72,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-cli-workspace-example:build"
+            "browserTarget": "making-civic-smart-city:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-cli-workspace-example:build:production"
+              "browserTarget": "making-civic-smart-city:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-cli-workspace-example:build"
+            "browserTarget": "making-civic-smart-city:build"
           }
         },
         "test": {
@@ -116,7 +117,7 @@
         }
       }
     },
-    "angular-cli-workspace-example-e2e": {
+    "making-civic-smart-city-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -124,11 +125,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-cli-workspace-example:serve"
+            "devServerTarget": "making-civic-smart-city:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-cli-workspace-example:serve:production"
+              "devServerTarget": "making-civic-smart-city:serve:production"
             }
           }
         },
@@ -144,5 +145,5 @@
       }
     }
   },
-  "defaultProject": "angular-cli-workspace-example"
+  "defaultProject": "making-civic-smart-city"
 }

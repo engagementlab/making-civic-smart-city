@@ -73,11 +73,18 @@ section {
 	display: flex;
 	flex-direction: row;
 
+	@include phones {
+		flex-direction: column;
+	}
+
 	.lg {		
 		font-size: 1.4em;
 	}
 	.indent {
 		padding-left: 10%;
+	}
+	.left .img {
+		z-index: -3;
 	}
 	.right {
 		width: 70%;
