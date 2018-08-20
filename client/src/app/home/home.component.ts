@@ -22,6 +22,10 @@ export class HomeComponent implements OnInit {
 
 	  var rellax = new Rellax('.img');
 	  particlesJS.load('particles-js', 'assets/particlesjs.json', function() {
+	  	console.log()
+	  	document.querySelector('.particles-js-canvas-el').style.width = '100vmax!important';
+			// width: 100vmax !important;
+			// height: 100vmax !important;
 		});
   }
 

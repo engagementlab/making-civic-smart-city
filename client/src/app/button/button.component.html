@@ -2,7 +2,7 @@
 
 <a *ngIf="href !== undefined && download === false" class="btn {{class}}" role="button" href="{{href}}" target="{{newWindow && '_blank' || '' }}" attr.aria-label="{{ariaLabel}}">{{label}}</a>
 
-<a *ngIf="download === 'true'" role="button" href="{{href}}" target="{{newWindow && '_blank' || '' }}" attr.aria-label="{{ariaLabel}}">
+<a *ngIf="download === true" role="button" href="{{href}}" target="{{newWindow && '_blank' || '' }}" attr.aria-label="{{ariaLabel}}">
 
 	<div class="download btn">
 

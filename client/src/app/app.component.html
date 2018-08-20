@@ -41,3 +41,12 @@
   </div>
 
 </footer>
+
+<!-- QA Build Banner -->
+<div *ngIf="isQABuild === true" id="qa-build"> 
+
+  <cdn-image cloudinaryId="qa-build.svg" autoFormat="false" width="50" alt="QA Build icon"></cdn-image>
+  <span id="text">QA BUILD</span>
+  <div>May be unstable. Not intended for external use.</div>
+
+</div>

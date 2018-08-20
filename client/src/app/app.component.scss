@@ -1,1 +1,22 @@
 @import "~src/styles/_variables";
+
+#qa-build {
+	position: fixed;
+	bottom: 100%;
+	left: 0;
+	right: 0;
+	color: white;
+	background-color: $pine;
+	text-align: center;
+	font-weight: bold;
+	font-size: large;
+	z-index: 100;
+
+	#text {
+		font-size: xx-large;
+	}
+	span {
+		vertical-align: top;
+	}
+	
+}

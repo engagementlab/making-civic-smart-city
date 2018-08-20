@@ -18,7 +18,21 @@ header {
   .intro {
 	  background-color: $off-white;
   }
+	.particles {
+		position: absolute;
+		// width: 100%; 
+		// height: 100%;
+		.particles-js-canvas-el {
+			// width: 100vmax !important;
+			height: 100vmax !important;
+			z-index: 0;
+		}
+	}
 
+	h1, .stagger {
+		position: relative;
+		z-index: 3;
+	}
 	.stagger {
 		display: flex;
 		flex-direction: column;
@@ -72,10 +86,10 @@ section {
 		}
 	}
 	&#img {
+		grid-column: 10 / span 3;
 		position: relative;
 		z-index: -3;
 		margin-top: -89%;
-		left: 60%;
 	}
 	p {	
 		@include font('Cabin', 400, em(14px));

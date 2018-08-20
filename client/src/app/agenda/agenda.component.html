@@ -13,7 +13,7 @@
 <div class="content">
 
 	<section id="nav">
-		<nav #stickyMenu [class.sticky]="sticky">
+		<nav #stickyMenu>
 			<div *ngFor="let title of sections; let i = index;" class="section">
 				<a (click)="changeStep(title.key)">
 					<span>{{title.label}}</span>
