@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Making A Civic Smart City</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
+
+<!-- 	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://res.cloudinary.com/engagement-lab-home/image/upload/opportunity-game/favicons/apple-touch-icon-57x57.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://res.cloudinary.com/engagement-lab-home/image/upload/opportunity-game/favicons/apple-touch-icon-114x114.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://res.cloudinary.com/engagement-lab-home/image/upload/opportunity-game/favicons/apple-touch-icon-72x72.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://res.cloudinary.com/engagement-lab-home/image/upload/opportunity-game/favicons/apple-touch-icon-144x144.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="60x60" href="https://res.cloudinary.com/engagement-lab-home/image/upload/opportunity-game/favicons/apple-touch-icon-60x60.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://res.cloudinary.com/engagement-lab-home/image/upload/opportunity-game/favicons/apple-touch-icon-120x120.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://res.cloudinary.com/engagement-lab-home/image/upload/opportunity-game/favicons/apple-touch-icon-76x76.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://res.cloudinary.com/engagement-lab-home/image/upload/opportunity-game/favicons/apple-touch-icon-152x152.png" />
+	<link rel="icon" type="image/png" href="https://res.cloudinary.com/engagement-lab-home/image/upload/opportunity-game/favicons/favicon-196x196.png" sizes="196x196" />
+	<link rel="icon" type="image/png" href="https://res.cloudinary.com/engagement-lab-home/image/upload/opportunity-game/favicons/favicon-96x96.png" sizes="96x96" />
+	<link rel="icon" type="image/png" href="https://res.cloudinary.com/engagement-lab-home/image/upload/opportunity-game/favicons/favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="https://res.cloudinary.com/engagement-lab-home/image/upload/opportunity-game/favicons/favicon-16x16.png" sizes="16x16" />
+	<link rel="icon" type="image/png" href="https://res.cloudinary.com/engagement-lab-home/image/upload/opportunity-game/favicons/favicon-128.png" sizes="128x128" />
+	
+	<meta name="application-name" content="Portland of Opportunity"/>
+	<meta name="msapplication-TileColor" content="#FFFFFF" />
+	<meta name="msapplication-TileImage" content="https://res.cloudinary.com/engagement-lab-home/image/upload/opportunity-game/favicons/mstile-144x144.png" />
+	<meta name="msapplication-square70x70logo" content="https://res.cloudinary.com/engagement-lab-home/image/upload/opportunity-game/favicons/mstile-70x70.png" />
+	<meta name="msapplication-square150x150logo" content="https://res.cloudinary.com/engagement-lab-home/image/upload/opportunity-game/favicons/mstile-150x150.png" />
+	<meta name="msapplication-wide310x150logo" content="https://res.cloudinary.com/engagement-lab-home/image/upload/opportunity-game/favicons/mstile-310x150.png" />
+	<meta name="msapplication-square310x310logo" content="https://res.cloudinary.com/engagement-lab-home/image/upload/opportunity-game/favicons/mstile-310x310.png" />
+ -->
+
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Cabin:500');
+		@import url('https://fonts.googleapis.com/css?family=Proza+Libre:500,700');
+
+		html, body {
+		    height: 100%;
+		}
+
+		html {
+		    display: table;
+		    margin: auto;
+		}
+		body {
+	    display: table-cell;
+	    vertical-align: middle;
+			background-color: #0000ff;
+			color: white;
+			text-align: center;
+		}
+		h1 {					
+		  font-family: 'Proza Libre', sans-serif;
+		  font-size: 24px;
+		  font-weight: bold;
+		  letter-spacing: 1.5px;
+		  text-transform: uppercase;
+		}
+		h2 {					
+			font-family: 'Cabin', sans-serif;
+			font-size: 18px;
+		  font-weight: 500;
+		}
+		a {
+			position: relative;
+			display: inline-block;
+			border: solid 2px white;
+		  
+		  font-family: 'Proza Libre', sans-serif;
+		  font-weight: 500;
+			font-size: 14px;
+			text-decoration: none;
+
+		  color: white;
+			padding: 3%;
+		  margin: 2%;
+		  text-align: center;
+
+		  -webkit-transition: transform .3s cubic-bezier(0.445, 0.050, 0.550, 0.950);
+		  transition: transform .3s cubic-bezier(0.445, 0.050, 0.550, 0.950);
+		}
+		a:hover {
+	    color: #0000ff;
+	    background-color: white;
+      -webkit-transform: scale(1.3);
+      transform: scale(1.3);
+	  }
+  	#particles-js {
+  		position: absolute;
+  		left: 0;
+  		top: 0;
+  		width: 100%;
+  		height: 100%;
+  		/*overflow: hidden;*/
+  	}
+
+	</style>
+	<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+</head>
+<body>
+	<div class="particles" id="particles-js"></div>	 
+  <img src="https://res.cloudinary.com/engagement-lab-home/image/upload/v1534795635/making-smart-city/50x/logo.svg" style="max-width: 350px" />
+  <p><img src="https://res.cloudinary.com/engagement-lab-home/image/upload/v1534795635/making-smart-city/50x/oops.svg" style="max-width: 600px" /></p>
+  <h1>Something went wrong!</h1>
+  <h2>Our team is working to fix this. Try again soon.</h2>
+  <a href=".">Try Again</a>
+</body>
+<script>
+	document.addEventListener("DOMContentLoaded", function(event) { 
+	  
+	  particlesJS.load('particles-js', 'https://res.cloudinary.com/engagement-lab-home/raw/upload/v1534797571/making-smart-city/50x/particlesjs.json', function() {
+		});
+	
+	});
+</script>
+</html>
