@@ -34,6 +34,7 @@
   }
   
 	&::before {  
+    
     content: "";
     position: absolute;
     z-index: -1;
@@ -52,10 +53,27 @@
 
   &.pine {
     color: $pine;
-    border-color: $pine; 
+    border-color: $pine;
+
     &:hover {
       color: white;
     } 
+  }
+
+  &.white {
+    color: white;
+    text-transform: capitalize;
+    border-width: 1px;
+    padding: 6%;
+    margin: 0;
+
+
+    &:hover {
+      color: $primary-blue;
+    } 
+    &:before {
+      background: white;
+    }
   }
 
   &.download {
@@ -66,16 +84,31 @@
     }
 
     &:hover {
-        svg {
-          @include transition(transform, .8s, ease-out);
-          @include transform(translateY(35%));
+      svg {
+        @include transition(transform, .8s, ease-out);
+        @include transform(translateY(35%));
 
-          path {
-            fill: $pine!important;
-          }
-        }      
-      }
+        path {
+          fill: $pine!important;
+        }
+      }      
     }
+  }
+
+  &.top {
+    cursor: pointer;
+    padding: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    path {
+      fill: $pine!important;
+    }
+    span {
+      color: $pine;
+      font-size: 1em;
+    }
+  }
 
 }
 span {

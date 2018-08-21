@@ -1,6 +1,7 @@
+<!-- <span id="top"></span> -->
 <app-nav></app-nav>
 
-<div class="wrapper">
+<div id="top" class="wrapper">
   
   <main>
     <router-outlet (activate)="activateRouter($event)" #o="outlet"></router-outlet>
@@ -14,11 +15,11 @@
     <span id="making">Making</span> <span id="a"> A</span><br />
     Civic Smart City
   </h4>
+
   <div id="contact">
-    <!-- +1 (555) 555-5555 -->
-    120 Boylston St<br />
-    Boston, MA 02116 USA<br />
-    engagementlab@emerson.edu
+    120 Boylston St.<br />
+    Boston, MA<br />
+    engagementlab@<br >emerson.edu
   </div>
 
   <ul>
@@ -28,16 +29,24 @@
       <li><a routerLink="/cities">Cities</a></li>
   </ul>
 
-  <div id="logo-left">
+  <div id="top">
 
-    <cdn-image cloudinaryId="logos/el-logo-black.png" width="100" alt="Engagement Lab @ Emerson College logo"></cdn-image>
+    <app-button [top]=true class="pine"></app-button>
 
   </div>
+  
+  <div id="logos">
 
-  <div id="logo-right">
-    <cdn-image cloudinaryId="logos/asu-center.png" width="281" alt="ASU Center for Smart Cities and Regions logo"></cdn-image>
-    <cdn-image cloudinaryId="logos/kf-logo-stacked.png" width="240" alt="Knight Foundation logo"></cdn-image>
-
+    <div>
+      <cdn-image cloudinaryId="logos/el-logo-black.png" width="100" alt="Engagement Lab @ Emerson College logo"></cdn-image> 
+      <cdn-image cloudinaryId="logos/ca-p-logo.png" width="277" alt="City as Platform logo"></cdn-image>
+      <cdn-image cloudinaryId="logos/berkman-klein-center-logo.png" width="362" alt="The Berkman Klein Center for Internet & Society at Harvard University logo"></cdn-image>
+    </div>
+    <div>
+      <cdn-image cloudinaryId="logos/asu-center.png" width="281" alt="ASU Center for Smart Cities and Regions logo"></cdn-image>
+      <cdn-image cloudinaryId="logos/kf-logo-stacked.png" width="240" alt="Knight Foundation logo"></cdn-image>
+    </div>
+    
   </div>
 
 </footer>

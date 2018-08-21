@@ -1,5 +1,92 @@
 @import "~src/styles/_variables";
 
+footer {
+	display: grid;
+
+	grid-column: 2 / span 10;
+	grid-row: 2;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+  "title title title"
+  "contact links top"
+  "logos logos logos";
+
+	margin-top: 5%;
+
+  @include phones {
+		grid-column: 1 / span 12;
+  }
+
+	h4 {
+		grid-area: title;
+		font-size: 2em;
+		#making {
+			@include font('Proza Libre', 500);
+			font-size: .7em;
+		}
+		#a {
+			@include font('Proza Libre');
+			font-size: .5em;
+		}
+	} 
+  ul {
+		grid-area: links;
+    align-self: center;
+
+		margin: 0;
+  	padding: 0;
+  	list-style: none;
+
+		font-size: em(12px);
+	  letter-spacing: 0.6px;
+	  
+	  @include not-phones {
+	  	font-size: em(20px);
+		  line-height: 1.6;
+		  letter-spacing: 1.5px;
+		}
+	  a {
+			color: $pine;
+		}
+  }
+
+  #top {
+  	grid-area: top;
+    align-self: center;
+    text-align: right;
+  }
+	#contact {
+		grid-area: contact;
+    align-self: center;
+
+		font-size: em(12px);
+	  letter-spacing: 0.6px;
+	  text-align: justify;
+
+	  @include not-phones {
+	  	font-size: em(20px);
+		  line-height: 1.6;
+		  letter-spacing: 1.5px;
+		}
+	}
+	#logos {
+		grid-area: logos;
+		display: flex;
+		flex-direction: column;
+	  @include not-phones {
+			flex-direction: row;
+		}
+		div {
+			display: flex;
+			flex-direction: row;
+			::ng-deep img {
+				width: 85%;
+			}
+		}
+	}
+}
+
 #qa-build {
 	position: fixed;
 	bottom: 100%;
