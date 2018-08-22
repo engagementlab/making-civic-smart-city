@@ -12,7 +12,7 @@ footer {
   "contact links top"
   "logos logos logos";
 
-	margin-top: 5%;
+	// margin-top: 5%;
 
   @include phones {
 		grid-column: 1 / span 12;
@@ -20,6 +20,9 @@ footer {
 
 	h4 {
 		grid-area: title;
+		margin: 0;
+		@include font('Butler');
+		
 		font-size: 2em;
 		#making {
 			@include font('Proza Libre', 500);

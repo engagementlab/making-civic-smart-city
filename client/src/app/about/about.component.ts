@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as Rellax  from 'rellax';
+import * as ismobile from 'ismobilejs';
 
 @Component({
   selector: 'app-about',
@@ -12,8 +13,9 @@ export class AboutComponent implements OnInit {
 
   ngOnInit() {
 	  
-	  var rellax = new Rellax('.img');
-
+    if(!ismobile.phone)
+      new Rellax('.img');
+    
   }
 
   public getPeople() {

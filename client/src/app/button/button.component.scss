@@ -6,7 +6,6 @@
 	border: solid 2px white;
 	font-size: em(14px);
 	text-decoration: none;
-  text-transform: uppercase;
 
   vertical-align: middle;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
@@ -50,6 +49,10 @@
     @include transition(transform, .3s, ease-out);
 
 	}
+
+  &.upper {    
+    text-transform: uppercase;
+  }
 
   &.pine {
     color: $pine;
@@ -100,6 +103,24 @@
     padding: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
+    
+    svg {
+      @include transition(transform, .8s, ease-out);
+    }
+    &:hover {
+      svg {
+        @include transform(translateY(-15%));
+      }
+      span {
+        color: white;
+      }
+      path {
+        fill: white!important;
+      }
+    }
+    &::before {
+      transform-origin: bottom;
+    }
 
     path {
       fill: $pine!important;

@@ -22,11 +22,17 @@ body {
 		font-weight: 800;
 	}
 
-	@include phones {
-		// &.nav {
-		// 	overflow: hidden;
-		// }
+	.phones {
+		@include not-phones {
+			display: none;
+		}
 	}
+	.not-phones {
+		@include phones {
+			display: none;
+		}
+	}
+
 	&.offwhite {
 		background-color: $off-white;
 	}
@@ -64,6 +70,7 @@ header {
 					width: 70%;
 				}
 			}
+			
 	  	padding-top: 12%;
 			@include not-phones {
 		  	padding-left: 21%;
@@ -81,6 +88,9 @@ h1 {
 }
 h3 {
 	@include font('Proza Libre', 800, em(48px));
+	@include phones {
+		font-size: em(36px);
+	}
 }
 
 p {
@@ -109,11 +119,16 @@ span {
 .content {	
 	display: grid;
   grid-template-columns: repeat(12, [col] 8.3%);;
+  	grid-column: 3 / span 8;
 	@include phones {
 	  grid-template-columns: 1fr;
 	}
 	section {
   	grid-column: 3 / span 8;
+		
+		@include phones {
+	  	grid-column: 1 / span 12;
+	  }
 	}
 
 	#end {
@@ -144,6 +159,11 @@ app-root {
 		grid-column-start: 1;
 		grid-column-end: 13;
 		grid-row: 1;
+
+		@include phones {
+			margin-right: 1%;
+			margin-left: 1%;
+		}
 
 	}
 }

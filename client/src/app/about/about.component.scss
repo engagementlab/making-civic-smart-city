@@ -12,7 +12,7 @@ header {
 		display: block;
 
 		@include phones {
-			max-width: 160px;
+			max-width: 100px;
 		}
   }
   .intro {
@@ -33,11 +33,14 @@ header {
 		h1 {
 			margin: 0;
 			font-size: em(144px);
+			@include phones {
+				font-size: em(48px);
+			}
 		}
-		p {
+		p, div {
 			margin: 0;
 			text-transform: uppercase;
-			@include font('Proza Libre', 500, .3em);
+			@include font('Proza Libre', 500, .4em);
 		}
 	}
 }
@@ -47,6 +50,9 @@ section {
 		position: relative;
 		z-index: -3;
 		left: 60%;
+		@include phones {
+			grid-column: 7 / span 4;
+		}
 	}
 }
 
@@ -54,41 +60,78 @@ section {
 	margin-top: -40%;
 
 	h2 {
-		@include font('Proza Libre', 800, em(36px));
+		@include font('Proza Libre', 800, em(48px));
+	}
+	h3 {
+		@include font('Proza Libre', 600, em(36px));
+	}
+
+	@include phones {
+		font-size: .5em;
+		.lg {		
+			font-size: 2em;
+		}
 	}
 	.indent {
 		@include not-phones {
-			padding-left: 50%;
+			@include font('Proza Libre', 500, em(24px));
+			padding-left: 30%;
 		}
 	}
 }
 
-#callout {
+#callout h1 {
 	color: $primary-blue;
 	grid-column: 2 / span 11;
+
+  line-height: 1.19;
+
+	@include font('Butler-ExtraBold', 800, em(72px));
+
+	@include phones {
+		@include font('Butler-Bold', 800, em(30px));
+	}
 }
 
 #what {
 
 	display: flex;
 	flex-direction: row;
+	grid-column: 1 / span 10;
 
 	@include phones {
 		flex-direction: column;
+		font-size: .7em;
 	}
 
 	.lg {		
 		font-size: 1.4em;
 	}
 	.indent {
-		padding-left: 10%;
+		@include not-phones {
+			padding-left: 10%;
+		}
+	  line-height: 1.6;
+	  letter-spacing: 1px;
+		@include font('Cabin', 600);
 	}
-	.left .img {
-		z-index: -3;
+
+	@include not-phones {
+		.left .img {
+			z-index: -3;
+		}
+		.right {
+			width: 70%;
+			padding-left: 5%;
+		}
 	}
 	.right {
-		width: 70%;
-		padding-left: 5%;
+		@include font('Proza Libre', 200, 1.1em);
+		@include phones {
+			span {
+				margin-bottom: 10%;
+			}
+		}
 	}
 
 }
@@ -109,6 +152,20 @@ section {
 		.name {
 			width: 30%;
 		}
+	}
+
+}
+
+#end {
+
+	@include font('Proza Libre', 500);
+	.indent {
+		@include not-phones {
+			padding-left: 10%;
+		}
+	  line-height: 1.6;
+	  letter-spacing: 1px;
+		@include font('Cabin', 600);
 	}
 
 }
