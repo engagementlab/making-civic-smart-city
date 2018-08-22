@@ -2,19 +2,24 @@
 @import url('https://fonts.googleapis.com/css?family=Cabin:400,500,700,400i');
 @import url('https://fonts.googleapis.com/css?family=Proza+Libre:400,500,600,700');
 @font-face {
+    font-family: 'Butler-Black';
+    src: url('https://res.cloudinary.com/engagement-lab-home/raw/upload/v1/making-smart-city/fonts/butler_black-webfont.woff2') format('woff2'),
+       url('https://res.cloudinary.com/engagement-lab-home/raw/upload/v1/making-smart-city/fonts/butler_black-webfont.woff') format('woff');
+}
+@font-face {
     font-family: 'Butler-ExtraBold';
-    src: url('https://res.cloudinary.com/engagement-lab-home/raw/upload/v1533317921/making-smart-city/fonts/butler_extrabold-webfont.woff2') format('woff2'),
-       url('https://res.cloudinary.com/engagement-lab-home/raw/upload/v1533317921/making-smart-city/fonts/butler_extrabold-webfont.woff') format('woff');
+    src: url('https://res.cloudinary.com/engagement-lab-home/raw/upload/v1/making-smart-city/fonts/butler_extrabold-webfont.woff2') format('woff2'),
+       url('https://res.cloudinary.com/engagement-lab-home/raw/upload/v1/making-smart-city/fonts/butler_extrabold-webfont.woff') format('woff');
 }
 @font-face {
 	font-family: 'Butler-Bold';
-	src: url('https://res.cloudinary.com/engagement-lab-home/raw/upload/v1533317921/making-smart-city/fonts/butler_bold-webfont.woff2') format('woff2'),
-       url('https://res.cloudinary.com/engagement-lab-home/raw/upload/v1533317921/making-smart-city/fonts/butler_bold-webfont.woff') format('woff');
+	src: url('https://res.cloudinary.com/engagement-lab-home/raw/upload/v1/making-smart-city/fonts/butler_bold-webfont.woff2') format('woff2'),
+       url('https://res.cloudinary.com/engagement-lab-home/raw/upload/v1/making-smart-city/fonts/butler_bold-webfont.woff') format('woff');
 }
 @font-face {
     font-family: 'Butler';
-    src: url('https://res.cloudinary.com/engagement-lab-home/raw/upload/v1533317921/making-smart-city/fonts/butler_regular-webfont.woff2') format('woff2'),
-       url('https://res.cloudinary.com/engagement-lab-home/raw/upload/v1533317921/making-smart-city/fonts/butler_regular-webfont.woff') format('woff');
+    src: url('https://res.cloudinary.com/engagement-lab-home/raw/upload/v1/making-smart-city/fonts/butler_regular-webfont.woff2') format('woff2'),
+       url('https://res.cloudinary.com/engagement-lab-home/raw/upload/v1/making-smart-city/fonts/butler_regular-webfont.woff') format('woff');
 }
  // CDN CONFIG
 $cdn-product: 'making-smart-city';

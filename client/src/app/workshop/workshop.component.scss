@@ -10,7 +10,10 @@ header {
 
 	.intro {	
 		background: $off-white;
-		padding-bottom: 15%
+
+		@include not-phones {
+			padding-bottom: 15%
+		}
 	}
 }
 ul {

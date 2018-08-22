@@ -44,6 +44,7 @@ header {
 
 	@include phones {
 	  grid-template-columns: 0% 80%;
+  	min-height: 250px;
 	}
 
 	z-index: 1;
@@ -55,6 +56,8 @@ header {
   	grid-row: 1 / span 2;
 
 		@include phones {
+			display: grid;
+			align-items: end;
 			margin: 0;
 	  	grid-column: 1 / span 12;
 		}
@@ -71,8 +74,8 @@ header {
 				}
 			}
 			
-	  	padding-top: 12%;
 			@include not-phones {
+		  	padding-top: 12%;
 		  	padding-left: 21%;
 			}
 		}

@@ -10,7 +10,10 @@ header {
 
 	.intro {	
 		background: $off-white;
-		padding-bottom: 15%
+
+		@include not-phones {
+			padding-bottom: 15%
+		}
 	}
 }
 
@@ -19,6 +22,9 @@ header {
 
 	@include not-phones {
 		margin-left: 33%;
+	}
+	@include phones {
+		font-size: em(18px);
 	}
 
 	margin-bottom: 5%;
@@ -31,25 +37,38 @@ header {
 		grid-column: 1 / span 1;
 		grid-template-columns: 1fr 2fr;
 		grid-template-row: 1fr 1fr;
-		
+	
 		@include phones {
-			margin-left: 2%;
-			margin-right: 2%;
-			h1 {
-				font-size: 1em;
+			margin-top: 10%;
+		}
+
+		h1 {
+			@include font('Butler-Black', 800, em(72px));
+			@include phones {
+				@include font('Butler-Bold', 800, em(36px));
+				margin: 0;
 			}
 		}
 
 		::ng-deep img {
-			min-width: 132px;
-			min-height: 300px;
+			@include not-phones {
+				min-height: 300px;
+				min-width: 132px;
+			}
 		}
 
 		.text {
+			font-weight: 600;
+		  line-height: 1.43;
+		  letter-spacing: 0.5px;
 			grid-column: 2;
 			@include phones {
 				grid-column: 1 / span 2;
 			}
+		}
+
+		learn-more-btn {
+			float: inline-end;
 		}
 	
 	}
