@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as Rellax  from 'rellax';
+import * as ismobile from 'ismobilejs';
 
 @Component({
   selector: 'app-workshop',
@@ -11,8 +12,9 @@ export class WorkshopComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-	  
-	  var rellax = new Rellax('.parallax');
+
+  	if(!ismobile.phone)
+		  new Rellax('.parallax');
 
   }
 

@@ -24,11 +24,10 @@
     padding-left: 30px;
     padding-right: 30px;
   }
-  &:hover {
+  &:hover, &.hover {
     color: white;
     &::before {
-      -webkit-transform: scaleY(1);
-      transform: scaleY(1);
+      @include transform(scaleY(1));
     }
   }
   
@@ -71,7 +70,7 @@
     margin: 0;
 
 
-    &:hover {
+    &:hover, &.hover {
       color: $primary-blue;
     } 
     &:before {
@@ -131,7 +130,36 @@
     }
   }
 
+  &.next {
+    padding: 50%;
+    svg {
+      @include transition(transform, .3s, ease-out)
+      path {
+        fill: white!important;
+      };
+    }
+    &:before {
+      background: white;
+    }
+    &::before {
+      @include transform(scaleX(0));
+      transform-origin: center left;
+    }
+    &:hover, &.hover {
+      &::before {
+        @include transform(scaleX(1));
+      }
+      svg {
+        @include transform(translateX(15%));
+        path {
+          fill: $pine!important;
+        }
+      }
+    }
+  }
+
 }
+
 span {
   @include font('Proza Libre', 400, em(28px));
   text-transform: uppercase;

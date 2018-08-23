@@ -1,0 +1,26 @@
+@import "~src/styles/_variables";
+
+h4 {
+	@include font('Proza Libre', 800, em(18px));
+	text-transform: uppercase;
+}
+
+#intro {
+	@include font('Cabin', 600, em(14px));
+
+}
+
+#activity {
+	.body {
+		@include font('Proza Libre', 500, em(14px));
+
+		@include not-phones {
+			font-size: em(24px);
+		}
+	}
+	.duration {
+		@include font('Butler', 500, em(14px));
+	  letter-spacing: 0.7px;
+	  color: $primary-blue;
+	}
+}

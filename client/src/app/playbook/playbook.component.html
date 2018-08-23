@@ -19,17 +19,21 @@
  </section>
 
 	<section id="plays">
-		<div *ngFor="let title of playTitles; let i = index;" id="play_{{i}}">
+		<div *ngFor="let title of playTitles; let i = index;" class="play" id="play_{{i}}">
 
-			<div class="play">
-				
-				<div class="left">
-				  <cdn-image class="not-phones" cloudinaryId="playbook/num-{{i+1}}.svg" width="100" autoFormat="false" alt="Play #{{i+1}} icon"></cdn-image>
-				  <cdn-image class="phones" cloudinaryId="playbook/num-{{i+1}}.svg" width="54" autoFormat="false" alt="Play #{{i+1}} icon"></cdn-image>
-				</div>
+			<!-- <div> -->
 
-				<div class="title">
-					<h1>{{title}}</h1>
+				<div class="top">
+					
+					<div class="left">
+					  <cdn-image class="not-phones" cloudinaryId="playbook/num-{{i+1}}.svg" width="100" autoFormat="false" alt="Play #{{i+1}} icon"></cdn-image>
+					  <cdn-image class="phones" cloudinaryId="playbook/num-{{i+1}}.svg" width="{{i==0 ? 52 : 84}}" autoFormat="false" alt="Play #{{i+1}} icon"></cdn-image>
+					</div>
+
+					<div class="title">
+						<h1>{{title}}</h1>
+					</div>
+
 				</div>
 
 				<div class="text">
@@ -38,7 +42,7 @@
 				  <learn-more-btn route="/play/sample"></learn-more-btn>
 				</div>
 
-			</div>
+			<!-- </div> -->
 
 		</div>
 	</section>

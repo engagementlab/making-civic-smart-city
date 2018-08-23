@@ -154,6 +154,42 @@ span {
 			}
 		}
 	}
+
+	#end-btn {
+		background-color: $pine;
+		display: block;
+		padding: 15%;
+		color: white;
+		&.flex {
+			section {
+				display: flex;
+				align-items: center;
+			}
+		}
+		div {
+			@include font('Butler-Black', 900, em(56px));
+			line-height: 100%;
+		}
+		.stroke {			
+			@include font('Proza Libre', 800, em(24px));
+		  color: rgba(255, 0, 0, 0);
+		  -webkit-text-stroke: 1px white;
+		}
+		app-button {
+			margin-left: 75%;
+		}
+
+		@include not-phones {
+			grid-column: 3 / span 6;
+		}
+		@include phones {
+			padding: 8%;
+			padding-right: 19%;
+			div {
+				font-size: em(24px);
+			}
+		}
+	}
 }
 
 app-root {
