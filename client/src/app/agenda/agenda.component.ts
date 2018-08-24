@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap, Params } from '@angular/router';
 
+import { DataService } from '../data.service';
+
 @Component({
   selector: 'app-agenda',
   templateUrl: './agenda.component.html',
@@ -18,14 +20,21 @@ export class AgendaComponent implements OnInit {
 		{key: 'remarks', label: "Concluding Remarks"}
 	];
 
-  constructor(private route: ActivatedRoute, private router: Router) { 
+  constructor(public _dataSvc: DataService, private route: ActivatedRoute, private router: Router) { 
 
 		
 		this.route.params.subscribe(params => {
-        this.stepId = params['step'];
+
+      this.stepId = params['step'];
+
+			this._dataSvc.getDataForUrl('agenda/'+this.stepId).subscribe(response => {
+	      
+	      debugger;
+	    
+	    });
+
     });
 
-		// this.router.navigate(['.'], { relativeTo: this.route, queryParams: { ... }});
   }
 
   ngOnInit() {

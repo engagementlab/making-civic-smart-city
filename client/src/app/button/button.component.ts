@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ElementRef } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Input, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -29,14 +29,13 @@ export class ButtonComponent implements OnInit, AfterViewInit {
     if(!this.parentElement) return;
 
     let btn = this.elementRef.nativeElement.getElementsByClassName('btn')[0];
-    console.log(document.getElementById(this.parentElement))
+
     document.getElementById(this.parentElement).addEventListener("mouseover", (e) => {
       btn.classList.add('hover');
     });
     document.getElementById(this.parentElement).addEventListener("mouseleave", (e) => {
       btn.classList.remove('hover');
     });
-  }
 
   }
 

@@ -31,6 +31,7 @@
     "ismobilejs": "^0.4.1",
     "rellax": "^1.6.2",
     "rxjs": "^6.0.0",
+    "rxjs-compat": "^6.2.2",
     "sass-mq": "^5.0.0",
     "scrollmagic": "^2.0.5",
     "underscore": "^1.9.1",
