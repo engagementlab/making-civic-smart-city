@@ -1,11 +1,13 @@
-<h3 class="stroke">
-	Introduction
-</h3>
-<h4>15 min</h4>
+<section>
+	<h3 class="stroke">
+		Introduction
+	</h3>
+	<h4>15 min</h4>
 
-<span class="blue"></span>
+	<span class="blue"></span>
 
-<p id="intro">Thank everyone for coming, and give a brief overview of the symposium’s goals and activities. Offer a broad definition of smart cities, and invite everyone to develop and refine their own thoughts about smart cities throughout the symposium. Answer any questions, and explain that each activity will be led by a facilitator.</p>
+	<p id="intro">Thank everyone for coming, and give a brief overview of the symposium’s goals and activities. Offer a broad definition of smart cities, and invite everyone to develop and refine their own thoughts about smart cities throughout the symposium. Answer any questions, and explain that each activity will be led by a facilitator.</p>
+</section>
 
 <section id="activity">
 
@@ -17,28 +19,36 @@
 	</div>
 </section>
 
-<!-- <section id="end">
-	<div>
-		<h3 id="actionideas">Action Ideas</h3>
+<section id="download">
 
-		<span class="blue"></span>
-		<ul>
-			<li>Embrace the smart city frame as an opportunity to highlight what matters in your place</li>
-			<li>Turn jargon and technical language into language accessible to publics</li>
-			<li>Use “smart” to revisit how your place engages publics</li>
-		</ul>
-	</div>
+	<a id="download-btn" href="" role="button" attr.aria-label="Download PDF for ..........">
+		<section id="end">
+			<div>
+				<h4>Download</h4>
+				<h3>Introduction</h3>
+			</div>
+			
+			<app-button [download]=true parentElement="download-btn" route="/" ariaLabel="" class="pine"></app-button>
+		</section>
+	</a>
 
-</section> -->
+</section>
 
-<a id="end-btn" routerLink="/agenda/step" role="button" attr.aria-label="Go to next agenda step">
-	<section>
-		
-		<div>
-			<div class="stroke">Up Next</div><!-- <span class="blue"></span> -->
-			<p>Identify Values</p>
-		</div>
+<section id="next">
 
-	 <app-button label="Continue" route="/agenda/step" ariaLabel="Go to next agenda step" class="white"></app-button>
-	</section>
-</a>
+	<a id="end-btn" routerLink="/agenda/step" role="button" attr.aria-label="Go to next agenda step">
+		<section>
+			
+			<div>
+				<div class="flex">
+					<div class="stroke">Up Next</div>
+					<span class="blue"></span>
+				</div>
+				<p>Framing The Smart City</p>
+			</div>
+
+		 <app-button route="/agenda/step" [next]="true" parentElement="end-btn" ariaLabel="Go to next agenda step" class="next"></app-button>
+		</section>
+	</a>
+
+</section>

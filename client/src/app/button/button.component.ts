@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -17,24 +17,26 @@ export class ButtonComponent implements OnInit, AfterViewInit {
   @Input() top: boolean = false;
 	@Input() next: boolean = false;
 
-  constructor() { }
+  @Input() parentElement: string;
+
+  constructor(private elementRef: ElementRef) { }
 
   ngOnInit() {
 
   }
   ngAfterViewInit() {
 
-    // if(this.next === true) {
-      let btn = document.querySelector('.btn.next');
-      btn.parentNode.parentNode.parentElement.addEventListener("mouseover", (e) => {
-        btn.classList.add('hover');
-      });
-      btn.parentNode.parentNode.parentElement.addEventListener("mouseleave", (e) => {
-        console.log('leave')
-        btn.classList.remove('hover');
-      });
-    }
-    // }
+    if(!this.parentElement) return;
+
+    let btn = this.elementRef.nativeElement.getElementsByClassName('btn')[0];
+    console.log(document.getElementById(this.parentElement))
+    document.getElementById(this.parentElement).addEventListener("mouseover", (e) => {
+      btn.classList.add('hover');
+    });
+    document.getElementById(this.parentElement).addEventListener("mouseleave", (e) => {
+      btn.classList.remove('hover');
+    });
+  }
 
   }
 

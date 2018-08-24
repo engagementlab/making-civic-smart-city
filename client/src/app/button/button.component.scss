@@ -80,12 +80,20 @@
 
   &.download {
     padding: 30%;
+    &.pine { 
+      padding: 8%;
+      svg {       
+        path {
+          fill: $pine!important;
+        }
+      }       
+    }
 
     &:before {
       background: white;
     }
 
-    &:hover {
+    &:hover, &.hover {
       svg {
         @include transition(transform, .8s, ease-out);
         @include transform(translateY(35%));
@@ -130,8 +138,7 @@
     }
   }
 
-  &.next {
-    padding: 50%;
+  &.next, &.continue {
     svg {
       @include transition(transform, .3s, ease-out)
       path {
@@ -157,6 +164,13 @@
       }
     }
   }
+  &.continue {    
+    // padding: 8%!important;
+    color: white;
+    &:hover, &.hover {
+      color: $pine;
+    }
+  }
 
 }
 
@@ -167,4 +181,9 @@ span {
   display: block;
   margin-top: 5%;
   color: white;
+
+  &.pine {
+    margin-top: 0;
+    color: $pine;
+  }
 }

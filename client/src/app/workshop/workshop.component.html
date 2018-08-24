@@ -70,11 +70,11 @@
 
 	</section>
 
-	<a id="end-btn" routerLink="/agenda" role="button" attr.aria-label="Go to agenda" class="flex">
+	<a id="end-btn" routerLink="/agenda/intro" role="button" attr.aria-label="Go to agenda" class="flex">
 		<section>
 			<div>Take me to the agenda</div>
 
-			<app-button [next]="true" class="pine"></app-button>
+			<app-button [next]="true" parentElement="end-btn" class="pine"></app-button>
 		</section>
 	</a>
 </div>

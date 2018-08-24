@@ -1,10 +1,10 @@
-<a *ngIf="route !== undefined && download === false" class="btn {{class}}" [class.odd]="odd" role="button" routerLink="{{route}}" routerLinkActive="active" attr.aria-label="{{ariaLabel}}">{{label}}</a>
+<a *ngIf="route !== undefined && download === false && next === false" class="btn {{class}}" [class.odd]="odd" role="button" routerLink="{{route}}" routerLinkActive="active" attr.aria-label="{{ariaLabel}}">{{label}}</a>
 
-<a *ngIf="href !== undefined && download === false" class="btn {{class}}" role="button" href="{{href}}" target="{{newWindow && '_blank' || '' }}" attr.aria-label="{{ariaLabel}}">{{label}}</a>
+<a *ngIf="href !== undefined && download === false && next === false" class="btn {{class}}" role="button" href="{{href}}" target="{{newWindow && '_blank' || '' }}" attr.aria-label="{{ariaLabel}}">{{label}}</a>
 
 <a *ngIf="download === true" role="button" href="{{href}}" target="{{newWindow && '_blank' || '' }}" attr.aria-label="{{ariaLabel}}">
 
-	<div class="download btn">
+	<div class="download btn {{class}}">
 		<svg viewBox="0 0 28.556 28.6" width="28.556" height="28.6">
 		  <g transform="matrix(0.05845, 0, 0, 0.05845, 0, 0)">
 		    <g>
@@ -17,7 +17,7 @@
 		  </g>
 		</svg>
 	</div>
-	<span>.pdf</span>
+	<span class="{{class}}">.pdf</span>
 
 </a>
 

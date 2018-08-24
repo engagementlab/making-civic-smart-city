@@ -67,7 +67,7 @@ header {
 				margin: 0;
 			}
 			h2 {						
-				@include font('Proza Libre', 800);
+				@include font('Butler-Black', 800);
 				font-size: 3.4em;
 				@include not-phones {
 					width: 70%;
@@ -121,8 +121,8 @@ span {
 
 .content {	
 	display: grid;
-  grid-template-columns: repeat(12, [col] 8.3%);;
-  	grid-column: 3 / span 8;
+  grid-template-columns: repeat(12, [col] 8.3%);
+
 	@include phones {
 	  grid-template-columns: 1fr;
 	}
@@ -176,7 +176,7 @@ span {
 		  -webkit-text-stroke: 1px white;
 		}
 		app-button {
-			margin-left: 75%;
+			// margin-left: 75%;
 		}
 
 		@include not-phones {

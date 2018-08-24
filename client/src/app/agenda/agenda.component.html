@@ -5,7 +5,7 @@
 	<div class="intro">
 
 		<div class="indent">
-		  <h1>Agenda</h1>
+		  <h2>Agenda</h2>
 		</div>
 
 	</div>
@@ -14,20 +14,18 @@
 
 <div class="content">
 
-<!-- 	<section id="nav">
-		<nav #stickyMenu>
-			<div *ngFor="let title of sections; let i = index;" class="section">
-				<a (click)="changeStep(title.key)">
-					<span>{{title.label}}</span>
-				</a>
-			</div>
-		</nav>
-	</section> -->
-	 
- 	<section id="text">
+	<nav>
+	  <div class="progress-bar"></div>
+	  <div class="border"></div>
+		<ul>
+			<a href="/agenda/intro">
+				<li *ngFor="let title of sections; let i = index;" class="section" [class.current]="i === 0">
+					<div>{{title.label}}</div>
+				</li>
+			</a>
+		</ul>
+	</nav>
 
-	 	<app-agendastep stepId="{{stepId}}"></app-agendastep>
-
- 	</section>
+	<app-agendastep stepId="{{stepId}}"></app-agendastep>
 
 </div>

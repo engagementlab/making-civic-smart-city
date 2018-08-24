@@ -12,7 +12,10 @@ export class AgendaComponent implements OnInit {
 	public sections: object[] = [
 		{key: 'intro', label: "Introduction"},
 		{key: 'framing', label: "Framing the Smart City"},
-		{key: 'identify', label: "Identify Values"}
+		{key: 'identify', label: "Identify Values"},
+		{key: 'plays', label: "Plays"},
+		{key: 'prototyping', label: "Prototyping"},
+		{key: 'remarks', label: "Concluding Remarks"}
 	];
 
   constructor(private route: ActivatedRoute, private router: Router) { 
