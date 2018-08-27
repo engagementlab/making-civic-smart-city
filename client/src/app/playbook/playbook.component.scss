@@ -33,13 +33,12 @@ header {
 
 #plays {
 	.play {
-		// display: grid;
 		grid-column: 1 / span 1;
-		// grid-template-columns: 1fr 2fr;
-		// grid-template-row: 1fr 1fr;
-	
-		@include phones {
-			margin-top: 10%;
+		
+		@include not-phones {
+			display: grid;
+			grid-template-columns: 1fr 2fr;
+			grid-template-row: 1fr 1fr;
 		}
 
 		h1 {
@@ -57,25 +56,34 @@ header {
 			}
 		}
 
-
 		.top {
 			display: flex;
 			flex-direction: row;
 			width: 100%;
+			@include not-phones {
+				grid-column: 1 / span 2;
+			}
 		}	
-		&:nth-child(even) {
-			.top {
-				flex-direction: row-reverse;
-				.left { 
-					width: 65%;
-				}
-				.title {
-					width: 100%;
+
+		@include phones {
+			margin-top: 10%;
+			&:nth-child(even) {
+				.top {
+					flex-direction: row-reverse;
+					.left { 
+						width: 65%;
+					}
+					.title {
+						width: 100%;
+					}
 				}
 			}
 		}
 
 		.left { 
+			@include not-phones {
+				text-align: center;
+			}
 			width: 40%;
 		}
 		.title {
