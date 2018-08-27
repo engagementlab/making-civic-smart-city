@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import * as Rellax  from 'rellax';
 import * as ismobile from 'ismobilejs';
 
+import { DataService } from '../data.service';
+
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
@@ -9,7 +11,15 @@ import * as ismobile from 'ismobilejs';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  public content: any;
+
+  constructor(private _dataSvc: DataService) { 
+
+    this._dataSvc.getDataForUrl('about').subscribe(response => {
+        this.content = response[0];    
+    });
+
+  }
 
   ngOnInit() {
 	  

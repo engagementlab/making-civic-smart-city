@@ -14,9 +14,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/observable/of';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class DataService {
 
   public isLoading: Subject<boolean> = new Subject<boolean>();
@@ -28,11 +26,15 @@ export class DataService {
 
   }
 	
-  public getDataForUrl(url: string): Observable<any> {
+  public getDataForUrl(page: string, suburl: string = undefined): Observable<any> {
 
       this.isLoading.next(true);
-      
-      return this.http.get(this.baseUrl+'get/'+url)
+
+      let url = this.baseUrl+'get/data/'+page+'/'; 
+      if(suburl)
+      	url += suburl;
+
+      return this.http.get(url)
       .map((res:any)=> {
         return res.data;
       })
@@ -41,5 +43,20 @@ export class DataService {
           return Observable.throw(error);
       });
 
-}
+	}
+	
+  public getFilteredDataForUrl(url: string, selector: string): Observable<any> {
+
+      this.isLoading.next(true);
+
+      return this.http.get(this.baseUrl+'get/data/select/'+url+'/'+selector)
+      .map((res:any)=> {
+        return res.data;
+      })
+      .catch((error:any) => { 
+          this.isLoading.next(false);
+          return Observable.throw(error);
+      });
+
+	}
 }

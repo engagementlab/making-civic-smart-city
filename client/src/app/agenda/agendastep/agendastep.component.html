@@ -1,42 +1,69 @@
 <section>
 	<h3 class="stroke">
-		Introduction
+		{{content?.name}}
 	</h3>
-	<h4>15 min</h4>
+	<h4>{{content?.duration}} min</h4>
 
 	<span class="blue"></span>
 
-	<p id="intro">Thank everyone for coming, and give a brief overview of the symposium’s goals and activities. Offer a broad definition of smart cities, and invite everyone to develop and refine their own thoughts about smart cities throughout the symposium. Answer any questions, and explain that each activity will be led by a facilitator.</p>
+	<p id="intro">{{content?.blurb}}</p>
 </section>
 
-<section id="activity">
+<section id="activity" class="list" *ngIf="hasActivity">
 
 	<h3>Activity</h3>
 	
-	<div class="subactivity">
-		<p class="body">Once everyone has finished writing, invite the table to choose and build one or more “frames of reference” using the available materials</p>
-		<p class="duration">5 min</p>
-	</div>
+	<div [innerHtml]="content?.activity.html"></div>
+</section>
+
+<section id="scenario" *ngIf="hasScenario">
+	
+	<h3>Scenario</h3>
+	
+	<p>{{content?.scenario}}</p>
+
+</section>
+
+<section id="discussion" class="list" *ngIf="hasDiscussion">
+	
+	<h3>Discussion Questions</h3>
+	
+	<div [innerHtml]="content?.discussion.html"></div>
+
+</section>
+
+<section id="reporting" class="list" *ngIf="hasReporting">
+	
+	<h3>Reporting</h3>
+	
+	<div [innerHtml]="content?.reporting.html"></div>
+
 </section>
 
 <section id="download">
 
-	<a id="download-btn" href="" role="button" attr.aria-label="Download PDF for ..........">
+	<a id="download-btn" href="{{content?.pdf.url}}" role="button" attr.aria-label="Download PDF for {{content?.name}}">
 		<section id="end">
 			<div>
 				<h4>Download</h4>
-				<h3>Introduction</h3>
+				<h3>{{content?.name}}</h3>
 			</div>
 			
-			<app-button [download]=true parentElement="download-btn" route="/" ariaLabel="" class="pine"></app-button>
+			<app-button [download]=true parentElement="download-btn" href="{{content?.pdf.url}}" ariaLabel="Download PDF for {{content?.name}}" class="pine"></app-button>
 		</section>
 	</a>
 
 </section>
 
-<section id="next">
+<section id="resources" *ngIf="content?.key === 'concluding-remarks'">
+	
+	<h2>Additional Resources</h2>
 
-	<a id="end-btn" routerLink="/agenda/step" role="button" attr.aria-label="Go to next agenda step">
+</section>
+
+<section id="next" *ngIf="nextStep !== undefined">
+
+	<a id="end-btn" routerLink="/agenda/{{nextStep.key}}" role="button" attr.aria-label="Go to next agenda step">
 		<section>
 			
 			<div>
@@ -44,10 +71,10 @@
 					<div class="stroke">Up Next</div>
 					<span class="blue"></span>
 				</div>
-				<p>Framing The Smart City</p>
+				<p>{{nextStep.name}}</p>
 			</div>
 
-		 <app-button route="/agenda/step" [next]="true" parentElement="end-btn" ariaLabel="Go to next agenda step" class="next"></app-button>
+		 <app-button route="/agenda/{{nextStep.key}}" [next]="true" parentElement="end-btn" ariaLabel="Go to next agenda step" class="next"></app-button>
 		</section>
 	</a>
 

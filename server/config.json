@@ -1,0 +1,5 @@
+{
+	"name": "Making a Civic Smart City",
+	"database": "making-civic-smart-city",
+	"allowed_domains": ["www.smartcivic.city", "qa.smartcivic.city"]
+}

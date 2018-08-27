@@ -59,20 +59,11 @@ section {
 #intro {
 	margin-top: -40%;
 
-	h2 {
+	::ng-deep h2 {
 		@include font('Proza Libre', 800, em(48px));
 	}
-	h3 {
-		@include font('Proza Libre', 600, em(36px));
-	}
-
-	@include phones {
-		font-size: .5em;
-		.lg {		
-			font-size: 2em;
-		}
-	}
-	.indent {
+	::ng-deep h3 {
+	  line-height: 1.5;
 		@include not-phones {
 			@include font('Proza Libre', 500, em(24px));
 			padding-left: 30%;
@@ -104,16 +95,23 @@ section {
 		font-size: .7em;
 	}
 
-	.lg {		
-		font-size: 1.4em;
+	::ng-deep p {
+		font-size: em(24px);
+		strong {
+			font-weight: 800;
+		}
 	}
-	.indent {
+
+	// .lg {		
+	// 	font-size: 1.4em;
+	// }
+	::ng-deep h4 {
 		@include not-phones {
 			padding-left: 10%;
 		}
 	  line-height: 1.6;
 	  letter-spacing: 1px;
-		@include font('Cabin', 600);
+		@include font('Cabin', 600, em(20px));
 	}
 
 	@include not-phones {
@@ -138,21 +136,33 @@ section {
 
 #who {
 
-	.people {
-		display: flex;
-		flex-direction: column;
+	text-align: end;
+	a {			
+		@include font('Butler', 400, em(24px));
+	  line-height: 1.33;
+	  letter-spacing: 1.2px;
+	  text-align: right;
+	  color: $pine;
+	  &:hover {
+	  	text-decoration: underline;
+	  }
 	}
-	.person {
-		display: flex;
-		flex-direction: row;
-		border-bottom: 1px solid black;
-		padding-bottom: 2%;
-		padding-top: 4%;
 
-		.name {
-			width: 30%;
-		}
-	}
+	// .people {
+	// 	display: flex;
+	// 	flex-direction: column;
+	// }
+	// .person {
+	// 	display: flex;
+	// 	flex-direction: row;
+	// 	border-bottom: 1px solid black;
+	// 	padding-bottom: 2%;
+	// 	padding-top: 4%;
+
+	// 	.name {
+	// 		width: 30%;
+	// 	}
+	// }
 
 }
 

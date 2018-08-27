@@ -3,9 +3,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClient, HttpClientModule } from '@angular/common/http'; 
 
 // Services
 import { RouterStateService } from './routerstate.service';
+import { DataService } from './data.service';
 
 // NPM
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
@@ -38,6 +40,7 @@ export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },  
   { path: 'agenda/:step', component: AgendaComponent },
+  { path: 'agenda', redirectTo: 'agenda/introduction', pathMatch: 'full' },
   
   { path: 'cities', component: CitiesComponent },
   { path: 'playbook', component: PlaybookComponent },
@@ -66,11 +69,15 @@ export const routes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     CloudinaryModule.forRoot(cloudinary, config),
+    HttpClientModule,
     RouterModule.forRoot(routes),
     ScrollToModule.forRoot()
   ],
   exports: [RouterModule],
-  providers: [RouterStateService],
+  providers: [
+    RouterStateService,
+    DataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,4 @@
 <header class="main-head">
-
 	<div class="banner"></div>
 	  
 	<div class="intro">
@@ -22,13 +21,7 @@
 		<cdn-image class="img phones" cloudinaryId="bg/about-top.png" gravity="center" width="165" crop="scale" alt="'About' banner background image"></cdn-image>
 	</section>
 
-	<section id="intro">
-
-		<h2>The dominant discourse of the smart city is focused primarily on issues of technology:</h2>
-		<h3>the integration of networked devices into the built environment of the city, the use of big data and algorithms, and the construction of smart infrastructure are all centered in our conception of what it means for a city to be smart.</h3>
- 		
- 		<p class="lg indent">To embrace the smart city means to leverage the enthusiasm of publics, the private sector, and government organizations for digital technologies and devices into conversations that encourage civic participation and provide public values.</p>
-
+	<section id="intro" [innerHtml]="content?.blurb.html">
 	</section>
 
 	<section id="callout">
@@ -50,28 +43,14 @@
 
 			<cdn-image class="img phones" cloudinaryId="bg/about-symposium.png" gravity="center" width="248" crop="scale" alt="'What We Did' image"></cdn-image>
 
-			<p class="lg">On March 22—23, 2018, we convened a symposium entitled, “Right to the Smart City: Designing for Public Value and Civic Participation” at the Berkman Klein Center for Internet & Society at Harvard University. We set out to answer this question:</p>
-			<p class="lg b">On March 22—23, 2018, we convened a symposium entitled, “Right to the Smart City: Designing for Public Value and Civic Participation” at the Berkman Klein Center for Internet & Society at Harvard University. We set out to answer this question:</p>
-
-			<p class="indent">This symposium was designed to bring together diverse perspectives, inviting participation from individuals differing in geographic location, disciplinary perspective, and professional experience. We presented participants with scenarios that embodied the complex problems surrounding the civic design and implementation of the smart city, prompting them to find ways in which publics can be more effectively engaged in the process of decision-making around smart city infrastructure and tools.</p>
-
+			<div [innerHtml]="content?.what.html"></div>
 		</div>
 
 	</section>
 
 	<section id="who">
 		
-	  <h3 class="heading stroke">Who was involved</h3>
-
-	  <div class="people">
-		  <div *ngFor="let i of getPeople()" class="person lg">
-		  	
-		  	<span class="name b">First Last</span>
-		  	<span class="title">Job Title</span>
-
-		  </div>
-		</div>
-
+	  <a routerLink="who">Who was involved</a>
 
 	</section>
 

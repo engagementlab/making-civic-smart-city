@@ -13,26 +13,39 @@ h4 {
 	text-transform: uppercase;
 }
 
-#intro {
-	@include font('Cabin', 600, em(14px));
-
+#intro, #scenario {
+	@include font('Cabin', 400, em(20px)); 
+  line-height: 1.6;
 }
 
-#activity {
+.list {
 	@include not-phones {
+		&#reporting {
+			grid-column: 2 / span 5;
+		}
 		grid-column: 4 / span 5;
 	}
-	.body {
-		@include font('Proza Libre', 500, em(14px));
+	::ng-deep ul {
+		list-style: none;
+		padding: 0;
 
-		@include not-phones {
-			font-size: em(24px);
+		li {
+			@include font('Proza Libre', 500, em(14px));
+		  margin-top: 5%;
+
+			strong {
+				@include font('Butler', 500, em(14px));
+			  display: block;
+			  margin-top: 2%;
+			  letter-spacing: 0.7px;
+			  color: $primary-blue;
+			}
+
+			@include not-phones {
+				font-size: em(24px);
+			}
 		}
-	}
-	.duration {
-		@include font('Butler', 500, em(14px));
-	  letter-spacing: 0.7px;
-	  color: $primary-blue;
+
 	}
 }
 
