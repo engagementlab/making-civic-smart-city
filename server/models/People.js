@@ -24,7 +24,7 @@ var People = new keystone.List('People',
 		label: 'People Page',
 		singular: 'People Page',
 		nodelete: true,
-		// nocreate: true
+		nocreate: true
 	});
 
 /**

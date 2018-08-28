@@ -3,15 +3,50 @@
 // Global overrides
 header {
 	margin-bottom: 5%;
+  grid-template-rows: .5fr 2fr 1fr;
+
+  .banner {
+		grid-column: 1 /span 2;
+		grid-row: 1 / span 1;
+		background: $primary-blue;
+		max-width: 100px;
+		display: block;
+
+		@include not-phones {
+			display: none;
+		}
+  }
 	
 	.intro {
 		grid-column: 1 / span 10;
 		background-color: $primary-blue;
 		padding-bottom: 15%;
+		color: white;
+
+		@include phones {
+			grid-row: 2 / span 1;
+		}
+	}
+
+	.stroke {
+		@include font('Proza Libre', 800, em(36px));
+		@include not-phones {
+			font-size: em(64px);
+		}
+	  -webkit-text-stroke: 1px #fff;		
+	}
+	h1 {
+		@include font('Butler-Bold', 800, em(48px));
+		@include not-phones {
+			font-size: em(64px);
+		}
 	}
 }
 
 nav {
+	@include phones {
+		display: none;
+	}
 	a {
 		cursor: pointer;
 	}
@@ -43,7 +78,15 @@ nav {
 			}
 		}
 		#text {
-			grid-column: 2;
+			@include not-phones {
+				grid-column: 2;
+			}
+		  line-height: 1.56;
+		  letter-spacing: 0.6px;
+
+		  h3 {
+		  	margin-top: 0;
+		  }
 		}
 		#end {
 			display: grid;
@@ -58,6 +101,29 @@ nav {
 			}
 		}
 	}
+
+	::ng-deep ul {
+		@include font('Cabin', 600, em(24px));
+		letter-spacing: 2.4px;
+		list-style: none;
+
+		padding: 0;
+		margin: 0;
+		margin-bottom: 8%;
+			
+		li {
+			display: flex;
+			margin-top: 5%;
+	    padding-left: 5%; 
+	    &:before {
+			  content: "*"; 
+
+			  position: relative;
+			  left: -5%;
+			  bottom: -3px;
+			}
+		}
+	}
 }
 
 #intro {
@@ -67,23 +133,39 @@ nav {
   letter-spacing: 0.5px;
 }
 
-ul {
-	@include font('Cabin', 600, em(24px));
-	letter-spacing: 2.4px;
-	list-style: none;
 
-	padding: 0;
-	margin: 0;
-		
-	li {
-		display: flex;
-    padding-left: 5%; 
-    &:before {
-		  content: "*"; 
+#next {
 
-		  position: relative;
-		  left: -5%;
-		  bottom: -3px;
+	grid-column: 1 / span 2;
+
+	@include phones {
+		grid-column: 1 / span 12;
+	}
+
+	#end-btn {
+		margin-top: 10%;
+
+		.flex {
+			display: flex;
+			span {
+				margin-top: 7%;
+				margin-left: 15%;
+			}
+		}
+		.stroke {
+			font-size: 1em;
+			@include not-phones {
+				font-size: .3em;
+			}
+		}
+		p {
+			font-size: 1.4em;
+			@include not-phones {
+				font-size: 1em;
+			}
+			margin: 0;
+			line-height: normal;
 		}
 	}
+
 }

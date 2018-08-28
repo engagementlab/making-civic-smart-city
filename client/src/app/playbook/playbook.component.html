@@ -19,9 +19,7 @@
  </section>
 
 	<section id="plays">
-		<div *ngFor="let title of playTitles; let i = index;" class="play" id="play_{{i}}">
-
-			<!-- <div> -->
+		<div *ngFor="let play of content; let i = index;" class="play" id="play_{{i}}">
 
 				<div class="top">
 					
@@ -31,18 +29,16 @@
 					</div>
 
 					<div class="title">
-						<h1>{{title}}</h1>
+						<h1>{{play.name}}</h1>
 					</div>
 
 				</div>
 
 				<div class="text">
-					<p>In conversations concerning smart cities, diverse perspectives can bring many different understandings of the definition of “smart” to the table; “smart” can refer to devices, data, analytics, processes, people, or all of those things. This breadth offers opportunities to strategically usher priorities into conversations about the future of the technologically enabled city. The term “smart city” has the power to draw companies, municipalities, researchers, and publics together to transition cities from the analog past into the digital future. Public values should define the contexts, nuances, and dynamics of such transitions, which might otherwise be subject only to market values.</p>
+					<p>{{play.blurb}}</p>
 
-				  <learn-more-btn route="/play/sample"></learn-more-btn>
+				  <learn-more-btn route="/playbook/{{play.key}}"></learn-more-btn>
 				</div>
-
-			<!-- </div> -->
 
 		</div>
 	</section>

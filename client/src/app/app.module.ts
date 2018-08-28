@@ -8,6 +8,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 // Services
 import { RouterStateService } from './routerstate.service';
 import { DataService } from './data.service';
+import { PlaysService } from './plays.service';
 
 // NPM
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
@@ -49,7 +50,7 @@ export const routes: Routes = [
   { path: 'cities', component: CitiesComponent },
   { path: 'playbook', component: PlaybookComponent },
   { path: 'workshop', component: WorkshopComponent },
-  { path: 'play/sample', component: PlayComponent }
+  { path: 'playbook/:key', component: PlayComponent }
 ];
 
 @NgModule({
@@ -82,7 +83,8 @@ export const routes: Routes = [
   exports: [RouterModule],
   providers: [
     RouterStateService,
-    DataService
+    DataService,
+    PlaysService
   ],
   bootstrap: [AppComponent]
 })

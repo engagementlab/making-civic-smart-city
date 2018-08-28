@@ -1,6 +1,9 @@
 import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, HostListener } from '@angular/core';
 import { ScrollToService } from '@nicky-lenaers/ngx-scroll-to';
 
+import { DataService } from '../data.service';
+import { PlaysService } from '../plays.service';
+
 @Component({
   selector: 'app-playbook',
   templateUrl: './playbook.component.html',
@@ -8,15 +11,8 @@ import { ScrollToService } from '@nicky-lenaers/ngx-scroll-to';
 })
 export class PlaybookComponent implements OnInit {
 
-	public playTitles: string[] = [
-		"Embrace \"Smart Cities\"",
-		"Cultivate Local Innovation Ecosystem",
-		"Invite Public Influence",
-		"Question Data",
-		"Imagine The Possible"
-	];
+  public content: any[];
 
-	// @ViewChild('stickyMenu') menuElement: ElementRef;
   sticky: boolean = false;
 	elementPosition: any;
 
@@ -32,21 +28,20 @@ export class PlaybookComponent implements OnInit {
 
   }
 
-  constructor(private _scrollToService: ScrollToService) { }
+  constructor(private _scrollToService: ScrollToService, public _dataSvc: DataService, public _playsSvc: PlaysService) { 
+
+    if(!this._playsSvc.plays) { 
+      this._dataSvc.getFilteredDataForUrl('play', 'name%20blurb%20key').subscribe(response => {
+
+        this._playsSvc.plays = response;
+        this.content = response;
+      
+      });
+    }
+
+  }
 
   ngOnInit() {
   }
 
-  ngAfterViewInit(){
-    // this.elementPosition = this.menuElement.nativeElement.offsetTop
-
-	}
-
-	/*@HostListener('window:scroll', ['$event'])
-  handleScroll() {
-
-		const windowScroll = window.pageYOffset;
-		this.sticky = windowScroll >= this.elementPosition;
-		console.log(this.sticky)
-	}*/
 }
