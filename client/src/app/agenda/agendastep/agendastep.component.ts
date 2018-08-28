@@ -10,10 +10,10 @@ export class AgendastepComponent implements OnInit, OnChanges {
 	@Input() nextStep: any;
 	@Input() content: any;
 
-  private hasActivity: boolean;
-  private hasScenario: boolean;
-  private hasDiscussion: boolean;
-	private hasReporting: boolean;
+  public hasActivity: boolean;
+  public hasScenario: boolean;
+  public hasDiscussion: boolean;
+	public hasReporting: boolean;
 
   constructor() { }
 
