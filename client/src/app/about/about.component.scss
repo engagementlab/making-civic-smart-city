@@ -61,11 +61,17 @@ section {
 
 	::ng-deep h2 {
 		@include font('Proza Libre', 800, em(48px));
+		@include phones {
+			font-size: em(24px);
+		}
 	}
 	::ng-deep h3 {
 	  line-height: 1.5;
+		@include font('Proza Libre', 500);
+		font-size: em(18px);
+		
 		@include not-phones {
-			@include font('Proza Libre', 500, em(24px));
+			font-size: em(24px);
 			padding-left: 30%;
 		}
 	}
@@ -101,10 +107,6 @@ section {
 			font-weight: 800;
 		}
 	}
-
-	// .lg {		
-	// 	font-size: 1.4em;
-	// }
 	::ng-deep h4 {
 		@include not-phones {
 			padding-left: 10%;
@@ -147,22 +149,6 @@ section {
 	  	text-decoration: underline;
 	  }
 	}
-
-	// .people {
-	// 	display: flex;
-	// 	flex-direction: column;
-	// }
-	// .person {
-	// 	display: flex;
-	// 	flex-direction: row;
-	// 	border-bottom: 1px solid black;
-	// 	padding-bottom: 2%;
-	// 	padding-top: 4%;
-
-	// 	.name {
-	// 		width: 30%;
-	// 	}
-	// }
 
 }
 

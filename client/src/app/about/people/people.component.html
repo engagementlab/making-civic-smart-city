@@ -1,0 +1,29 @@
+<header class="main-head">
+
+	<div class="banner"></div>		
+
+	<div class="intro">
+
+		<div class="indent">
+		  <h2>Who Was Involved</h2>
+		</div>
+
+	</div>
+
+</header>
+
+<div class="content">
+
+	<section id="who">
+		<div class="person" *ngFor="let person of content; let i = index;">
+				
+				<div class="name b">{{(person | split:' | ')[0]}}</div>
+		  	<div class="title">{{(person | split:' | ')[1]}}</div>
+
+		</div>
+
+	  <app-button label="Back to About" route="/about" ariaLabel="Go back to about page" class="white"></app-button>
+
+	</section>
+
+</div>

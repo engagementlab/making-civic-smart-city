@@ -1,0 +1,75 @@
+@import "~src/styles/_variables";
+
+header {
+
+	color: white;
+  grid-template-columns: repeat(12, [col] auto);
+  grid-template-rows: 1fr 2fr 2fr;
+
+  .banner {
+  	background-color: $pine;
+		grid-column: 1 /span 2;
+		grid-row: 1 / span 1;
+
+		display: block;
+
+		@include phones {
+			max-width: 100px;
+		}
+  }
+
+	.intro {
+		padding-bottom: 10%;
+		background-color: $pine;
+		grid-column: 1 /span 12;
+		grid-row: 2 / span 2;
+		text-align: center;
+	}
+}
+
+.content {
+	background-color: $pine;
+
+}
+
+
+#who {
+
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr;
+	grid-column: 1 / span 10;
+
+	color: white;
+	font-size: em(18px);
+
+	.person {
+		display: flex;
+		flex-direction: row;
+		border-bottom: 1px solid white;
+		padding-bottom: 2%;
+		padding-top: 4%;
+
+		grid-column: 2 / span 2;
+
+		@include phones {
+			font-size: em(12px);
+			grid-column: 1 / span 3;
+			flex-wrap: wrap;
+		}
+
+		.name {
+			width: 30%;
+			@include phones {
+				width: 70%;
+			}
+		}
+		.title {
+			text-align: left;
+		}
+	}
+
+	app-button {
+		grid-column: 2 / span 1;
+	}
+
+}

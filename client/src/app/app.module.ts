@@ -34,11 +34,15 @@ import { WorkshopComponent } from './workshop/workshop.component';
 import { PlayComponent } from './playbook/play/play.component';
 import { AgendaComponent } from './agenda/agenda.component';
 import { AgendastepComponent } from './agenda/agendastep/agendastep.component';
+import { PeopleComponent } from './about/people/people.component';
+import { SplitPipe } from './split.pipe';
 
 // App routes
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },  
+  { path: 'about/who', component: PeopleComponent },  
+  
   { path: 'agenda/:step', component: AgendaComponent },
   { path: 'agenda', redirectTo: 'agenda/introduction', pathMatch: 'full' },
   
@@ -63,7 +67,9 @@ export const routes: Routes = [
     WorkshopComponent,
     PlayComponent,
     AgendaComponent,
-    AgendastepComponent
+    AgendastepComponent,
+    PeopleComponent,
+    SplitPipe
   ],
   imports: [
     BrowserModule,
