@@ -18,11 +18,11 @@
 	  <div id="progress" class="progress-bar"></div>
 	  <div class="border"></div>
 		<ul>
-			<li *ngFor="let section of sections; let i = index;" class="section" [class.current]="section.key === stepId">
-				<a href="/agenda/{{section.key}}">
-					<div>{{section.name}}</div>
-				</a>
-			</li>
+			<a href="/agenda/{{section.key}}" [class.current]="section.key === stepId" *ngFor="let section of sections; let i = index;">
+				<li class="section">
+						<div>{{section.name}}</div>
+				</li>
+			</a>
 		</ul>
 	</nav>
 

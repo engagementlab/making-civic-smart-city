@@ -119,3 +119,22 @@ h4 {
 		line-height: normal;
 	}
 }
+
+#resources {
+	h2 {
+		@include font('Butler-Black', 800, em(64px));
+		@include phones {
+			font-size: em(36px);
+		}
+	}
+	.flex {
+		display: flex;
+		align-items: center;
+		&.reverse {
+			flex-direction: row-reverse;
+			.left {
+				text-align: right;
+			}
+		}
+	}
+}

@@ -25,17 +25,7 @@ export class AgendaComponent implements OnInit {
   	this._dataSvc.getFilteredDataForUrl('agenda', 'name%20key').subscribe(items => {
 
   		this.sections = items;
-	    this.stepIndex = this.sections.findIndex((section) => { return section.key === this.stepId });
-			
-			// Set progress bar    
-			let progress = document.getElementById('progress');
-			if(this.stepIndex > 0) {
-				let width = 20*(this.stepIndex-1);
-				let newWidth = (20*this.stepIndex)+1;
-				progress.style.width = width+1 + '%';
-
-		    TweenLite.to(progress, 1, {width: newWidth+'%', delay:1.3, ease:Quad.easeOut})
-			}
+	    this.setProgress();
 
   	});
 
@@ -46,13 +36,14 @@ export class AgendaComponent implements OnInit {
 	    this._scrollToService
 	      .scrollTo({
 	        target: 'top',
-	        easing: 'easeOutElastic',
-	        duration: 2000
+	        easing: 'easeOutQuad',
+	        duration: 2500
 	      });
 
 			this._dataSvc.getDataForUrl('agenda/'+this.stepId).subscribe(response => {
 
 				this.content = response;
+		    this.setProgress();
 	    
 	    });
 
@@ -71,6 +62,24 @@ export class AgendaComponent implements OnInit {
   public changeStep(step) {
 
 	  this.router.navigateByUrl(this.router.url.replace(this.stepId, step));
+
+	}
+
+	private setProgress() {
+  	
+  	if(!this.sections) return;
+		
+		this.stepIndex = this.sections.findIndex((section) => { return section.key === this.stepId });
+		
+		// Set progress bar    
+		let progress = document.getElementById('progress');
+		if(this.stepIndex > 0) {
+			let width = 20*(this.stepIndex-1);
+			let newWidth = (20*this.stepIndex)+1;
+			progress.style.width = width+1 + '%';
+
+	    TweenLite.to(progress, 1, {width: newWidth+'%', delay:2, ease:Quad.easeOut})
+		}
 
 	}
 
