@@ -100,7 +100,7 @@ export class PlayComponent implements OnInit {
       this.nextPlayName = nextPlay.name;
     }
 
-    return nextPlay !== undefined;
+    return Observable.of(nextPlay !== undefined);
     
   }
 
