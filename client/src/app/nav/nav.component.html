@@ -7,48 +7,29 @@
 	
 		<div>		
 			<h3><a routerLink="/about">About</a></h3>
-			<h3><a routerLink="/workshop">Workshop</a></h3>
-			<h3><a routerLink="/cities">Cities</a></h3>
-			<!-- <ul>
-				<li>1 Embrace &ldquo;Smart cities&rsquo;</li>
-				<li>2 Cultivate Local Innovation Ecosystem</li>
-				<li>3 Invite Public Influence</li>
-				<li>4 Question Data</li>
-				<li>5 Imagine the Possible</li>
-			</ul> -->
-		</div>
-	
-		<div>
-			<h3><a routerLink="/playbook">Playbook</a></h3>
-<!-- 			<ul>
-				<li *ngFor="let city of cities">{{city}}</li>
-			</ul> -->
-		</div>
-	
-		<div>
-<!-- 			<ul>
-				<li *ngFor="let city of cities">{{city}}</li>
-			</ul> -->
-		</div>
-		<div>
-			<h3><a routerLink="/about">Submit A Play</a></h3>
-<!-- 			<ul>
-				<li *ngFor="let city of cities">{{city}}</li>
-			</ul> -->
-
-			<span class="white"></span>
-			<h4>Get the &#8220;Making a Civic<br />Smart City&#8221; white paper</h4>
-			<app-button label="Download PDF" href="/" ariaLabel="Click to download 'Making a Civic Smart City' PDF" class="white"></app-button>
-
-		</div>
-
-	<!-- 	<div>
-			<h3>Resources</h3>
+			<h3 class="no-margin"><a routerLink="/workshop">Workshop</a></h3>
 			<ul>
-				<li>Video Testimonials</li>
+				<a routerLink="/agenda"><li>Agenda</li></a>
 			</ul>
 		</div>
- -->
+	
+		<div>
+			<h3 class="no-margin"><a routerLink="/playbook">Playbook</a></h3>
+			<ul>
+				<a routerLink="/playbook/{{play.key}}" *ngFor="let play of plays; let i = index;">
+					<li>{{i}}&nbsp;&nbsp;&nbsp;{{play.name}}</li>
+				</a>
+			</ul>
+		</div>
+
+		<div id="pdf">
+			<div>
+				<span class="white"></span>
+				<h4>Get the &#8220;Making a Civic<br />Smart City&#8221; white paper</h4>
+				<app-button label="Download PDF" href="https://elabhome.blob.core.windows.net/smartcity/right-to-smart-city.pdf" ariaLabel="Click to download 'Making a Civic Smart City' PDF" class="white"></app-button>
+			</div>
+		</div>
+
 	</section>
 
 </nav>

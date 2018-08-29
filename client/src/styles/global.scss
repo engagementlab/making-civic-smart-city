@@ -175,9 +175,6 @@ span {
 		  color: rgba(255, 0, 0, 0);
 		  -webkit-text-stroke: 1px white;
 		}
-		app-button {
-			// margin-left: 75%;
-		}
 
 		@include not-phones {
 			grid-column: 3 / span 6;

@@ -1,12 +1,6 @@
 @import "~src/styles/_variables";
 
 nav {
-
-	/* #open {
-		position: fixed;
-		top: 10%;
-		right: 15%;
-	} */
 	#open, #close {
 		position: absolute;
 		z-index: 21;
@@ -16,21 +10,18 @@ nav {
 	}
 	#close {
 		display: none;
-		&:before {
-    content: '\2716';
-    font-size: 20px;
-  }
+		margin-right: .5%;
 	}
 
 	#menu {
 		position: absolute;
 		overflow-y: scroll;
 		z-index: 20;
-		top: 0;
+		top: -40%;
 		left: 0;
 		width: 100%;
-		height: 0;
-		max-height: 556px;
+		height: 100%;
+		max-height: 300px;
 
 		@include font('Proza Libre', 700, em(16px));
 		color: white;
@@ -42,10 +33,23 @@ nav {
 
 		@include phones {			
 			max-height: 100%;
+			padding-left: 5%;
 			flex-direction: column;
 		}
 
+		#pdf {
+			display: flex;
+			align-items: center;
+			flex-direction: row;
+			@include phones {	
+				margin-top: 5%;
+			}
+		}
+
 	  h3 {
+	  	&.no-margin {
+	  		margin-bottom: 0;
+	  	}
 	  	a {
 	  		color: white;
 	  		font-size: .8em;
@@ -62,6 +66,9 @@ nav {
 	  	list-style: none;
 	  	margin: 0;
 	  	padding: 0;
+	  	a {
+	  		color: white;
+	  	}
 	  	li {
 	  		font-size: .8em;
 	  		text-transform: uppercase;

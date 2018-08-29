@@ -88,6 +88,20 @@
         }
       }       
     }
+    &.white { 
+      svg g {
+         line, polyline {
+          stroke: white!important;
+        }
+      }
+      &:hover, &.hover {
+        svg g {
+          line, polyline {
+            stroke: $pine!important;
+          }
+        }
+      }
+    }
 
     &:before {
       background: white;
@@ -99,7 +113,7 @@
         @include transform(translateY(35%));
 
         path {
-          fill: $pine!important;
+          fill: white!important;
         }
       }      
     }
@@ -164,8 +178,7 @@
       }
     }
   }
-  &.continue {    
-    // padding: 8%!important;
+  &.continue {
     color: white;
     &:hover, &.hover {
       color: $pine;

@@ -19,12 +19,12 @@
 			  <div class="left">
 
 				  <h2 class="stroke">How do we make smart cities civic?</h2>
-				  <learn-more-btn></learn-more-btn>
+				  <learn-more-btn route="/about"></learn-more-btn>
 			  </div>
 			  <div class="right">
 				  <h2>Run your own smart city workshop</h2>
 
-				  <app-button label="Get Started" route="/" ariaLabel="" class="upper pine"></app-button>
+				  <app-button label="Get Started" route="/workshop" ariaLabel="Go to Workshop" class="upper pine"></app-button>
 			  </div>
 			</div>  
 
@@ -46,7 +46,7 @@
 	  <div class="flex">
 	  	<div class="left">
 	  		<p>This workshop brings together people in your place to define your own localized version of ‘smart’, and encourage greater participation in the civic processes of designing the smart city.</p>
-			  <app-button label="Get Started" route="/" ariaLabel="" class="pine"></app-button>
+			  <app-button label="Get Started" route="/workshop" ariaLabel="Go to Workshop" class="pine"></app-button>
 	  	</div>
 	  	<div class="image">
 			  <cdn-image cloudinaryId="icons/toolkit.png" width="341" autoFormat="true" alt="'Workshop' icon image"></cdn-image>
@@ -104,12 +104,14 @@
 	</section>
 
 	<section id="share-bg" class="img" data-rellax-speed="1" data-rellax-percentage="0.3">
-		<div id="share" data-rellax-speed="4" data-rellax-percentage="0.1">
-			<h3>Download the &#8220;Making a Civic Smart City&#8221; white paper</h3>
+		<a id="share-btn" href="https://elabhome.blob.core.windows.net/smartcity/right-to-smart-city.pdf" role="button" attr.aria-label="Go to next agenda step">
+			<div id="share" data-rellax-speed="4" data-rellax-percentage="0.1">
+				<h3>Download the &#8220;Making a Civic Smart City&#8221; white paper</h3>
 
-			<app-button [download]=true route="/" ariaLabel=""></app-button>
+				<app-button [download]=true href="https://elabhome.blob.core.windows.net/smartcity/right-to-smart-city.pdf" ariaLabel="Download the white paper" parentElement="share-btn" class="white"></app-button>
 
-		</div>
+			</div>
+		</a>
 	</section>
 
 </div>
