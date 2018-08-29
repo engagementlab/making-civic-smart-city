@@ -6,7 +6,7 @@
 
 		<div class="indent">
 		  <h1 class="stroke">
-		  	Play #{{content?.sortOrder+1}}
+		  	Play #{{content?.sortOrder}}
 		  </h1>
 		  <h1>{{content?.name}}</h1>
 		</div>
@@ -31,12 +31,12 @@
 	 		<h3 id="introduction">Introduction</h3>
 			<span class="blue"></span>
 
-			<p class="lg">{{content?.intro}}</p>
+			<p>{{content?.intro}}</p>
 
 	 		<h3 id="discussion">Discussion</h3>
 			<span class="blue"></span>
 
-			<p class="lg">{{content?.discussion}}</p>
+			<p>{{content?.discussion}}</p>
 	 	</section>
 
 		<section id="end">
@@ -49,9 +49,9 @@
 
 		</section>
 
-	<section id="next">
+	<section id="next" #next>
 
-		<a id="end-btn" routerLink="/playbook/{{nextPlayKey}}" role="button" attr.aria-label="Go to ">
+		<a id="end-btn" routerLink="/playbook/{{nextPlayKey}}" role="button" attr.aria-label="Go to {{nextPlayName}}" *ngIf="hasNext as nextPlay">
 			<section>
 				
 				<div>

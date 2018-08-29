@@ -38,6 +38,8 @@ export class PlaybookComponent implements OnInit {
       
       });
     }
+    else      
+      this.content = this._playsSvc.plays;
 
   }
 

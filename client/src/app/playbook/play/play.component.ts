@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, HostListener }
 import { ActivatedRoute } from '@angular/router';
 import { ScrollToService } from '@nicky-lenaers/ngx-scroll-to';
 
+import { Observable } from 'rxjs/Observable';
 import { DataService } from '../../data.service';
 import { PlaysService } from '../../plays.service';
 
@@ -15,10 +16,12 @@ export class PlayComponent implements OnInit {
   public content: any;
   public nextPlayName: string;
   public nextPlayKey: string;
+  public hasNext: Observable<boolean>;
 
   private key: string;
 
   @ViewChild('stickyMenu') menuElement: ElementRef;
+  @ViewChild('next') nextElement: ElementRef;
 
   sticky: boolean = false;
   elementPosition: number;
@@ -28,21 +31,31 @@ export class PlayComponent implements OnInit {
 
     this.route.params.subscribe(params => {
 
+      this._scrollToService
+        .scrollTo({
+          target: 'top',
+          easing: 'easeOutQuad',
+          duration: 1500
+        });
+
       this.key = params['key'];
       this._dataSvc.getDataForUrl('play/'+this.key).subscribe(response => {
 
-        this.content = response;
+        this.content = response;  
 
         if(!this._playsSvc.plays) {
           this._dataSvc.getFilteredDataForUrl('play', 'name%20blurb%20key').subscribe(response => {
 
             this._playsSvc.plays = response;
-            this.getNextPlay();
+            this.hasNext = this.getNextPlay();
+            this.endPosition = this.nextElement.nativeElement.offsetTop;
           
           });
         }
-        else
-          this.getNextPlay();
+        else {
+          this.hasNext = this.getNextPlay();
+          this.endPosition = this.nextElement.nativeElement.offsetTop
+        }
       
       });
 
@@ -55,7 +68,7 @@ export class PlayComponent implements OnInit {
 
   ngAfterViewInit(){
 
-    this.elementPosition = this.menuElement.nativeElement.offsetTop
+    this.elementPosition = this.menuElement.nativeElement.offsetTop;
 
 	}
 
@@ -63,7 +76,7 @@ export class PlayComponent implements OnInit {
   handleScroll() {
 
 		const windowScroll = window.pageYOffset-150;
-		this.sticky = windowScroll >= this.elementPosition & windowScroll < this.endPosition;
+		this.sticky = windowScroll >= this.elementPosition && windowScroll < this.endPosition;
 	}
 
   public triggerScrollTo(name: string) {
@@ -81,12 +94,13 @@ export class PlayComponent implements OnInit {
 
     let thisIndex = this._playsSvc.plays.findIndex((play) => { return play.key === this.key });
     let nextPlay = this._playsSvc.plays[thisIndex+1];
-
-    if(nextPlay === undefined) return;
-    this.endPosition = document.getElementById('next').offsetTop
     
-    this.nextPlayKey = nextPlay.key;
-    this.nextPlayName = nextPlay.name;
+    if(nextPlay !== undefined) {
+      this.nextPlayKey = nextPlay.key;
+      this.nextPlayName = nextPlay.name;
+    }
+
+    return nextPlay !== undefined;
     
   }
 
