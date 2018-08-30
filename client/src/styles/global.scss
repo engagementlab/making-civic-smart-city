@@ -38,6 +38,11 @@ body {
 	}
 }
 
+canvas {
+	position: absolute;
+	z-index: -3;
+}
+
 header {
 	display: grid;
   grid-template-columns: repeat(12, [col] 8.3%);

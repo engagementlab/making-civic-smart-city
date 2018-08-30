@@ -6,6 +6,10 @@ header {
 		margin-bottom: 10%;
 	}
 
+	#dots {
+		z-index: 0;
+	}
+
   .banner {
 		@include not-phones {
 			position: absolute;
@@ -42,8 +46,11 @@ header {
 		display: flex;
 		flex-direction: column;
 		.left {
+			h3 {
+				font-size: em(64px);
+			}
 			@include phones {	
-				h2 {							
+				h3 {							
 					display: contents;	
 					font-size: 2.2em;
 				}
@@ -60,7 +67,7 @@ header {
 				width: 80%;
 			}
 
-			h2 {				
+			h3 {				
 				font-size: em(40px);
 				@include phones {	
 					font-size: em(24px);
@@ -118,6 +125,9 @@ section {
 		}
 	}
 
+	h1 {
+		@include font('Butler-Black', 800, em(72px));
+	}
 	h3 {
 		@include phones {
 			font-size: 2em;
@@ -166,6 +176,10 @@ section {
 
 	top: 10%;    
 	grid-column: 3 / span 7;
+	
+	#dots-playbook {
+		padding-left: 25%;
+	}
 
 	#list {
 		display: grid;
