@@ -35,7 +35,7 @@ export class PlayComponent implements OnInit {
         .scrollTo({
           target: 'top',
           easing: 'easeOutQuad',
-          duration: 1500
+          duration: 1
         });
 
       this.key = params['key'];

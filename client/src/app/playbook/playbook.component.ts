@@ -4,12 +4,14 @@ import { ScrollToService } from '@nicky-lenaers/ngx-scroll-to';
 import { DataService } from '../data.service';
 import { PlaysService } from '../plays.service';
 
+import {create as createDots} from '../dots';
+
 @Component({
   selector: 'app-playbook',
   templateUrl: './playbook.component.html',
   styleUrls: ['./playbook.component.scss']
 })
-export class PlaybookComponent implements OnInit {
+export class PlaybookComponent implements OnInit, AfterViewInit {
 
   public content: any[];
 
@@ -44,6 +46,20 @@ export class PlaybookComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    createDots(document.getElementById('dots'), 4, 1, 200);
+    createDots(document.querySelector('#intro canvas'), 3, 1, 200);
+
+  }
+
+
+  ngAfterViewInit() {
+    // let els = document.querySelectorAll('.text');
+    //   console.log(els)
+    // for(el of els) {
+    //   createDots(el.querySelector('canvas'), 3, 1, 200);
+    // }
+
   }
 
 }
