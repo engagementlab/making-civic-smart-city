@@ -66,6 +66,12 @@ ul {
 	display: flex;
 	flex-flow: row wrap;
 
+	canvas {
+		@include phones {
+			display: none;
+		}
+	}
+
 	div {
 		@include not-phones {
 			width: 45%;

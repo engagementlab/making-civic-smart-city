@@ -21,13 +21,14 @@
  </section>
 
 	<section id="plays">
-		<div *ngFor="let play of content; let i = index;" class="play" id="play_{{i}}">
+		<div #allTheseThings *ngFor="let play of content; let i = index;" class="play" id="play_{{i}}">
 
 				<div class="top">
 					
 					<div class="left">
 					  <cdn-image class="not-phones" cloudinaryId="playbook/num-{{i+1}}.svg" width="100" autoFormat="false" alt="Play #{{i+1}} icon"></cdn-image>
 					  <cdn-image class="phones" cloudinaryId="playbook/num-{{i+1}}.svg" width="{{i==0 ? 52 : 84}}" autoFormat="false" alt="Play #{{i+1}} icon"></cdn-image>
+						<canvas width="200" height="200"></canvas>
 					</div>
 
 					<div class="title">
@@ -37,7 +38,6 @@
 				</div>
 
 				<div class="text">
-					<canvas  width="200" height="200"></canvas> 	
 
 					<p>{{play.blurb}}</p>
 

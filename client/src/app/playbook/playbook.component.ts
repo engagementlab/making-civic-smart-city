@@ -1,10 +1,12 @@
-import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, HostListener } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
 import { ScrollToService } from '@nicky-lenaers/ngx-scroll-to';
 
 import { DataService } from '../data.service';
 import { PlaysService } from '../plays.service';
 
-import {create as createDots} from '../dots';
+import { create as createDots } from '../dots';
+
+import * as _ from 'underscore';
 
 @Component({
   selector: 'app-playbook',
@@ -17,6 +19,9 @@ export class PlaybookComponent implements OnInit, AfterViewInit {
 
   sticky: boolean = false;
 	elementPosition: any;
+
+  @ViewChildren('allTheseThings') things: QueryList<any>;
+
 
   public triggerScrollTo(name: string) {
     
@@ -37,7 +42,7 @@ export class PlaybookComponent implements OnInit, AfterViewInit {
 
         this._playsSvc.plays = response;
         this.content = response;
-      
+    
       });
     }
     else      
@@ -52,13 +57,18 @@ export class PlaybookComponent implements OnInit, AfterViewInit {
 
   }
 
-
   ngAfterViewInit() {
-    // let els = document.querySelectorAll('.text');
-    //   console.log(els)
-    // for(el of els) {
-    //   createDots(el.querySelector('canvas'), 3, 1, 200);
-    // }
+
+    this.things.changes.subscribe(t => {
+
+      let els = document.querySelectorAll('.play');
+      _.each(els, (el) => {
+        let numDots = Math.random() * (5 - 2) + 2;
+        let numEmpty = Math.random() * (3 - 1) + 1;
+        createDots(el.querySelector('canvas'), numDots, numEmpty, 300);
+      });
+  
+    })
 
   }
 

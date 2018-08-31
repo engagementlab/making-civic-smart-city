@@ -41,6 +41,9 @@ header {
 		@include not-phones {
 			left: 20%;
 		}
+		@include phones {
+			display: none;
+		}
   }
 }
 
@@ -54,11 +57,52 @@ header {
 			grid-template-row: 1fr 1fr;
 		}
 
+		@include phones {
+			margin-top: 10%;
+			&:nth-child(even) {
+				.top {
+					flex-direction: row-reverse;
+					.left { 
+						width: 65%;
+					}
+					.title {
+						width: 100%;
+					}
+				}
+			}
+			canvas {
+				display: none;
+			}
+		}
+
 		h1 {
 			@include font('Butler-Black', 800, em(72px));
 			@include phones {
 				@include font('Butler-Bold', 800, em(36px));
 				margin: 0;
+			}
+		}
+
+		&:nth-child(1) {
+			canvas {
+				right: 20%;
+			}
+		}
+		&:nth-child(2) {
+			canvas {
+				left: 30%;
+				margin-top: 20%;
+			}
+		}
+		&:nth-child(4) {
+			canvas {
+				left: 10%;
+				margin-top: 10%;
+			}
+		}
+		&:nth-child(5) {
+			canvas {
+				margin-top: 10%;
 			}
 		}
 
@@ -77,21 +121,6 @@ header {
 				grid-column: 1 / span 2;
 			}
 		}	
-
-		@include phones {
-			margin-top: 10%;
-			&:nth-child(even) {
-				.top {
-					flex-direction: row-reverse;
-					.left { 
-						width: 65%;
-					}
-					.title {
-						width: 100%;
-					}
-				}
-			}
-		}
 
 		.left { 
 			@include not-phones {
