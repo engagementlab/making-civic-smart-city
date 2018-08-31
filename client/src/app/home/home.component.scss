@@ -160,6 +160,10 @@ section {
 	margin-top: -18%;
 	grid-column: 3 / span 7;
 
+	.flex {
+		margin-bottom: 12%;
+	}
+
 	@include phones {
 		margin-top: -24%;
 		.flex {
@@ -175,6 +179,7 @@ section {
 #playbook {
 
 	top: 10%;    
+	margin-bottom: 35%;
 	grid-column: 3 / span 7;
 	
 	#dots-playbook {
@@ -213,13 +218,13 @@ section {
 	
 	@include not-phones {
 		position: relative;
-		top: 20%;			
-		left: -10%;
+		padding-bottom: 9%;
+		top: 10%;			
+		left: -15%;
 	}
 	
-	background-image: cdn-image('bg/home-share', c_scale, w_320);	
+	background-image: cdn-image('bg/home-share', c_scale, w_500);	
 	background-repeat: no-repeat;
-	// margin-bottom: 18%;
 
 }
 
@@ -227,11 +232,11 @@ section {
 
 	display: flex;
 	margin-top: 10%;
-	margin-left: 10%;
+	margin-left: 20%;
 	 
   align-items: center;
 	color: white;
-	padding: 3%;
+	padding: 6%;
   background-color: $pine;
 
   h3 {
