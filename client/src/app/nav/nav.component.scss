@@ -51,10 +51,23 @@ nav {
 	  		margin-bottom: 0;
 	  	}
 	  	a {
+			  display: inline-block;
 	  		color: white;
 	  		font-size: .8em;
 	  		&:hover {
-	  			text-decoration: underline;
+	  			span {
+	  				width: 100%;
+						opacity: 1;
+	  			}
+	  		}
+	  		span {
+	  			display: block;
+					background-color: white;
+	  			left: 0;
+					width: 5px;
+					height: 3px;
+					opacity: 0;
+					@include transition(all, 0.2s,  ease 0s);
 	  		}
 	  	}
 	  }
@@ -68,6 +81,9 @@ nav {
 	  	padding: 0;
 	  	a {
 	  		color: white;
+	  		&:hover {
+		  		text-decoration: underline;
+		  	}
 	  	}
 	  	li {
 	  		font-size: .8em;
