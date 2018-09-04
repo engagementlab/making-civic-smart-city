@@ -1,6 +1,6 @@
 'use strict';
 
-function create(canvasEl, numDots, numEmpties, fps, centerDot) {
+function create(canvasEl, numDots, numEmpties, fps, centerDot=false) {
 
     // Push dots to array
     let empties = 0,
