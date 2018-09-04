@@ -69,10 +69,16 @@
     padding: 6%;
     margin: 0;
 
-
-    &:hover, &.hover {
-      color: $primary-blue;
-    } 
+    &.hover-blue {
+      &:hover, &.hover {
+        color: $primary-blue;
+      } 
+    }
+    &.hover-pine {
+      &:hover, &.hover {
+        color: $pine;
+      } 
+    }
     &:before {
       background: white;
     }

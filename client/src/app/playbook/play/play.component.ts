@@ -48,13 +48,13 @@ export class PlayComponent implements OnInit {
 
             this._playsSvc.plays = response;
             this.hasNext = this.getNextPlay();
-            this.endPosition = this.nextElement.nativeElement.offsetTop;
+            // this.endPosition = this.nextElement.nativeElement.offsetTop;
           
           });
         }
         else {
           this.hasNext = this.getNextPlay();
-          this.endPosition = this.nextElement.nativeElement.offsetTop
+          // this.endPosition = this.nextElement.nativeElement.offsetTop
         }
       
       });
@@ -76,7 +76,19 @@ export class PlayComponent implements OnInit {
   handleScroll() {
 
 		const windowScroll = window.pageYOffset-150;
-		this.sticky = windowScroll >= this.elementPosition && windowScroll < this.endPosition;
+    console.log('windowScroll', windowScroll)
+
+    let isSticky = false;
+
+    if(this.nextElement.nativeElement) {
+      let stopY = (this.nextElement.nativeElement.offsetTop-this.nextElement.nativeElement.scrollHeight/2)
+      isSticky = (windowScroll > this.elementPosition && windowScroll < stopY);
+    }
+    else
+  		isSticky = windowScroll > this.elementPosition;
+
+    this.sticky = isSticky;
+
 	}
 
   public triggerScrollTo(name: string) {

@@ -50,12 +50,30 @@ nav {
 	a {
 		cursor: pointer;
 	}
-	&.sticky {
-	  position: fixed;
-	  top: 0;
-	  overflow: hidden;
-	  z-index: 10;
+}
+
+#pdf {
+	
+	@include phones {
+		display: none;
 	}
+
+  font-size: em(14px);
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  text-transform: capitalize;
+
+  p {
+  	width: 60%;
+  }
+
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+  z-index: 10;
 }
 
 .content {
@@ -136,12 +154,13 @@ nav {
 }
 
 #intro {
+
 	@include font('Proza Libre', 500, em(24px));
 	margin-left: 33%;
 	margin-bottom: 5%;
   letter-spacing: 0.5px;
-}
 
+}
 
 #next {
 

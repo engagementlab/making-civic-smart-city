@@ -29,6 +29,23 @@ var Play = new keystone.List('Play',
 		// nocreate: true
 	});
 
+// Storage adapter for Azure
+const azureFile = new keystone.Storage({
+  adapter: require('keystone-storage-adapter-azure'),
+  azure: {
+    container: 'smartcity',
+    generateFilename: function (file) {
+        // Cleanup filename
+        return file.originalname.replace(/[\\'\-\[\]\/\{\}\(\)\*\+\?\\\^\$\|]/g, "").replace(/ /g, '_').toLowerCase();
+    }
+  },
+  schema: {
+    path: true,
+    originalname: true,
+    url: true
+  }
+});
+
 /**
  * Model Fields
  * @main Play
@@ -39,6 +56,8 @@ Play.add({
 	intro: { type: Types.Textarea, label: "Intro Text", initial: true, required: true },
 	discussion: { type: Types.Textarea, label: "Discussion Text", initial: true, required: true },
 	actionIdeas: { type: Types.Markdown, label: "Action Ideas", initial: true, required: true },
+
+  pdf: { type: Types.File, label: "Play PDF", storage: azureFile },
 
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
 });

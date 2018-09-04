@@ -19,12 +19,17 @@
 
 	<div class="columns">
 
-		<section id="play-nav">
-			<nav #stickyMenu [class.sticky]="sticky">
+		<section id="play-nav" #stickyMenu [class.sticky]="sticky">
+			<nav>
 				<div><a (click)="triggerScrollTo('introduction')">Introduction</a></div>
 				<div><a (click)="triggerScrollTo('discussion')">Discussion</a></div>
 				<div><a (click)="triggerScrollTo('actionideas')">Action Ideas</a></div>
 			</nav>
+
+			<div id="pdf" *ngIf="content?.pdf !== undefined">
+				<p>Print a PDF of Play {{content?.sortOrder}}: {{content?.name}}</p>
+				<app-button label="Download" href="{{content?.pdf.url}}" ariaLabel="Click to download PDF for this Play" class="pine"></app-button>
+			</div>
 		</section>
 	 
 	 	<section id="text">
