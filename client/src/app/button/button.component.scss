@@ -59,7 +59,11 @@
 
     &:hover {
       color: white;
-    } 
+    }
+    & + span {
+      color: $pine;
+      
+    }
   }
 
   &.white {

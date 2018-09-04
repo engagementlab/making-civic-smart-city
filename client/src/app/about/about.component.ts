@@ -28,8 +28,4 @@ export class AboutComponent implements OnInit {
     
   }
 
-  public getPeople() {
-  	return new Array(30);
-  }
-
 }

@@ -76,8 +76,6 @@ export class PlayComponent implements OnInit {
   handleScroll() {
 
 		const windowScroll = window.pageYOffset-150;
-    console.log('windowScroll', windowScroll)
-
     let isSticky = false;
 
     if(this.nextElement.nativeElement) {
