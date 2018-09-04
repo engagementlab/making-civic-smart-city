@@ -1,6 +1,6 @@
 'use strict';
 
-function create(canvasEl, numDots, numEmpties, fps) {
+function create(canvasEl, numDots, numEmpties, fps, centerDot) {
 
     // Push dots to array
     let empties = 0,
@@ -23,7 +23,8 @@ function create(canvasEl, numDots, numEmpties, fps) {
     }
     
     // Randomize array
-    dots.sort(() => Math.random() - 0.5);
+    if(!centerDot)
+      dots.sort(() => Math.random() - 0.5);
     
     // Draw the scene
     var draw = function() {
@@ -42,7 +43,23 @@ function create(canvasEl, numDots, numEmpties, fps) {
         ctx.fill();
         ctx.fillStyle = '#0000ff';
         ctx.stroke();
+
+        if(centerDot) {
+
+          ctx.beginPath();
+          ctx.moveTo(s.x, s.y)
+          ctx.lineTo(dots[0].x, dots[0].y);
+
+          ctx.lineWidth = 0.6;
+          ctx.strokeStyle = 'black';
+          ctx.stroke();
+
+        }
+
       }
+
+      if(centerDot)
+        return;
 
       ctx.beginPath();
 
@@ -65,8 +82,13 @@ function create(canvasEl, numDots, numEmpties, fps) {
       for (var i = 0, x = dots.length; i < x; i++) {
         var s = dots[i];
 
-        s.x += s.vx / fps;
-        s.y += s.vy / fps;
+        if(centerDot && i === 0) {
+          s.x += s.vx / (fps + 300);
+          s.y += s.vy / (fps + 300);
+        } else {
+          s.x += s.vx / fps;
+          s.y += s.vy / fps;
+        }
 
         if (s.x < 30 || s.x > canvasEl.width - 30) s.vx = -s.vx;
         if (s.y < 30 || s.y > canvasEl.height - 30) s.vy = -s.vy;

@@ -52,7 +52,7 @@ export class PlaybookComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
 
-    createDots(document.getElementById('dots'), 4, 1, 200);
+    createDots(document.getElementById('dots'), 4, 1, 200, true);
     createDots(document.querySelector('#intro canvas'), 3, 1, 200);
 
   }

@@ -15,8 +15,8 @@ export class WorkshopComponent implements OnInit {
 
   ngOnInit() {
 
-    createDots(document.getElementById('dots'), 4, 0, 200);
-    createDots(document.getElementById('dots-howto'), 4, 2, 200);
+    createDots(document.getElementById('dots'), 4, 0, 200, true);
+    createDots(document.getElementById('dots-howto'), 4, 2, 200, true);
 
   	if(!ismobile.phone)
 		  new Rellax('.parallax');
