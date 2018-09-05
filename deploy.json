@@ -36,7 +36,7 @@
       "ref": "origin/production",
       "path": "/srv/making-civic-smart-city/",
       "pre-deploy-local" : "echo 'NPM linking making-civic-smart-city and restarting app.';",
-      "post-deploy": "cd client ; nvm use ; npm i ; npm run build ; pm2 restart 'smart-city-client'"
+      "post-deploy": "cd client ; nvm use ; npm i ; npm run build ; pm2 restart 'smart-city-client'; cd ../server ; nvm use ; npm i ; pm2 restart 'smart-city-server'"
     }
 
   }
