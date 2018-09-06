@@ -50,7 +50,6 @@ ul {
 	}
 
   @include not-phones {
-		grid-column-end: 9;
 	  h2 {
 		  font-size: em(64px);
 	  }

@@ -6,10 +6,14 @@ import { Observable } from 'rxjs/Observable';
 import { DataService } from '../../data.service';
 import { PlaysService } from '../../plays.service';
 
+import { fadeInAnimation } from '../../animations/fade';
+
 @Component({
   selector: 'app-play',
   templateUrl: './play.component.html',
-  styleUrls: ['./play.component.scss']
+  styleUrls: ['./play.component.scss'],
+  animations: [fadeInAnimation],
+  host: { '[@fadeInAnimation]': '' }
 })
 export class PlayComponent implements OnInit {
 

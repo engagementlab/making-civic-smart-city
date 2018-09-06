@@ -2,16 +2,17 @@ import { Component, Renderer2 } from '@angular/core';
 import { Router, RouterOutlet, ActivatedRoute, ActivatedRouteSnapshot, NavigationStart } from '@angular/router';
 
 import { environment } from '../environments/environment';
+
 import { TweenLite } from "gsap";
 import * as Rellax  from "rellax";
-import { slideInOutAnimation } from './animations/slide';
+import { fadeInAnimation } from './animations/fade';
 import { RouterStateService } from './routerstate.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [slideInOutAnimation]
+  animations: [fadeInAnimation],
 })
 export class AppComponent {
 
@@ -21,33 +22,34 @@ export class AppComponent {
 	lastPage: string;
 	lastState: string;
 
-	getState(outlet: RouterOutlet) {
-	    let state: string = (<ActivatedRouteSnapshot>outlet.activatedRoute.snapshot)['_routerState'].url;
+/*	getState(outlet: RouterOutlet) {
+	
+    let state: string = (<ActivatedRouteSnapshot>outlet.activatedRoute.snapshot)['_routerState'].url;
 
-	    if (this.lastState !== state) {
+    if (this.lastState !== state) {
+    
+      let dir: string = this.appRouterState.getDirection(state);
+      if (dir === "f")
+        this.currentState++;
+      else
+        this.currentState--;
       
-        let dir: string = this.appRouterState.getDirection(state);
-        if (dir === "f")
-          this.currentState++;
-        else
-          this.currentState--;
-        
-        this.lastPage= state;
-	    
-	    }
+      this.lastPage= state;
+    
+    }
 
-	    return this.currentState;
-	}
+    return this.currentState;
 
-	public activateRouter(event) {
+	}*/
+  
+  getState(outlet) {
+    return outlet.activatedRouteData.state;
+  }
 
-		// debugger;
-
-	}
 
 	constructor(private appRouterState: RouterStateService, private renderer: Renderer2, private router: Router, private route: ActivatedRoute) {
 
-		this.router.events
+		/*this.router.events
       .subscribe((event) => {
         if (event instanceof NavigationStart) {
 
@@ -57,7 +59,7 @@ export class AppComponent {
           if (currentUrlSlug === 'cities')
             this.renderer.addClass(document.body, 'offwhite');
         }
-      });
+      });*/
 
 	}
 

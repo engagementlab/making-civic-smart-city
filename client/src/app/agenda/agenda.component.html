@@ -18,7 +18,7 @@
 	  <div id="progress" class="progress-bar"></div>
 	  <div class="border"></div>
 		<ul>
-			<a href="/agenda/{{section.key}}" [class.current]="section.key === stepId" *ngFor="let section of sections; let i = index;">
+			<a routerLink="/agenda/{{section.key}}" [class.current]="section.key === stepId" *ngFor="let section of sections; let i = index;">
 				<li class="section">
 						<div>{{section.name}}</div>
 				</li>

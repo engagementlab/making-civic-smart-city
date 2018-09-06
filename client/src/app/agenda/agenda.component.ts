@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap, Params } from '@angular/router';
+import { Router, RouterEvent, ActivatedRoute, ParamMap, Params } from '@angular/router';
 
 import { ScrollToService } from '@nicky-lenaers/ngx-scroll-to';
 import * as _ from 'underscore';
@@ -19,6 +19,7 @@ export class AgendaComponent implements OnInit {
   public content: any;
 
   private stepIndex: number;
+  private fromOtherPage: boolean;
 
   constructor(public _dataSvc: DataService, private _scrollToService: ScrollToService, private route: ActivatedRoute, private router: Router) { 
 
@@ -29,15 +30,33 @@ export class AgendaComponent implements OnInit {
 
   	});
 
+  	this.router.events.subscribe((val: RouterEvent) => {
+
+  		this.fromOtherPage = false;
+  		if(val.url === '/agenda' && val['urlAfterRedirects'] === '/agenda/introduction') {
+
+  			this.fromOtherPage = true;
+		    this._scrollToService
+		      .scrollTo({
+		        target: 'top',
+		        duration: 1
+		      });
+
+  		}
+
+  	});
+
 		this.route.params.subscribe(params => {
 
-      this.stepId = params['step'];  	
+			if(this.fromOtherPage) return;
+
+      this.stepId = params['step'];
 
 	    this._scrollToService
 	      .scrollTo({
 	        target: 'top',
 	        easing: 'easeOutQuad',
-	        duration: 2500
+	        duration: 1500
 	      });
 
 			this._dataSvc.getDataForUrl('agenda/'+this.stepId).subscribe(response => {
