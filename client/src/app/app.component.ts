@@ -17,35 +17,6 @@ import { RouterStateService } from './routerstate.service';
 export class AppComponent {
 
   public isQABuild: boolean;
-  
-  currentState: number = 0;
-	lastPage: string;
-	lastState: string;
-
-/*	getState(outlet: RouterOutlet) {
-	
-    let state: string = (<ActivatedRouteSnapshot>outlet.activatedRoute.snapshot)['_routerState'].url;
-
-    if (this.lastState !== state) {
-    
-      let dir: string = this.appRouterState.getDirection(state);
-      if (dir === "f")
-        this.currentState++;
-      else
-        this.currentState--;
-      
-      this.lastPage= state;
-    
-    }
-
-    return this.currentState;
-
-	}*/
-  
-  getState(outlet) {
-    return outlet.activatedRouteData.state;
-  }
-
 
 	constructor(private appRouterState: RouterStateService, private renderer: Renderer2, private router: Router, private route: ActivatedRoute) {
 
@@ -64,8 +35,6 @@ export class AppComponent {
 	}
 
   ngOnInit() {
-
-  	this.appRouterState.loadRouting();
     
     this.isQABuild = environment.qa;
     

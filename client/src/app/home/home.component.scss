@@ -127,6 +127,9 @@ section {
 
 	h1 {
 		@include font('Butler-Black', 800, em(72px));
+		@include phones {
+			font-size: em(48px);
+		}
 	}
 	h3 {
 		@include phones {
