@@ -32,15 +32,51 @@ header {
 		text-align: center;
 		h1 {
 			margin: 0;
-			font-size: em(144px);
+			font-size: em(144px); 
+			@include tablets {
+				font-size: em(64px);
+			}
 			@include phones {
 				font-size: em(48px);
 			}
+			#how {
+				margin: 0;
+				text-transform: uppercase;
+				@include font('Proza Libre', 500, .27em);
+			}
+			.word {
+				display: inline-block;
+				padding-left: 2%;
+			}
 		}
-		p, div {
-			margin: 0;
-			text-transform: uppercase;
-			@include font('Proza Libre', 500, .4em);
+
+		.definition {
+			// position: absolute;
+				@include phones {
+					display: none;
+				}
+			
+				@include font('Cabin', 200, .1em);
+				strong {
+					font-weight: 700;
+				}
+				text-align: left;
+				letter-spacing: 1.4px;
+				max-width: 300px;
+				// position: absolute;
+
+				&#smaht {
+					margin-top: -12%;
+					left: 16%;
+				}
+				&#city {
+					margin-bottom: -73%;
+				}
+				&#civic {
+					margin-top: -12%;
+					left: 16%;
+				}
+			
 		}
 	}
 }

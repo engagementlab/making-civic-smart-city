@@ -99,10 +99,11 @@ nav {
 	    }
 
 	    div {
-		    @include phones {
-		    	display: none;
+		    @include desktop {
+		    	display: block;
 		    }
 				@include font('Proza Libre', 800, em(14px));
+	    	display: none;
 	    	min-width: 120px;
 	    	left: -35%;
 	    	position: relative;

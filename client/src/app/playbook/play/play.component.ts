@@ -20,7 +20,7 @@ export class PlayComponent implements OnInit {
   public content: any;
   public nextPlayName: string;
   public nextPlayKey: string;
-  public hasNext: Observable<boolean>;
+  public hasNext: boolean;
 
   private key: string;
 
@@ -51,15 +51,17 @@ export class PlayComponent implements OnInit {
           this._dataSvc.getFilteredDataForUrl('play', 'name%20blurb%20key').subscribe(response => {
 
             this._playsSvc.plays = response;
-            this.hasNext = this.getNextPlay();
-            // this.endPosition = this.nextElement.nativeElement.offsetTop;
+            
+            this.getNextPlay().subscribe(response => {
+              this.hasNext = response;
+            });
           
           });
         }
-        else {
-          this.hasNext = this.getNextPlay();
-          // this.endPosition = this.nextElement.nativeElement.offsetTop
-        }
+        else
+          this.getNextPlay().subscribe(response => {
+            this.hasNext = response;
+          });
       
       });
 
@@ -114,7 +116,9 @@ export class PlayComponent implements OnInit {
       this.nextPlayName = nextPlay.name;
     }
 
-    return Observable.of(nextPlay !== undefined);
+    let obs = Observable.of(nextPlay !== undefined);
+    // debugger;
+    return obs;
     
   }
 
