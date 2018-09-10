@@ -97,7 +97,7 @@ export class AgendaComponent implements OnInit {
 			let newWidth = (20*this.stepIndex)+1;
 			progress.style.width = width+1 + '%';
 
-	    TweenLite.to(progress, 1, {width: newWidth+'%', delay:2, ease:Quad.easeOut})
+	    TweenLite.to(progress, 1, {width: newWidth+'%', delay:1.2, ease:Quad.easeOut})
 		}
 
 	}
