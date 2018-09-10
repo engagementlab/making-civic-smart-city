@@ -163,14 +163,17 @@ span {
 	#end-btn {
 		background-color: $pine;
 		display: block;
-		padding: 15%;
+		padding: 10%;
 		color: white;
+
 		&.flex {
 			section {
 				display: flex;
 				align-items: center;
+				justify-content: space-evenly;
 			}
 		}
+
 		div {
 			@include font('Butler-Black', 900, em(56px));
 			line-height: 100%;
