@@ -32,6 +32,7 @@ var People = new keystone.List('People',
  * @main People
  */
 People.add({
+  name: { type: String, default: "People Page", hidden: true },
 	people: { type: Types.TextArray, label: "People", note: "Format as \"Person | Title\"" },
 
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
@@ -41,4 +42,5 @@ People.add({
  * Model Registration
  */
 People.defaultSort = '-createdAt';
+People.defaultColumns = 'name';
 People.register();

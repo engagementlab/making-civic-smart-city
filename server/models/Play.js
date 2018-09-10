@@ -26,7 +26,7 @@ var Play = new keystone.List('Play',
     autokey: { path: 'key', from: 'name', unique: true },
     sortable: true,
 		nodelete: true,
-		// nocreate: true
+		nocreate: true
 	});
 
 // Storage adapter for Azure

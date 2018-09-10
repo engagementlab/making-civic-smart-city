@@ -24,7 +24,9 @@ var Agenda = new keystone.List('Agenda',
 		label: 'Agenda Items',
 		singular: 'Agenda Item',
     autokey: { path: 'key', from: 'name', unique: true },
-    sortable: true    
+    sortable: true,
+    nocreate: true,
+    nodelete: true
 	});
 
 // Storage adapter for Azure
