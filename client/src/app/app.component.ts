@@ -5,6 +5,7 @@ import { environment } from '../environments/environment';
 
 import { TweenLite } from "gsap";
 import * as Rellax  from "rellax";
+import * as detect from 'detect-browser';
 import { fadeInAnimation } from './animations/fade';
 import { RouterStateService } from './routerstate.service';
 
@@ -35,6 +36,21 @@ export class AppComponent {
 	}
 
   ngOnInit() {
+
+    // Browser warning 
+    const browser = detect.detect();
+    console.log(browser.name, browser.version)
+    let unsupported = (browser.name === 'ie') ||
+                      (browser.name === 'firefox' && parseInt(browser.version) < 52) ||
+                      (browser.name === 'chrome' && parseInt(browser.version) < 57) || 
+                      (browser.name === 'android' && parseInt(browser.version) < 67) || 
+                      (browser.name === 'edge' && parseInt(browser.version) < 16) || 
+                      ((browser.name === 'safari' || browser.name === 'ios') && parseInt(browser.version) < 10);
+    
+    if(unsupported) {
+      let warn = document.getElementById('browser-warn');
+      warn.style.display = 'block';      
+    }
     
     this.isQABuild = environment.qa;
     
@@ -47,6 +63,12 @@ export class AppComponent {
       TweenLite.fromTo(document.getElementById('qa-build'), .7, {autoAlpha:1, bottom:0}, {autoAlpha:0, bottom:'-100%', display:'none', delay:4, ease:Expo.easeIn});
   
     }, 2000);
+
+  }
+
+  public hideWarning() {
+
+    document.getElementById('browser-warn').style.display = 'none';
 
   }
 }

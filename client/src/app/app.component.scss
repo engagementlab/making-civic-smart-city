@@ -90,6 +90,20 @@ footer {
 	}
 }
 
+#browser-warn {
+	position: fixed;
+	color: white;
+	background-color: $pine;
+	text-align: center;
+	font-size: large;
+	display: none;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding: 3%;	
+}
+
 #qa-build {
 	position: fixed;
 	bottom: 100%;

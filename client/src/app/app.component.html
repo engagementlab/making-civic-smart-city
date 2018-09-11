@@ -1,3 +1,9 @@
+<div id="browser-warn">
+  You are using a legacy browser that is not supported on this website, and may have a poor experience.<br />If possible, we recommend you use the latest version of Chrome, Safari, Firefox, or Edge.
+  <br />
+  <app-button label="Ok" href="" ariaLabel="Dismiss browser warning" (click)="hideWarning()"></app-button>
+
+</div>
 <app-nav></app-nav>
 
 <div id="top" class="wrapper" [@fadeInAnimation]="o.isActivated ? o.activatedRoute : ''">

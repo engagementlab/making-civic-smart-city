@@ -6,10 +6,14 @@ body {
 	margin: 0;
   
 	app-root {
-	  display: grid;
-	  grid-template-columns: repeat(12, [col] 8.3%);
-		grid-template-rows: repeat(2, [row] auto);
+		@supports (display: grid) {
+		  display: grid;
+		  grid-template-columns: repeat(12, [col] 8.3%);
+			grid-template-rows: repeat(2, [row] auto);
+		}
+		@supports not (display: grid) {
 
+		}
 	}
 	a {
 		color: $primary-blue;
@@ -125,18 +129,20 @@ span {
 }
 
 .content {	
-	display: grid;
-  grid-template-columns: repeat(12, [col] 8.3%);
+	@supports (display: grid) {
+		display: grid;
+	  grid-template-columns: repeat(12, [col] 8.3%);
 
-	@include phones {
-	  grid-template-columns: 1fr;
-	}
-	section {
-  	grid-column: 3 / span 8;
-		
 		@include phones {
-	  	grid-column: 1 / span 12;
-	  }
+		  grid-template-columns: 1fr;
+		}
+		section {
+	  	grid-column: 3 / span 8;
+			
+			@include phones {
+		  	grid-column: 1 / span 12;
+		  }
+		}
 	}
 
 	#end {

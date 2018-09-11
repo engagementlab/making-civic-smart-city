@@ -190,10 +190,16 @@ section {
 	}
 
 	#list {
-		display: grid;
 		position: relative;
-		grid-column: 1 / span 3;
-		grid-template-columns: 1fr 1fr 1fr;
+
+		@supports (display: grid) {
+			display: grid;
+			grid-column: 1 / span 3;
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+		@supports not (display: grid) {
+			display: flex;
+		}
 
 		h3 {	
 			margin: 0;

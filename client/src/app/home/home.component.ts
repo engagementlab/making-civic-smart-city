@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import * as Rellax  from 'rellax';
 import * as ismobile from 'ismobilejs';
 
-import {create as createDots} from '../dots';
+import { create as createDots } from '../dots';
 
 @Component({
   selector: 'app-home',
