@@ -53,6 +53,7 @@ section {
 		position: relative;
 		z-index: -3;
 		left: 60%;
+		grid-column: 3 / span 6;
 		@include phones {
 			grid-column: 7 / span 4;
 		}
@@ -157,6 +158,7 @@ section {
 
 #end {
 
+	margin-bottom: 200px;
 	@include font('Proza Libre', 500);
 	.indent {
 		@include not-phones {

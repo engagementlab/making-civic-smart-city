@@ -134,11 +134,14 @@ nav {
 }
 		
 app-agendastep {
+
 	display: grid;
   grid-template-columns: repeat(12, [col] 8.3%);
 	grid-column: 3 / span 10;
+	margin-bottom: 200px;
 
 	@include phones {
 		grid-column: 1 / span 12;
 	}
+	
 }

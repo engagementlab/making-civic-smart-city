@@ -41,8 +41,6 @@ ul {
 
 #intro {
   letter-spacing: 2px;
-  width: 70%;
-
 	h2 {
 		@include font('Proza Libre', 800, em(48px));
 	}
@@ -51,6 +49,8 @@ ul {
 	}
 
   @include not-phones {
+	  width: 70%;
+
 	  h2 {
 		  font-size: em(64px);
 	  }
@@ -94,10 +94,10 @@ ul {
 		.blue {
 	  	margin-bottom: 40px;
 	  }
-	}
 
-	#document {
-		width: 70%;
+		#document {
+			width: 70%;
+		}
 	}
 }
 

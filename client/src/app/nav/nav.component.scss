@@ -8,6 +8,14 @@ nav {
 		right: 2%;
 		cursor: pointer;
 	}
+	#home {
+		position: absolute;
+		z-index: 21;
+		top: 1%;
+		left: 2%;
+		cursor: pointer;	
+		display: none;
+	} 
 	#close {
 		display: none;
 		margin-right: .5%;

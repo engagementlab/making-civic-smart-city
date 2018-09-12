@@ -44,14 +44,16 @@ export class NavComponent implements OnInit {
 
   	let tl = this.tl;
   	let open = document.getElementById('open');
-  	let close = document.getElementById('close');
+    let close = document.getElementById('close');
+  	let home = document.getElementById('home');
   	let navEl = document.getElementById('menu');
 
     TweenLite.set(open, {transformStyle:'preserve-3d'});
     TweenLite.set(close, {transformStyle:'preserve-3d'});
   	tl.fromTo(open, .1, {autoAlpha:1}, {autoAlpha:0, rotationY:90});
-  	tl.fromTo(close, .2, {autoAlpha:0, rotationY:90}, {autoAlpha:1, rotationY:0, display:'block'}, '+=0.1');
-  	tl.fromTo(navEl, .6, {autoAlpha:0}, {top:0, autoAlpha:1, ease:Quad.easeOut}, '+=0.1');
+    tl.fromTo(close, .2, {autoAlpha:0, rotationY:90}, {autoAlpha:1, rotationY:0, display:'block'}, '+=0.1');
+    tl.fromTo(navEl, .6, {autoAlpha:0}, {top:0, autoAlpha:1, ease:Quad.easeOut}, '+=0.1');
+  	tl.fromTo(home, .2, {autoAlpha:0, rotationY:90}, {autoAlpha:1, rotationY:0, display:'block'}, '+=0.1');
 
   }
 
