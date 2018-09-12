@@ -39,14 +39,12 @@ export class AppComponent {
 
     // Browser warning 
     const browser = detect.detect();
-    console.log(browser.name, browser.version)
     let unsupported = (browser.name === 'ie') ||
                       (browser.name === 'firefox' && parseInt(browser.version) < 52) ||
                       (browser.name === 'chrome' && parseInt(browser.version) < 57) || 
                       (browser.name === 'android' && parseInt(browser.version) < 67) || 
                       (browser.name === 'edge' && parseInt(browser.version) < 16) || 
                       ((browser.name === 'safari' || browser.name === 'ios') && parseInt(browser.version) < 10);
-    
     if(unsupported) {
       let warn = document.getElementById('browser-warn');
       warn.style.display = 'block';      

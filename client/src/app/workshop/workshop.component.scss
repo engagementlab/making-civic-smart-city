@@ -64,6 +64,7 @@ ul {
 #howto {
 	display: flex;
 	flex-flow: row wrap;
+  letter-spacing: 2px;
 
 	canvas {
 		@include phones {

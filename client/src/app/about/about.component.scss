@@ -39,44 +39,11 @@ header {
 			@include phones {
 				font-size: em(48px);
 			}
-			#how {
+			p, div {
 				margin: 0;
 				text-transform: uppercase;
-				@include font('Proza Libre', 500, .27em);
+				@include font('Proza Libre', 500, .4em);
 			}
-			.word {
-				display: inline-block;
-				padding-left: 2%;
-			}
-		}
-
-		.definition {
-			// position: absolute;
-				@include phones {
-					display: none;
-				}
-			
-				@include font('Cabin', 200, .1em);
-				strong {
-					font-weight: 700;
-				}
-				text-align: left;
-				letter-spacing: 1.4px;
-				max-width: 300px;
-				// position: absolute;
-
-				&#smaht {
-					margin-top: -12%;
-					left: 16%;
-				}
-				&#city {
-					margin-bottom: -73%;
-				}
-				&#civic {
-					margin-top: -12%;
-					left: 16%;
-				}
-			
 		}
 	}
 }
@@ -175,7 +142,6 @@ section {
 
 #who {
 
-	text-align: end;
 	a {			
 		@include font('Butler', 400, em(24px));
 	  line-height: 1.33;

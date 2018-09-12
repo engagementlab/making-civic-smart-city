@@ -14,10 +14,12 @@ function create(canvasEl, numDots, numEmpties, fps, centerDot=false) {
       radius: Math.random() * 3 + 5,
       vx: Math.floor(Math.random() * 50) - 30,
       vy: Math.floor(Math.random() * 50) + 30,
-      fill: null
+      fill: 'rgba(0,0,0,0)'
     };
 
-    dot.fill = (empties < numEmpties) ? '#fff' : '#0000ff';
+    if(empties > numEmpties)
+      dot.fill = '#0000ff';
+
     dots.push(dot);
     empties++;
   }
@@ -39,16 +41,16 @@ function create(canvasEl, numDots, numEmpties, fps, centerDot=false) {
       ctx.beginPath();
       ctx.arc(s.x, s.y, s.radius, 0, 2 * Math.PI);
       ctx.strokeStyle = '#0000ff';
-      ctx.lineWidth = 3;
+      ctx.lineWidth = 2;
       ctx.fill();
-      ctx.fillStyle = '#0000ff';
+      ctx.fillStyle = s.fill;
       ctx.stroke();
 
       if(centerDot) {
 
         ctx.beginPath();
-        ctx.moveTo(s.x, s.y)
-        ctx.lineTo(dots[0].x, dots[0].y);
+        ctx.moveTo(s.x-(s.radius/2), s.y-(s.radius/2))
+        ctx.lineTo(dots[0].x-(dots[0].radius/2), dots[0].y-(dots[0].radius/2));
 
         ctx.lineWidth = 0.6;
         ctx.strokeStyle = 'black';
@@ -65,8 +67,8 @@ function create(canvasEl, numDots, numEmpties, fps, centerDot=false) {
 
     for (var j = 0, x = dots.length; j < x; j++) {
 
-      var starII = dots[j];
-      ctx.lineTo(starII.x, starII.y);
+      var star2 = dots[j];
+      ctx.lineTo(star2.x-(star2.radius/2), star2.y-(star2.radius/2));
 
     }
 
