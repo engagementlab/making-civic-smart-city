@@ -55,7 +55,7 @@ section {
 		left: 60%;
 		grid-column: 3 / span 6;
 		@include phones {
-			grid-column: 7 / span 4;
+			grid-column: 3 / span 5;
 		}
 	}
 }
