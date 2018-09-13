@@ -29,7 +29,7 @@ export class NavComponent implements OnInit {
     });
 
     // Get pdf url if needed
-    if(this._dataSvc.whitepaperPdf === undefined) {
+    if(this._dataSvc.whitepaperUrl === undefined) {
       this._dataSvc.getFilteredDataForUrl('about', 'whitepaperPdf').subscribe(item => {
         
         this._dataSvc.setWhitepaperUrl(item[0].whitepaperPdf.url);
