@@ -188,8 +188,18 @@ $base-font-size: 16px;
     @content;
   }
 }
+@mixin tablets {
+  @include mq($from: mobileLg, $until: tablet) {
+    @content;
+  }
+}
 @mixin not-phones {
   @include mq($from: tabletPortrait) {
+    @content;
+  }
+}
+@mixin desktop {
+  @include mq($from: wide) {
     @content;
   }
 }

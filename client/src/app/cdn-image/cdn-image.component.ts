@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DomSanitizer, SafeResourceUrl, SafeStyle } from '@angular/platform-browser';
+import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 
 @Component({
   selector: 'cdn-image',

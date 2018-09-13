@@ -48,7 +48,8 @@
 			  <app-button label="Get Started" route="/workshop" ariaLabel="Go to Workshop" class="pine"></app-button>
 	  	</div>
 	  	<div class="image">
-			  <cdn-image cloudinaryId="icons/toolkit.png" width="341" autoFormat="true" alt="'Workshop' icon image"></cdn-image>
+	  		<img src="https://res.cloudinary.com/engagement-lab-home/image/upload/c_scale,f_auto,w_720/v1536767858/making-smart-city/icons/toolkit.svg" style="max-width: 360px" alt="'Workshop' icon image">
+			  <!-- <cdn-image cloudinaryId="icons/toolkit.png" width="720" autoFormat="true"></cdn-image> -->
 	  	</div>
 	  </div>
 
@@ -95,7 +96,8 @@
 
 	  	</div>
 	  	<div class="image">
-			  <cdn-image cloudinaryId="icons/playbook.png" width="360" alt="'Playbook' icon image"></cdn-image>
+			  <!-- <cdn-image cloudinaryId="icons/playbook.svg" width="360" autoFormat="false" alt="'Playbook' icon image"></cdn-image> -->
+ 	  		<img src="https://res.cloudinary.com/engagement-lab-home/image/upload/c_scale,f_auto,w_720/v1536767858/making-smart-city/icons/playbook.svg" style="max-width: 360px" alt="'Playbook' icon image">
 	  	</div>
 	  </div>
 
@@ -105,11 +107,11 @@
 	</section>
 
 	<section id="share-bg" class="img" data-rellax-speed="2" data-rellax-percentage="0.1">
-		<a id="share-btn" href="https://elabhome.blob.core.windows.net/smartcity/right-to-smart-city.pdf" role="button" attr.aria-label="Go to next agenda step">
+		<a id="share-btn" href="{{whitepaperUrl}}" role="button" attr.aria-label="Go to next agenda step">
 			<div id="share" data-rellax-speed="-9" data-rellax-percentage="1">
 				<h3>Download the &#8220;Making a Civic Smart City&#8221; white paper</h3>
 
-				<app-button [download]=true href="https://elabhome.blob.core.windows.net/smartcity/right-to-smart-city.pdf" ariaLabel="Download the white paper" parentElement="share-btn" class="white"></app-button>
+				<app-button [download]=true href="{{whitepaperUrl}}" ariaLabel="Download the white paper" parentElement="share-btn" class="white"></app-button>
 
 			</div>
 		</a>

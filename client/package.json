@@ -27,6 +27,7 @@
     "@types/gsap": "^1.19.2",
     "cloudinary-core": "^2.5.0",
     "core-js": "^2.5.4",
+    "detect-browser": "^3.0.1",
     "gsap": "^2.0.1",
     "ismobilejs": "^0.4.1",
     "rellax": "^1.6.2",

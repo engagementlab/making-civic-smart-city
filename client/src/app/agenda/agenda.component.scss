@@ -3,7 +3,7 @@
 // Global overrides
 header {
 	margin-bottom: 5%;
-  grid-template-rows: 1fr 2fr 2fr;
+  grid-template-rows: 1fr 2fr 1fr;
 
   .banner {
 		grid-column: 1 /span 2;
@@ -99,10 +99,11 @@ nav {
 	    }
 
 	    div {
-		    @include phones {
-		    	display: none;
+		    @include desktop {
+		    	display: block;
 		    }
 				@include font('Proza Libre', 800, em(14px));
+	    	display: none;
 	    	min-width: 120px;
 	    	left: -35%;
 	    	position: relative;
@@ -133,11 +134,14 @@ nav {
 }
 		
 app-agendastep {
+
 	display: grid;
   grid-template-columns: repeat(12, [col] 8.3%);
 	grid-column: 3 / span 10;
+	margin-bottom: 200px;
 
 	@include phones {
 		grid-column: 1 / span 12;
 	}
+	
 }

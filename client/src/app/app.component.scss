@@ -6,13 +6,12 @@ footer {
 	grid-column: 2 / span 10;
 	grid-row: 2;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: .5fr 1fr 1fr 1fr;
   grid-template-areas:
   "title title title"
   "contact links top"
-  "logos logos logos";
-
-	// margin-top: 5%;
+  "logos logos logos"
+  ". . .";
 
   @include phones {
 		grid-column: 1 / span 12;
@@ -21,7 +20,7 @@ footer {
 	h4 {
 		grid-area: title;
 		margin: 0;
-		@include font('Butler');
+		@include font('Butler-Bold');
 		
 		font-size: 2em;
 		#making {
@@ -77,6 +76,7 @@ footer {
 		grid-area: logos;
 		display: flex;
 		flex-direction: column;
+		padding-top: 5%;
 	  @include not-phones {
 			flex-direction: row;
 		}
@@ -88,6 +88,20 @@ footer {
 			}
 		}
 	}
+}
+
+#browser-warn {
+	position: fixed;
+	color: white;
+	background-color: $pine;
+	text-align: center;
+	font-size: large;
+	display: none;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding: 3%;	
 }
 
 #qa-build {

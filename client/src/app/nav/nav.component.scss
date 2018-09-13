@@ -8,6 +8,22 @@ nav {
 		right: 2%;
 		cursor: pointer;
 	}
+
+	#home {
+		position: absolute;
+		z-index: 21;
+		top: 1%;
+		left: 2%;
+		cursor: pointer;	
+		display: none;
+	} 
+
+	#home-mobile {
+		display: none;
+		margin-top: 4%;
+		margin-left: 2%;
+	}
+	
 	#close {
 		display: none;
 		margin-right: .5%;
@@ -28,8 +44,10 @@ nav {
 	  background-color: rgba(0, 0, 255, 0.9);
 
 		// Layout
-		display: flex;
-		justify-content: space-evenly;
+		@include not-phones {
+			display: flex;
+			justify-content: space-evenly;
+		}
 
 		@include phones {			
 			max-height: 100%;
@@ -37,6 +55,11 @@ nav {
 			flex-direction: column;
 		}
 
+		#playbook {
+			@include tablets {
+				margin-left: 2%;
+			}
+		}
 		#pdf {
 			display: flex;
 			align-items: center;

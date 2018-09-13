@@ -32,15 +32,18 @@ header {
 		text-align: center;
 		h1 {
 			margin: 0;
-			font-size: em(144px);
+			font-size: em(144px); 
+			@include tablets {
+				font-size: em(64px);
+			}
 			@include phones {
 				font-size: em(48px);
 			}
-		}
-		p, div {
-			margin: 0;
-			text-transform: uppercase;
-			@include font('Proza Libre', 500, .4em);
+			p, div {
+				margin: 0;
+				text-transform: uppercase;
+				@include font('Proza Libre', 500, .4em);
+			}
 		}
 	}
 }
@@ -50,8 +53,9 @@ section {
 		position: relative;
 		z-index: -3;
 		left: 60%;
+		grid-column: 3 / span 6;
 		@include phones {
-			grid-column: 7 / span 4;
+			grid-column: 3 / span 5;
 		}
 	}
 }
@@ -139,7 +143,6 @@ section {
 
 #who {
 
-	text-align: end;
 	a {			
 		@include font('Butler', 400, em(24px));
 	  line-height: 1.33;
@@ -155,6 +158,7 @@ section {
 
 #end {
 
+	margin-bottom: 200px;
 	@include font('Proza Libre', 500);
 	.indent {
 		@include not-phones {

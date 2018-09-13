@@ -49,11 +49,10 @@ const azureFile = new keystone.Storage({
  * @main About
  */
 About.add({
+  name: { type: String, default: "About Page", hidden: true },
 	blurb: { type: Types.Markdown, label: "Intro Blurb Text", initial: true, required: true },
   what: { type: Types.Markdown, label: "'What We Did'", initial: true, required: true },
-	// what: { type: Types.Markdown, label: "'What We Did/'", initial: true, required: true },
-	// conceptDescription: { type: Types.Markdown, label: "Concept Paper Description", initial: true, required: true },
-	whitepaperPdf: { type: Types.File, label: "Concept PDF", storage: azureFile },
+	whitepaperPdf: { type: Types.File, label: "Whitepaper PDF", storage: azureFile },
 
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
 });
@@ -62,4 +61,5 @@ About.add({
  * Model Registration
  */
 About.defaultSort = '-createdAt';
+About.defaultColumns = 'name';
 About.register();

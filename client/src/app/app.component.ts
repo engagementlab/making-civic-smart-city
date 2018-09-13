@@ -2,52 +2,26 @@ import { Component, Renderer2 } from '@angular/core';
 import { Router, RouterOutlet, ActivatedRoute, ActivatedRouteSnapshot, NavigationStart } from '@angular/router';
 
 import { environment } from '../environments/environment';
+
 import { TweenLite } from "gsap";
 import * as Rellax  from "rellax";
-import { slideInOutAnimation } from './animations/slide';
+import * as detect from 'detect-browser';
+import { fadeInAnimation } from './animations/fade';
 import { RouterStateService } from './routerstate.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [slideInOutAnimation]
+  animations: [fadeInAnimation],
 })
 export class AppComponent {
 
   public isQABuild: boolean;
-  
-  currentState: number = 0;
-	lastPage: string;
-	lastState: string;
-
-	getState(outlet: RouterOutlet) {
-	    let state: string = (<ActivatedRouteSnapshot>outlet.activatedRoute.snapshot)['_routerState'].url;
-
-	    if (this.lastState !== state) {
-      
-        let dir: string = this.appRouterState.getDirection(state);
-        if (dir === "f")
-          this.currentState++;
-        else
-          this.currentState--;
-        
-        this.lastPage= state;
-	    
-	    }
-
-	    return this.currentState;
-	}
-
-	public activateRouter(event) {
-
-		// debugger;
-
-	}
 
 	constructor(private appRouterState: RouterStateService, private renderer: Renderer2, private router: Router, private route: ActivatedRoute) {
 
-		this.router.events
+		/*this.router.events
       .subscribe((event) => {
         if (event instanceof NavigationStart) {
 
@@ -57,13 +31,24 @@ export class AppComponent {
           if (currentUrlSlug === 'cities')
             this.renderer.addClass(document.body, 'offwhite');
         }
-      });
+      });*/
 
 	}
 
   ngOnInit() {
 
-  	this.appRouterState.loadRouting();
+    // Browser warning 
+    const browser = detect.detect();
+    let unsupported = (browser.name === 'ie') ||
+                      (browser.name === 'firefox' && parseInt(browser.version) < 52) ||
+                      (browser.name === 'chrome' && parseInt(browser.version) < 57) || 
+                      (browser.name === 'android' && parseInt(browser.version) < 67) || 
+                      (browser.name === 'edge' && parseInt(browser.version) < 16) || 
+                      ((browser.name === 'safari' || browser.name === 'ios') && parseInt(browser.version) < 10);
+    if(unsupported) {
+      let warn = document.getElementById('browser-warn');
+      warn.style.display = 'block';      
+    }
     
     this.isQABuild = environment.qa;
     
@@ -76,6 +61,12 @@ export class AppComponent {
       TweenLite.fromTo(document.getElementById('qa-build'), .7, {autoAlpha:1, bottom:0}, {autoAlpha:0, bottom:'-100%', display:'none', delay:4, ease:Expo.easeIn});
   
     }, 2000);
+
+  }
+
+  public hideWarning() {
+
+    document.getElementById('browser-warn').style.display = 'none';
 
   }
 }

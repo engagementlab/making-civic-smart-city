@@ -41,20 +41,21 @@ ul {
 
 #intro {
   letter-spacing: 2px;
-
 	h2 {
-		font-size: em(48px);
+		@include font('Proza Libre', 800, em(48px));
 	}
 	h4 {
 		@include font('Proza Libre', 800);
 	}
 
   @include not-phones {
-		grid-column-end: 9;
+	  width: 70%;
+
 	  h2 {
 		  font-size: em(64px);
 	  }
 	  h4 {
+			margin-top: 8%;
 		  letter-spacing: 1.5px;
 		  font-size: em(24px);
 		  text-transform: uppercase;
@@ -65,6 +66,7 @@ ul {
 #howto {
 	display: flex;
 	flex-flow: row wrap;
+  letter-spacing: 2px;
 
 	canvas {
 		@include phones {
@@ -82,5 +84,26 @@ ul {
 		&:nth-child(3) {
 			width: 100%;
 		}
+	}
+
+  @include not-phones {
+		h3 {
+	  	margin-top: 8%;
+	  	margin-bottom: 60px;
+	  }
+		.blue {
+	  	margin-bottom: 40px;
+	  }
+
+		#document {
+			width: 70%;
+		}
+	}
+}
+
+#end-btn {
+	@include not-phones {
+		margin-top: 25%;
+		margin-bottom: 25%;
 	}
 }

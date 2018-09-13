@@ -14,12 +14,14 @@ export class WorkshopComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
+    if(ismobile.phone)
+      return;
 
     createDots(document.getElementById('dots'), 4, 0, 200, true);
     createDots(document.getElementById('dots-howto'), 4, 2, 200, true);
 
-  	if(!ismobile.phone)
-		  new Rellax('.parallax');
+	  new Rellax('.parallax');
 
   }
 

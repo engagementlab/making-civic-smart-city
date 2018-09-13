@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
+
 import * as Rellax  from 'rellax';
 import * as ismobile from 'ismobilejs';
 
-import {create as createDots} from '../dots';
+import { create as createDots } from '../dots';
 
 @Component({
   selector: 'app-home',
@@ -18,10 +20,15 @@ export class HomeComponent implements OnInit {
 		"Question Data",
 		"Imagine The Possible"
 	];
+  public whitepaperUrl: string;
 
-  constructor() { }
+  constructor(private _dataSvc: DataService) { }
 
   ngOnInit() {
+    
+    this._dataSvc.whitepaperSubject.subscribe(value => {
+      this.whitepaperUrl = this._dataSvc.whitepaperUrl;
+    });
 
   	createDots(document.getElementById('dots'), 4, 1, 100, true);
   	createDots(document.getElementById('dots-getstarted'), 3, 1, 200);

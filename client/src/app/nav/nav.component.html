@@ -2,10 +2,16 @@
 
   <cdn-image id="open" cloudinaryId="icons/nav" width="70" autoFormat="false" alt="Button to open navigation" aria-role="button" (click)="openNav()"></cdn-image>
   <cdn-image id="close" cloudinaryId="icons/close" width="70" autoFormat="false" alt="Button to close navigation" aria-role="button" (click)="closeNav()"></cdn-image>
+  <a id="home" routerLink="/">
+  	<cdn-image cloudinaryId="icons/home.png" width="70" autoFormat="true" alt="Button to go to home page" aria-role="button"></cdn-image>
+  </a>
 
 	<section id="menu">
 	
-		<div>		
+		<div>
+		  <a id="home-mobile" routerLink="/">
+		  	<cdn-image cloudinaryId="icons/home.png" width="70" autoFormat="true" alt="Button to go to home page" aria-role="button"></cdn-image>
+		  </a>
 			<h3><a routerLink="/about">About<span></span></a></h3>
 			<h3 class="no-margin"><a routerLink="/workshop">Workshop<span></span></a></h3>
 			<ul>
@@ -13,11 +19,11 @@
 			</ul>
 		</div>
 	
-		<div>
+		<div id="playbook">
 			<h3 class="no-margin"><a routerLink="/playbook">Playbook<span></span></a></h3>
 			<ul>
 				<a routerLink="/playbook/{{play.key}}" *ngFor="let play of plays; let i = index;">
-					<li>{{i}}&nbsp;&nbsp;&nbsp;{{play.name}}</li>
+					<li>{{i+1}}&nbsp;&nbsp;&nbsp;{{play.name}}</li>
 				</a>
 			</ul>
 		</div>
@@ -26,7 +32,7 @@
 			<div>
 				<span class="white"></span>
 				<h4>Get the &#8220;Making a Civic<br />Smart City&#8221; white paper</h4>
-				<app-button label="Download PDF" href="https://elabhome.blob.core.windows.net/smartcity/right-to-smart-city.pdf" ariaLabel="Click to download 'Making a Civic Smart City' PDF" class="white hover-blue"></app-button>
+				<app-button label="Download PDF" href="{{whitepaperUrl}}" ariaLabel="Click to download 'Making a Civic Smart City' PDF" class="white hover-blue"></app-button>
 			</div>
 		</div>
 
