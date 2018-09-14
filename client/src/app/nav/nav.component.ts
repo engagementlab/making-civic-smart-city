@@ -34,7 +34,7 @@ export class NavComponent implements OnInit {
         
         this._dataSvc.setWhitepaperUrl(item[0].whitepaperPdf.url);
         this.whitepaperUrl = this._dataSvc.whitepaperUrl;
-        
+
       });
     }
 
@@ -54,7 +54,7 @@ export class NavComponent implements OnInit {
 
 
   	this.tl = new TimelineLite({paused:true});
-    // console.log(ismobile)
+    
   	let tl = this.tl;
   	let open = document.getElementById('open');
     let close = document.getElementById('close');
