@@ -143,6 +143,8 @@ section {
 
 #who {
 
+	margin-top: 10%;
+
 	a {			
 		@include font('Butler', 400, em(24px));
 	  line-height: 1.33;
