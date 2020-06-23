@@ -6,6 +6,8 @@
     "start": "ng serve",
     "build": "ng build --prod",
     "build-qa": "ng build --configuration=qa --prod",
+    "dev": "npm-run-all -p api start",
+    "api": "cd ../server; nodemon;",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
