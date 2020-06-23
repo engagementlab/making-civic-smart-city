@@ -1,120 +1,180 @@
 <header class="main-head">
+  <div class="intro">
+    <div class="banner">
+      <cdn-image
+        class="corner-img img"
+        cloudinaryId="bg/home-topleft.png"
+        gravity="center"
+        height="260"
+        width="430"
+        crop="fill"
+        alt="Icon for Reward"
+        data-rellax-speed="3"
+      ></cdn-image>
+    </div>
 
-	<div class="intro">
-		<div class="banner">
-		  <cdn-image class="corner-img img" cloudinaryId="bg/home-topleft.png" gravity="center" height="260" width="430" crop="fill" alt="Icon for Reward" data-rellax-speed="3"></cdn-image>
-		</div>
-	  
-	  <div class="indent">
-			<canvas id="dots" width="350" height="410"></canvas>  
-		  <h1>
+    <div class="indent">
+      <canvas id="dots" width="350" height="410"></canvas>
+      <h1>
+        <span id="making">Making</span> <span id="a"> A</span><br />
+        Civic Smart City
+      </h1>
 
-		  	<span id="making">Making</span> <span id="a"> A</span><br />
-	      Civic Smart City
+      <div class="stagger">
+        <div class="left">
+          <h3 class="stroke">How do we make smart cities civic?</h3>
+          <learn-more-btn route="/about"></learn-more-btn>
+        </div>
+        <div class="right">
+          <canvas id="dots-getstarted" width="250" height="210"></canvas>
+          <h3>Civic Smart City Case Study: Beta Blocks</h3>
 
-		  </h1>
-
-		  <div class="stagger">
-			  <div class="left">
-				  <h3 class="stroke">How do we make smart cities civic?</h3>
-				  <learn-more-btn route="/about"></learn-more-btn>
-			  </div>
-			  <div class="right">
-					<canvas id="dots-getstarted" width="250" height="210"></canvas> 
-				  <h3>Run your own smart city workshop</h3>
-
-				  <app-button label="Get Started" route="/workshop" ariaLabel="Go to Workshop" class="upper pine"></app-button>
-			  </div>
-			</div>  
-
-		</div>
-	</div>
-
+          <app-button
+            label="Learn More"
+            route="/betablocks"
+            ariaLabel="Go to Beta Blocks page"
+            class="upper pine"
+          >
+          </app-button>
+        </div>
+      </div>
+    </div>
+  </div>
 </header>
 
 <div class="content">
+  <section id="img">
+    <cdn-image
+      class="img"
+      cloudinaryId="bg/home-plays.png"
+      gravity="center"
+      width="526"
+      crop="scale"
+      alt="'Workshop' background image"
+      data-rellax-speed="-4"
+      data-rellax-percentage="0.5"
+    ></cdn-image>
+  </section>
 
-	<section id="img">
-		<cdn-image class="img" cloudinaryId="bg/home-plays.png" gravity="center" width="526" crop="scale" alt="'Workshop' background image" data-rellax-speed="-4" data-rellax-percentage="0.5"></cdn-image>
-	</section>
+  <section id="workshop">
+    <h1>Workshop</h1>
 
-	<section id="workshop">
+    <div class="flex">
+      <div class="left">
+        <p>
+          This workshop brings together people in your place to define your own
+          localized version of ‘smart’, and encourage greater participation in
+          the civic processes of designing the smart city.
+        </p>
+        <app-button
+          label="Get Started"
+          route="/workshop"
+          ariaLabel="Go to Workshop"
+          class="pine"
+        ></app-button>
+      </div>
+      <div class="image">
+        <img
+          src="https://res.cloudinary.com/engagement-lab-home/image/upload/c_scale,f_auto,w_720/v1536767858/making-smart-city/icons/toolkit.svg"
+          style="max-width: 360px;"
+          alt="'Workshop' icon image"
+        />
+        <!-- <cdn-image cloudinaryId="icons/toolkit.png" width="720" autoFormat="true"></cdn-image> -->
+      </div>
+    </div>
 
-		<h1>Workshop</h1>
+    <h3 class="stroke">What’s inside</h3>
+    <div class="flex">
+      <div class="left">
+        <ul>
+          <li>
+            <div>
+              <h4>Agenda</h4>
+              <p>
+                Includes activities, discussion questions, and scenarios for
+                exploring and shaping smart city discourse in your place.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li>
+            <h4>Note-Taking Template</h4>
+          </li>
+          <li>
+            <h4>5 Starter Plays</h4>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-	  <div class="flex">
-	  	<div class="left">
-	  		<p>This workshop brings together people in your place to define your own localized version of ‘smart’, and encourage greater participation in the civic processes of designing the smart city.</p>
-			  <app-button label="Get Started" route="/workshop" ariaLabel="Go to Workshop" class="pine"></app-button>
-	  	</div>
-	  	<div class="image">
-	  		<img src="https://res.cloudinary.com/engagement-lab-home/image/upload/c_scale,f_auto,w_720/v1536767858/making-smart-city/icons/toolkit.svg" style="max-width: 360px" alt="'Workshop' icon image">
-			  <!-- <cdn-image cloudinaryId="icons/toolkit.png" width="720" autoFormat="true"></cdn-image> -->
-	  	</div>
-	  </div>
+  <section id="playbook">
+    <canvas id="dots-playbook" width="480" height="200"></canvas>
 
-	  <h3 class="stroke">What’s inside</h3>
-	  <div class="flex">
-	  	<div class="left">
-	
-				<ul>
-					<li>
+    <h1>Playbook</h1>
 
-						<div>
-							<h4>Agenda</h4>
-							<p>Includes activities, discussion questions, and scenarios for exploring and shaping smart city discourse in your place.</p>
-						</div>
-					</li>
-				</ul>
+    <div class="flex reverse">
+      <div class="left">
+        <p>
+          These five plays are actions that can be taken by the range of actors
+          involved in the design and implementation of the smart city,
+          prioritizing a values-first approach that can be implemented across
+          organizations.
+        </p>
+        <app-button
+          label="View Playbook"
+          route="/playbook"
+          ariaLabel="Click to view playbook"
+          class="pine"
+        >
+        </app-button>
+      </div>
+      <div class="image">
+        <!-- <cdn-image cloudinaryId="icons/playbook.svg" width="360" autoFormat="false" alt="'Playbook' icon image"></cdn-image> -->
+        <img
+          src="https://res.cloudinary.com/engagement-lab-home/image/upload/c_scale,f_auto,w_720/v1536767858/making-smart-city/icons/playbook.svg"
+          style="max-width: 360px;"
+          alt="'Playbook' icon image"
+        />
+      </div>
+    </div>
 
-	  	</div>
-	  	<div>
-				
-				<ul>
-					<li>
-						<h4>Note-Taking Template</h4>
-					</li>
-					<li>
-						<h4>5 Starter Plays</h4>
-					</li>
-				</ul>
+    <div id="list">
+      <div *ngFor="let title of playTitles; let i = index" class="play-title">
+        <h3 class="stroke">{{ i + 1 }}</h3>
+        {{ title }}
+      </div>
+    </div>
+  </section>
 
-	  	</div>
-	  </div>
-	</section>
+  <section
+    id="share-bg"
+    class="img"
+    data-rellax-speed="2"
+    data-rellax-percentage="0.1"
+  >
+    <a
+      id="share-btn"
+      href="{{ whitepaperUrl }}"
+      role="button"
+      attr.aria-label="Go to next agenda step"
+    >
+      <div id="share" data-rellax-speed="-9" data-rellax-percentage="1">
+        <h3>
+          Download the &#8220;Making a Civic Smart City&#8221; white paper
+        </h3>
 
-	<section id="playbook">
-
-		<canvas id="dots-playbook" width="480" height="200"></canvas> 
-
-		<h1>Playbook</h1>
-
-	  <div class="flex reverse">
-	  	<div class="left">
-	  		<p>These five plays are actions that can be taken by the range of actors involved in the design and implementation of the smart city, prioritizing a values-first approach that can be implemented across organizations.</p>
-			  <app-button label="View Playbook" route="/playbook" ariaLabel="Click to view playbook" class="pine"></app-button>
-
-	  	</div>
-	  	<div class="image">
-			  <!-- <cdn-image cloudinaryId="icons/playbook.svg" width="360" autoFormat="false" alt="'Playbook' icon image"></cdn-image> -->
- 	  		<img src="https://res.cloudinary.com/engagement-lab-home/image/upload/c_scale,f_auto,w_720/v1536767858/making-smart-city/icons/playbook.svg" style="max-width: 360px" alt="'Playbook' icon image">
-	  	</div>
-	  </div>
-
-	  <div id="list">
-			<div *ngFor="let title of playTitles; let i = index;" class="play-title"><h3 class="stroke">{{i+1}}</h3>{{title}}</div>
-		</div>
-	</section>
-
-	<section id="share-bg" class="img" data-rellax-speed="2" data-rellax-percentage="0.1">
-		<a id="share-btn" href="{{whitepaperUrl}}" role="button" attr.aria-label="Go to next agenda step">
-			<div id="share" data-rellax-speed="-9" data-rellax-percentage="1">
-				<h3>Download the &#8220;Making a Civic Smart City&#8221; white paper</h3>
-
-				<app-button [download]=true href="{{whitepaperUrl}}" ariaLabel="Download the white paper" parentElement="share-btn" class="white"></app-button>
-
-			</div>
-		</a>
-	</section>
-
+        <app-button
+          [download]="true"
+          href="{{ whitepaperUrl }}"
+          ariaLabel="Download the white paper"
+          parentElement="share-btn"
+          class="white"
+        ></app-button>
+      </div>
+    </a>
+  </section>
 </div>
