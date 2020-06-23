@@ -1,0 +1,40 @@
+@import "~src/styles/_variables";
+
+header {
+    color: white;
+    grid-template-columns: repeat(12, [col] auto);
+    grid-template-rows: 1fr 2fr 2fr;
+
+    .banner {
+        background-color: $pine;
+        grid-column: 1 / span 2;
+        grid-row: 1 / span 1;
+
+        display: block;
+
+        @include phones {
+            max-width: 100px;
+        }
+    }
+}
+
+.intro {
+    padding-bottom: 10%;
+    background-color: $pine;
+    grid-column: 1 / span 12;
+    grid-row: 2 / span 2;
+    text-align: center;
+}
+
+.content {
+    background-color: $pine;
+}
+
+#embed {
+    width: 50%;
+    height: 500px;
+
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
