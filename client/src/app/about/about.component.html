@@ -9,8 +9,8 @@
 
       <app-button
         label="Download the Beta Blocks case study report"
-        href=""
-        ariaLabel="Click to view workshop guide"
+        route="/betablocks/file/study"
+        ariaLabel="Click to view Beta Blocks case study report"
         class="white sm hover-blue"
       ></app-button>
     </div>
@@ -49,14 +49,14 @@
         gravity="center"
         width="482"
         crop="scale"
-        alt="'What We Did' background image"
+        alt="'Download the tools' background image"
         data-rellax-speed="-1"
         data-rellax-percentage=".3"
       ></cdn-image>
     </div>
 
     <div class="right">
-      <h3 class="heading">What We Did</h3>
+      <h3 class="heading">Download the tools</h3>
       <span class="blue"></span>
 
       <cdn-image
@@ -65,45 +65,14 @@
         gravity="center"
         width="248"
         crop="scale"
-        alt="'What We Did' image"
+        alt="'Download the tools' image"
       ></cdn-image>
 
-      <div [innerHtml]="content?.what.html"></div>
-    </div>
-  </section>
-
-  <section id="who">
-    <a routerLink="who">Right to the Smart City participants</a>
-  </section>
-
-  <section id="end">
-    <h3 class="stroke">Now it’s your turn</h3>
-
-    <p class="lg">
-      Use our workshop guide to reproduce our process on a local level in order
-      to ground-truth our general findings and provide local texture to the
-      definition of smart.
-    </p>
-    <p class="indent">
-      The workshop we provide is in the form of a day-long symposium, adapted
-      from the model we piloted in March of 2018.
-    </p>
-    <div class="indent">
-      <p>
-        When used in conjunction with the five plays described, this workshop is
-        intended to help cities to define their own localized version of
-        ‘smart’, and to construct a workable strategy to encourage greater
-        engagement with publics in the civic processes of designing the smart
-        city.
-      </p>
-      <p>
-        <app-button
-          label="Start Workshop"
-          route="/workshop"
-          ariaLabel="Click to view workshop guide"
-          class="pine"
-        ></app-button>
-      </p>
+      <div>
+        <p *ngFor="let link of links">
+          <a [routerLink]="link[1]">{{ link[0] }}</a>
+        </p>
+      </div>
     </div>
   </section>
 </div>

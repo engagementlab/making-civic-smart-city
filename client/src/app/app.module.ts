@@ -40,6 +40,7 @@ import { AgendaComponent } from "./agenda/agenda.component";
 import { AgendastepComponent } from "./agenda/agendastep/agendastep.component";
 import { PeopleComponent } from "./about/people/people.component";
 import { SplitPipe } from "./split.pipe";
+import { FileComponent } from "./file/file.component";
 
 // App routes
 export const routes: Routes = [
@@ -47,6 +48,7 @@ export const routes: Routes = [
   { path: "about", redirectTo: "betablocks" },
   { path: "about/who", component: PeopleComponent },
   { path: "betablocks", component: AboutComponent },
+  { path: "betablocks/file/:key", component: FileComponent },
 
   { path: "agenda/:step", component: AgendaComponent },
   { path: "agenda", redirectTo: "agenda/introduction", pathMatch: "full" },
@@ -75,6 +77,7 @@ export const routes: Routes = [
     AgendastepComponent,
     PeopleComponent,
     SplitPipe,
+    FileComponent,
   ],
   imports: [
     BrowserModule,
