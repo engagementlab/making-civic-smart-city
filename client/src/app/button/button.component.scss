@@ -2,15 +2,15 @@
 
 .btn {
   position: relative;
-	display: inline-block;
-	border: solid 2px white;
-	font-size: em(14px);
-	text-decoration: none;
+  display: inline-block;
+  border: solid 2px white;
+  font-size: em(14px);
+  text-decoration: none;
 
   vertical-align: middle;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
 
-	padding: 3%;
+  padding: 3%;
   margin: 2%;
 
   flex: 1 1 auto;
@@ -25,15 +25,18 @@
     padding-left: 30px;
     padding-right: 30px;
   }
-  &:hover, &.hover {
+
+  &:hover,
+  &.hover {
     color: white;
+
     &::before {
       @include transform(scaleY(1));
     }
   }
-  
-	&::before {  
-    
+
+  &::before {
+
     content: "";
     position: absolute;
     z-index: -1;
@@ -48,9 +51,9 @@
     @include transform(scaleY(0));
     @include transition(transform, .3s, ease-out);
 
-	}
+  }
 
-  &.upper {    
+  &.upper {
     text-transform: uppercase;
   }
 
@@ -61,9 +64,10 @@
     &:hover {
       color: white;
     }
-    & + span {
+
+    &+span {
       color: $pine;
-      
+
     }
   }
 
@@ -74,16 +78,30 @@
     padding: 6%;
     margin: 0;
 
+    &.sm {
+      padding: 2%;
+      // &:hover,
+      // &.hover {
+      //   color: $primary-blue
+      // }
+    }
+
     &.hover-blue {
-      &:hover, &.hover {
+
+      &:hover,
+      &.hover {
         color: $primary-blue;
-      } 
+      }
     }
+
     &.hover-pine {
-      &:hover, &.hover {
+
+      &:hover,
+      &.hover {
         color: $pine;
-      } 
+      }
     }
+
     &:before {
       background: white;
     }
@@ -91,24 +109,33 @@
 
   &.download {
     padding: 30%;
-    &.pine { 
+
+    &.pine {
       padding: 8%;
-      svg {       
+
+      svg {
         path {
-          fill: $pine!important;
-        }
-      }       
-    }
-    &.white { 
-      svg g {
-         line, polyline {
-          stroke: white!important;
+          fill: $pine !important;
         }
       }
-      &:hover, &.hover {
+    }
+
+    &.white {
+      svg g {
+
+        line,
+        polyline {
+          stroke: white !important;
+        }
+      }
+
+      &:hover,
+      &.hover {
         svg g {
-          line, polyline {
-            stroke: $pine!important;
+
+          line,
+          polyline {
+            stroke: $pine !important;
           }
         }
       }
@@ -118,15 +145,16 @@
       background: white;
     }
 
-    &:hover, &.hover {
+    &:hover,
+    &.hover {
       svg {
         @include transition(transform, .8s, ease-out);
         @include transform(translateY(35%));
 
         path {
-          fill: white!important;
+          fill: white !important;
         }
-      }      
+      }
     }
   }
 
@@ -135,67 +163,85 @@
     padding: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
-    
+
     svg {
       @include transition(transform, .8s, ease-out);
     }
+
     &:hover {
       svg {
         @include transform(translateY(-15%));
       }
+
       span {
         color: white;
       }
+
       path {
-        fill: white!important;
+        fill: white !important;
       }
     }
+
     &::before {
       transform-origin: bottom;
     }
 
     path {
-      fill: $pine!important;
+      fill: $pine !important;
     }
+
     span {
       color: $pine;
       font-size: 1em;
     }
   }
 
-  &.next, &.continue {
+  &.next,
+  &.continue {
     svg {
-      @include transition(transform, .3s, ease-out)
-      @include transform(translateX(0%));
+      @include transition(transform, .3s, ease-out) @include transform(translateX(0%));
+
       path {
-        fill: white!important;
-      };
+        fill: white !important;
+      }
+
+      ;
     }
+
     &.agenda {
       padding: 50%;
     }
+
     &:before {
       background: white;
     }
+
     &::before {
       @include transform(scaleX(0));
       transform-origin: center left;
     }
-    &:hover, &.hover {
+
+    &:hover,
+    &.hover {
       &::before {
         @include transform(scaleX(1));
       }
+
       svg {
         @include transform(translateX(15%));
+
         path {
-          fill: $pine!important;
+          fill: $pine !important;
         }
       }
     }
   }
+
   &.continue {
     color: white;
-    &:hover, &.hover {
+
+    &:hover,
+    &.hover {
       color: $pine;
     }
   }
