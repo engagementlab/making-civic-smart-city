@@ -27,22 +27,6 @@ var About = new keystone.List('About',
 		nocreate: true
 	});
 
-// Storage adapter for Azure
-const azureFile = new keystone.Storage({
-  adapter: require('keystone-storage-adapter-azure'),
-  azure: {
-    container: 'smartcity',
-    generateFilename: function (file) {
-        // Cleanup filename
-        return file.originalname.replace(/[\\'\-\[\]\/\{\}\(\)\*\+\?\\\^\$\|]/g, "").replace(/ /g, '_').toLowerCase();
-    }
-  },
-  schema: {
-    path: true,
-    originalname: true,
-    url: true
-  }
-});
 
 /**
  * Model Fields
@@ -51,8 +35,7 @@ const azureFile = new keystone.Storage({
 About.add({
   name: { type: String, default: "About Page", hidden: true },
 	blurb: { type: Types.Markdown, label: "Intro Blurb Text", initial: true, required: true },
-  what: { type: Types.Markdown, label: "'What We Did'", initial: true, required: true },
-	whitepaperPdf: { type: Types.File, label: "Whitepaper PDF", storage: azureFile },
+  what: { type: Types.Markdown, label: "'Download The Tools", initial: true, required: true },
 
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
 });
