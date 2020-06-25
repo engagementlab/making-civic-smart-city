@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 
 import * as PDFObject from "pdfobject";
+import * as ismobile from "ismobilejs";
 
 @Component({
   selector: "app-file",
@@ -28,11 +29,17 @@ export class FileComponent implements OnInit {
       this.fileLabel = this.files[params["key"]][0];
       this.filePath = this.files[params["key"]][1];
 
+      if(ismobile.phone) {
+        window.location.href = `https://betablocks.blob.core.windows.net/files/${this.filePath}.pdf`;
+        return;
+      }
+
       const pdf = PDFObject.embed(
         `https://betablocks.blob.core.windows.net/files/${this.filePath}.pdf`,
-        "#embed"
+        "#embed", {
+          fallbackLink: "<p>Please <a href='[url]'>view this file here</a></p>"
+        }
       );
-      console.log(pdf);
     });
   }
 }
