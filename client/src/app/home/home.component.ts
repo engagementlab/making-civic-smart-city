@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { DataService } from '../data.service';
 
 import * as Rellax  from 'rellax';
@@ -20,23 +20,29 @@ export class HomeComponent implements OnInit {
 		"Question Data",
 		"Imagine The Possible"
 	];
-  public whitepaperUrl: string;
+	public whitepaperUrl: string;
+	public betaBlocksUrl: string;
 
-  constructor(private _dataSvc: DataService) { }
+	@ViewChild('dotsGetStarted') dotsGetStarted: ElementRef
+	@ViewChild('dotsPlaybook') dotsPlaybook: ElementRef
 
-  ngOnInit() {
-    
-    this._dataSvc.whitepaperSubject.subscribe(value => {
-      this.whitepaperUrl = this._dataSvc.whitepaperUrl;
-    });
+	constructor(private _dataSvc: DataService) {}
 
-  	createDots(document.getElementById('dots'), 4, 1, 100, true);
-  	createDots(document.getElementById('dots-getstarted'), 3, 1, 200);
-  	createDots(document.getElementById('dots-playbook'), 4, 2, 200, true);
+	ngOnInit() {
 
-  	if(!ismobile.phone)
-		  new Rellax('.img');
+		this._dataSvc.whitepaperSubject.subscribe(value => {
+			if(!this._dataSvc.whitepaperUrls) return;
+			this.whitepaperUrl = this._dataSvc.whitepaperUrls['whitepaperPdf'];
+			this.betaBlocksUrl = this._dataSvc.whitepaperUrls['betaBlocksPdf'];
 
-  }
+			createDots(document.getElementById('dots'), 4, 1, 100, true);
+			// createDots(this.dotsGetStarted.nativeElement, 3, 1, 200);
+			createDots(this.dotsPlaybook.nativeElement, 4, 2, 200, true);
+		});
+
+		if (!ismobile.phone)
+			new Rellax('.img');
+
+	}
 
 }

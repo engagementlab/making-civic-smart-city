@@ -28,12 +28,15 @@ export class NavComponent implements OnInit {
       this.tl.reverse();
     });
 
-    // Get pdf url if needed
-    if(this._dataSvc.whitepaperUrl === undefined) {
-      this._dataSvc.getFilteredDataForUrl('about', 'whitepaperPdf').subscribe(item => {
+    // Get pdf urls if needed
+    if(this._dataSvc.whitepaperUrls === undefined) {
+      this._dataSvc.getFilteredDataForUrl('about', 'whitepaperPdf betaBlocksPdf').subscribe(item => {
         
-        this._dataSvc.setWhitepaperUrl(item[0].whitepaperPdf.url);
-        this.whitepaperUrl = this._dataSvc.whitepaperUrl;
+        this._dataSvc.setWhitepaperUrl({
+          whitepaperPdf: item[0].whitepaperPdf.url,
+          betaBlocksPdf: item[0].betaBlocksPdf,
+        });
+        this.whitepaperUrl = this._dataSvc.whitepaperUrls['whitepaperPdf'];
 
       });
     }

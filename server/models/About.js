@@ -25,17 +25,36 @@ var About = new keystone.List('About',
 		singular: 'About Page',
 		nodelete: true,
 		nocreate: true
-	});
-
+	})
+	;
+// Storage adapter for Azure
+const azureFile = new keystone.Storage({
+	adapter: require('keystone-storage-adapter-azure'),
+	azure: {
+	  container: 'smartcity',
+	  generateFilename: function (file) {
+		  // Cleanup filename
+		  return file.originalname.replace(/[\\'\-\[\]\/\{\}\(\)\*\+\?\\\^\$\|]/g, "").replace(/ /g, '_').toLowerCase();
+	  }
+	},
+	schema: {
+	  path: true,
+	  originalname: true,
+	  url: true
+	}
+  });
+  
 
 /**
  * Model Fields
  * @main About
  */
 About.add({
-  name: { type: String, default: "About Page", hidden: true },
+	name: { type: String, default: "About Page", hidden: true },
 	blurb: { type: Types.Markdown, label: "Intro Blurb Text", initial: true, required: true },
-  what: { type: Types.Markdown, label: "'Download The Tools", initial: true, required: true },
+	what: { type: Types.Markdown, label: "'Download The Tools", initial: true, required: true },
+	whitepaperPdf: { type: Types.File, label: "Whitepaper PDF", storage: azureFile },
+	betaBlocksPdf: { type: Types.Url, label: "Beta Blocks PDF URL" },
 
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
 });

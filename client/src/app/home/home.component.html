@@ -15,28 +15,24 @@
 
     <div class="indent">
       <canvas id="dots" width="350" height="410"></canvas>
+
       <h1>
-        <span id="making">Making</span> <span id="a"> A</span><br />
         Civic Smart City
       </h1>
 
       <div class="stagger">
         <div class="left">
-          <h3 class="stroke">How do we make smart cities civic?</h3>
+          <h4>Community-centered approach to questioning and discovering the value of urban technologies</h4>
           <learn-more-btn route="/betablocks"></learn-more-btn>
         </div>
-        <div class="right">
-          <canvas id="dots-getstarted" width="250" height="210"></canvas>
-          <h3>Civic Smart City Case Study: Beta Blocks</h3>
-
-          <app-button
-            label="Learn More"
-            route="/betablocks"
-            ariaLabel="Go to Beta Blocks page"
-            class="upper pine"
-          >
-          </app-button>
-        </div>
+        <section >
+            <div class="flex">
+              <p class="right">
+                Civic Smart City seeks to create and promote value sensitive approaches to identifying and implementing urban technologies. It explores new modes of public engagement, media literacy and shared governance that are necessary for creating equitable and just smart cities.
+              </p>
+              
+            </div>
+        </section>
       </div>
     </div>
   </div>
@@ -56,8 +52,47 @@
     ></cdn-image>
   </section>
 
+  <section id="playbook">
+    <canvas #dotsPlaybook width="480" height="200"></canvas>
+
+    <h1>Guiding Values</h1>
+
+    <div class="flex reverse">
+      <div class="left">
+        <p>
+          These five plays are actions that can be taken by the range of actors
+          involved in the design and implementation of the smart city,
+          prioritizing a values-first approach that can be implemented across
+          organizations.
+        </p>
+        <app-button
+          label="View Playbook"
+          route="/playbook"
+          ariaLabel="Click to view playbook"
+          class="pine"
+        >
+        </app-button>
+      </div>
+      <div class="image">
+        <!-- <cdn-image cloudinaryId="icons/playbook.svg" width="360" autoFormat="false" alt="'Playbook' icon image"></cdn-image> -->
+        <img
+          src="https://res.cloudinary.com/engagement-lab-home/image/upload/c_scale,f_auto,w_720/v1536767858/making-smart-city/icons/playbook.svg"
+          style="max-width: 360px;"
+          alt="'Playbook' icon image"
+        />
+      </div>
+    </div>
+
+    <div id="list">
+      <div *ngFor="let title of playTitles; let i = index" class="play-title">
+        <h3 class="stroke">{{ i + 1 }}</h3>
+        {{ title }}
+      </div>
+    </div>
+  </section>
   <section id="workshop">
     <h1>Workshop</h1>
+    <h3>Run your own smart city workshop</h3>
 
     <div class="flex">
       <div class="left">
@@ -111,44 +146,23 @@
     </div>
   </section>
 
-  <section id="playbook">
-    <canvas id="dots-playbook" width="480" height="200"></canvas>
+<!-- <section id="getstarted">
 
-    <h1>Playbook</h1>
+  <div class="right">
+    <canvas #dotsGetStarted width="250" height="210"></canvas>
+    <h3>Civic Smart City Case Study: Beta Blocks</h3>
+    
+    <app-button
+    label="Learn More"
+    route="/betablocks"
+    ariaLabel="Go to Beta Blocks page"
+    class="upper pine"
+    >
+  </app-button>
+</div> 
 
-    <div class="flex reverse">
-      <div class="left">
-        <p>
-          These five plays are actions that can be taken by the range of actors
-          involved in the design and implementation of the smart city,
-          prioritizing a values-first approach that can be implemented across
-          organizations.
-        </p>
-        <app-button
-          label="View Playbook"
-          route="/playbook"
-          ariaLabel="Click to view playbook"
-          class="pine"
-        >
-        </app-button>
-      </div>
-      <div class="image">
-        <!-- <cdn-image cloudinaryId="icons/playbook.svg" width="360" autoFormat="false" alt="'Playbook' icon image"></cdn-image> -->
-        <img
-          src="https://res.cloudinary.com/engagement-lab-home/image/upload/c_scale,f_auto,w_720/v1536767858/making-smart-city/icons/playbook.svg"
-          style="max-width: 360px;"
-          alt="'Playbook' icon image"
-        />
-      </div>
-    </div>
-
-    <div id="list">
-      <div *ngFor="let title of playTitles; let i = index" class="play-title">
-        <h3 class="stroke">{{ i + 1 }}</h3>
-        {{ title }}
-      </div>
-    </div>
-  </section>
+</section>
+  -->
 
   <section
     id="share-bg"
@@ -156,8 +170,34 @@
     data-rellax-speed="2"
     data-rellax-percentage="0.1"
   >
+  <h1>Case Studies</h1>
+
+
+      <a
+      id="share-btn-1"
+      class="share-btn"
+      routerLink="betablocks/file/study"
+      role="button"
+      attr.aria-label="Go to next agenda step"
+    >
+      <div id="share" data-rellax-speed="-9" data-rellax-percentage="1">
+        <h3>
+          Download the &#8220;Beta Blocks&#8221; report
+        </h3>
+
+        <app-button
+          [download]="true"
+          route="betablocks/file/study"
+          ariaLabel="Download the white paper"
+          parentElement="share-btn-1"
+          class="white"
+        ></app-button>
+      </div>
+    </a>
+
     <a
-      id="share-btn"
+      id="share-btn-2"
+      class="share-btn"
       href="{{ whitepaperUrl }}"
       role="button"
       attr.aria-label="Go to next agenda step"
@@ -171,7 +211,7 @@
           [download]="true"
           href="{{ whitepaperUrl }}"
           ariaLabel="Download the white paper"
-          parentElement="share-btn"
+          parentElement="share-btn-2"
           class="white"
         ></app-button>
       </div>

@@ -19,7 +19,7 @@ export class DataService {
 
   public isLoading: Subject<boolean> = new Subject<boolean>();
   public whitepaperSubject: Subject<boolean> = new Subject<boolean>();
-  public whitepaperUrl: string;
+  public whitepaperUrls: object;
   private baseUrl: string;
 
   constructor(private http: HttpClient) { 
@@ -28,11 +28,11 @@ export class DataService {
 
   }
 
-  public setWhitepaperUrl(url: string) {
+  public setWhitepaperUrl(urls: object) {
     
-    this.whitepaperSubject.next(true);
-    this.whitepaperUrl = url;
     this.whitepaperSubject.next(false);
+    this.whitepaperUrls = urls;
+    this.whitepaperSubject.next(true);
 
   }
 	

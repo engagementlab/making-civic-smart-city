@@ -10,63 +10,74 @@ header {
 		z-index: 0;
 	}
 
-  .banner {
+	.banner {
 		@include not-phones {
 			position: absolute;
 		}
+
 		top: 0;
 		left: 0;
 
 		@include phones {
 			max-width: 160px;
 		}
-  }
-  .intro {
-	  background-color: $off-white;
-	  
+	}
+
+	.intro {
+		background-color: $off-white;
+
 		@include phones {
 			.indent {
 				padding-top: 0;
 			}
-	  }
-  }
+		}
+	}
+
 	.particles {
 		position: absolute;
+
 		.particles-js-canvas-el {
 			height: 100vmax !important;
 			z-index: 0;
 		}
 	}
 
-	h1, .stagger {
+	h1,
+	.stagger {
 		position: relative;
 		z-index: 3;
 	}
+
 	.stagger {
 		display: flex;
 		flex-direction: column;
+
 		.left {
 			h3 {
 				font-size: em(64px);
 			}
-			@include phones {	
-				h3 {							
-					display: contents;	
+
+			@include phones {
+				h3 {
+					display: contents;
 					font-size: 2.2em;
 				}
 			}
 		}
-		.right { 
+
+		.right {
 			position: relative;
 			padding-top: 5%;
+
 			@include not-phones {
 				left: 22%;
 				width: 80%;
 			}
 
-			h3 {				
+			h3 {
 				font-size: em(40px);
-				@include phones {	
+
+				@include phones {
 					font-size: em(24px);
 				}
 			}
@@ -75,13 +86,15 @@ header {
 }
 
 h1 {
-	@include phones {	
+	@include phones {
 		font-size: 3em;
 	}
+
 	#making {
 		@include font('Proza Libre', 500);
 		font-size: .7em;
 	}
+
 	#a {
 		@include font('Proza Libre');
 		font-size: .5em;
@@ -92,30 +105,38 @@ section {
 
 	.flex {
 		display: flex;
+
 		@include not-phones {
-			font-size: em(20px);		
+			font-size: em(20px);
+
 			.left {
 				width: 50%;
 			}
+
 			&.reverse {
 				flex-direction: row-reverse;
+
 				.image {
 					padding-left: 0%;
 				}
+
 				.left {
 					padding-left: 5%;
 				}
 			}
 		}
+
 		@include phones {
 			flex-direction: column-reverse;
 		}
 	}
+
 	&#img {
 		grid-column: 10 / span 3;
 		position: relative;
 		z-index: -3;
 		margin-top: -89%;
+
 		@include phones {
 			grid-column: 8 / span 3;
 			margin-top: -63%;
@@ -124,35 +145,39 @@ section {
 
 	h1 {
 		@include font('Butler-Black', 800, em(72px));
+
 		@include phones {
 			font-size: em(48px);
 		}
 	}
+
 	h3 {
 		@include phones {
 			font-size: 2em;
 		}
 	}
-	p {	
+
+	p {
 		@include font('Cabin', 400, em(14px));
 		line-height: 1.4;
 		letter-spacing: 1px;
-	} 
+	}
 
 	ul {
 		list-style: none;
+
 		li {
-	    &:before {
-			  content: "*";
-			  color: $primary-blue;
+			&:before {
+				content: "*";
+				color: $primary-blue;
 				margin: 0 5px 0 -15px;
-		    height: 20px;
-		    display: block;
-		    float: left;
-		    margin-right: 5px;
+				height: 20px;
+				display: block;
+				float: left;
+				margin-right: 5px;
 			}
 		}
-  }
+	}
 }
 
 #workshop {
@@ -166,6 +191,7 @@ section {
 
 	@include phones {
 		margin-top: -24%;
+
 		.flex {
 			flex-direction: column;
 		}
@@ -178,10 +204,10 @@ section {
 
 #playbook {
 
-	top: 10%;    
+	top: 10%;
 	margin-bottom: 35%;
 	grid-column: 3 / span 7;
-	
+
 	#dots-playbook {
 		padding-left: 25%;
 	}
@@ -194,23 +220,28 @@ section {
 			grid-column: 1 / span 3;
 			grid-template-columns: 1fr 1fr 1fr;
 		}
+
 		@supports not (display: grid) {
 			display: flex;
 		}
 
-		h3 {	
+		h3 {
 			margin: 0;
 			font-size: em(64px);
 		}
-		div {		
+
+		div {
 			font-size: em(32px);
 			@include font('Proza Libre', 800);
 		}
+
 		@include phones {
-			grid-template-columns: 1fr 1fr;			
+			grid-template-columns: 1fr 1fr;
+
 			h3 {
 				font-size: em(36px);
 			}
+
 			div {
 				font-size: em(18px);
 			}
@@ -219,45 +250,52 @@ section {
 	}
 
 }
-	
+
 #share-bg {
-	
+
 	@include not-phones {
 		position: relative;
 		padding-bottom: 9%;
-		top: 10%;			
+		top: 10%;
 		left: -15%;
+
+		h1 {
+			position: relative;
+			left: 15%;
+		}
 	}
-	
-	background-image: cdn-image('bg/home-share', c_scale, w_500);	
+
+	background-image: cdn-image('bg/home-share', c_scale, w_500);
 	background-repeat: no-repeat;
 
 }
 
-#share {	
+#share {
 
 	display: flex;
 	margin-top: 10%;
 	margin-left: 20%;
-	 
-  align-items: center;
+
+	align-items: center;
 	color: white;
 	padding: 6%;
-  background-color: $pine;
+	background-color: $pine;
 
-  h3 {
-  	width: 70%;
+	h3 {
+		width: 70%;
 		font-size: em(32px);
-  }
+	}
+
 	@include phones {
 		margin-left: 2%;
+
 		h3 {
 			font-size: em(18px);
 		}
 	}
-	
-  app-button {
-  	grid-column: 2;
-  }
-  
+
+	app-button {
+		grid-column: 2;
+	}
+
 }
