@@ -51,11 +51,11 @@
 
     <div id="playbook">
       <h3 class="no-margin">
-        <a routerLink="/playbook">Playbook<span></span></a>
+        <a routerLink="/guiding-values">Guiding Values<span></span></a>
       </h3>
       <ul>
         <a
-          routerLink="/playbook/{{ play.key }}"
+          routerLink="/guiding-values/{{ play.key }}"
           *ngFor="let play of plays; let i = index"
         >
           <li>{{ i + 1 }}&nbsp;&nbsp;&nbsp;{{ play.name }}</li>

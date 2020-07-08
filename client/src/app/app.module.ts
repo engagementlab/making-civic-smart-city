@@ -55,9 +55,11 @@ export const routes: Routes = [
   { path: "agenda", redirectTo: "agenda/introduction", pathMatch: "full" },
 
   { path: "cities", component: CitiesComponent },
-  { path: "playbook", component: PlaybookComponent },
+  { path: "guiding-values", component: PlaybookComponent },
+  { path: "guiding-values/:key", component: PlayComponent },
+  { path: "playbook", redirectTo: 'guiding-values' },
+  { path: "playbook/:key", redirectTo: 'guiding-values/:key' },
   { path: "workshop", component: WorkshopComponent },
-  { path: "playbook/:key", component: PlayComponent },
 ];
 
 @NgModule({
