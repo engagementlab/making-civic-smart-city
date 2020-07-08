@@ -1,0 +1,80 @@
+<header class="main-head">
+  <div class="banner"></div>
+
+  <div class="intro">
+    <div class="heading">
+      <h1>
+        <p>Beta Blocks</p>
+      </h1>
+
+      <app-button
+        label="Download the Beta Blocks case study report"
+        route="/betablocks/file/study"
+        ariaLabel="Click to view Beta Blocks case study report"
+        class="white sm hover-blue"
+      ></app-button>
+    </div>
+  </div>
+</header>
+
+<div class="content">
+  <section id="img">
+    <cdn-image
+      class="img not-phones"
+      cloudinaryId="bg/bb-top.png"
+      gravity="center"
+      width="453"
+      crop="scale"
+      alt="'Beta Blocks' banner background image"
+      data-rellax-speed="1"
+      data-rellax-percentage="0.3"
+    ></cdn-image>
+    <cdn-image
+      class="img phones"
+      cloudinaryId="bg/bb-top.png"
+      gravity="center"
+      width="165"
+      crop="scale"
+      alt="'Beta Blocks' banner background image"
+    ></cdn-image>
+  </section>
+
+  <section id="intro" [innerHtml]="content?.blurb.html"></section>
+
+  <section id="what">
+    <div class="left">
+      <cdn-image
+        class="img not-phones"
+        cloudinaryId="bg/bb-lower"
+        quality="100"
+        gravity="center"
+        width="482"
+        crop="scale"
+        alt="'Download the tools' background image"
+        data-rellax-speed="-1"
+        data-rellax-percentage=".3"
+      ></cdn-image>
+    </div>
+
+    <div class="right">
+      <h3 class="heading">Download the tools</h3>
+      <span class="blue"></span>
+
+      <cdn-image
+        class="img phones"
+        cloudinaryId="bg/bb-lower"
+        quality="100"
+        gravity="center"
+        width="248"
+        crop="scale"
+        alt="'Download the tools' image"
+      ></cdn-image>
+
+      <div>
+        <p *ngFor="let link of links">
+          <a [routerLink]="link[1]">{{ link[0] }}</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</div>

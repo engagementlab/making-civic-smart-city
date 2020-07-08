@@ -157,3 +157,18 @@ section {
 	}
 
 }
+
+#end {
+
+	margin-bottom: 200px;
+	@include font('Proza Libre', 500);
+	.indent {
+		@include not-phones {
+			padding-left: 10%;
+		}
+	  line-height: 1.6;
+	  letter-spacing: 1px;
+		@include font('Cabin', 600);
+	}
+
+}

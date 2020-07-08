@@ -41,13 +41,14 @@ import { AgendastepComponent } from "./agenda/agendastep/agendastep.component";
 import { PeopleComponent } from "./about/people/people.component";
 import { SplitPipe } from "./split.pipe";
 import { FileComponent } from "./file/file.component";
+import { BetaBlocksComponent } from "./about/betablocks.component";
 
 // App routes
 export const routes: Routes = [
   { path: "", component: HomeComponent },
-  { path: "about", redirectTo: "betablocks" },
+  { path: "about", component: AboutComponent },
   { path: "about/who", component: PeopleComponent },
-  { path: "betablocks", component: AboutComponent },
+  { path: "betablocks", component: BetaBlocksComponent },
   { path: "betablocks/file/:key", component: FileComponent },
 
   { path: "agenda/:step", component: AgendaComponent },
@@ -63,6 +64,7 @@ export const routes: Routes = [
   declarations: [
     AppComponent,
     AboutComponent,
+    BetaBlocksComponent,
     ButtonComponent,
     CdnImageComponent,
     HomeComponent,
