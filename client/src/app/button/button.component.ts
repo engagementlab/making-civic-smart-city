@@ -1,4 +1,5 @@
 import { Component, OnInit, AfterViewInit, Input, ElementRef } from '@angular/core';
+import { ScrollToService } from '@nicky-lenaers/ngx-scroll-to';
 
 @Component({
   selector: 'app-button',
@@ -19,7 +20,8 @@ export class ButtonComponent implements OnInit, AfterViewInit {
 
   @Input() parentElement: string;
 
-  constructor(private elementRef: ElementRef) { }
+  constructor(
+    private _scrollToSvc: ScrollToService, private elementRef: ElementRef) { }
 
   ngOnInit() {
 
@@ -37,6 +39,15 @@ export class ButtonComponent implements OnInit, AfterViewInit {
       btn.classList.remove('hover');
     });
 
+  }
+  
+  public scrollToTop() {
+      this._scrollToSvc.scrollTo({
+          target: document.getElementById('top'),
+          offset: 0,
+          easing: 'easeOutQuint',
+          duration: 700,
+      });
   }
 
 }

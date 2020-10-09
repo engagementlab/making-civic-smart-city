@@ -15,13 +15,12 @@ export class AboutComponent implements OnInit {
 
   constructor(private _dataSvc: DataService) { 
 
-    this._dataSvc.getDataForUrl('about').subscribe(response => {
-        this.content = response[0];    
-    });
-
   }
 
-  ngOnInit() {
+
+  async ngOnInit() {
+    const data = await this._dataSvc.getDataForUrl('about')
+    this.content = data[0];    
 	  
     if(!isMobile(window.navigator.userAgent).phone)
       new Rellax('.img');

@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class PlaysService {
 
-	public plays: any[];
+	public plays: any;
 
   constructor() { }
 }

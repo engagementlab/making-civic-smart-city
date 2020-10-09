@@ -1,13 +1,9 @@
-import { Component, Renderer2 } from '@angular/core';
-import { Router, RouterOutlet, ActivatedRoute, ActivatedRouteSnapshot, NavigationStart } from '@angular/router';
-
+import { Component } from '@angular/core';
 import { environment } from '../environments/environment';
 
-import { TweenLite } from "gsap";
-import * as Rellax  from "rellax";
-import * as detect from 'detect-browser';
 import { fadeInAnimation } from './animations/fade';
-import { RouterStateService } from './routerstate.service';
+import { TweenLite, Expo, Back } from "gsap";
+import * as detect from 'detect-browser';
 
 @Component({
   selector: 'app-root',
@@ -19,21 +15,7 @@ export class AppComponent {
 
   public isQABuild: boolean;
 
-	constructor(private appRouterState: RouterStateService, private renderer: Renderer2, private router: Router, private route: ActivatedRoute) {
-
-		/*this.router.events
-      .subscribe((event) => {
-        if (event instanceof NavigationStart) {
-
-          this.renderer.removeClass(document.body, 'offwhite');
-          let currentUrlSlug = event.url.slice(1)
-          
-          if (currentUrlSlug === 'cities')
-            this.renderer.addClass(document.body, 'offwhite');
-        }
-      });*/
-
-	}
+	constructor() {	}
 
   ngOnInit() {
 

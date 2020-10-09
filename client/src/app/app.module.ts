@@ -37,6 +37,7 @@ import { AgendaComponent } from './agenda/agenda.component';
 import { AgendastepComponent } from './agenda/agendastep/agendastep.component';
 import { PeopleComponent } from './about/people/people.component';
 import { SplitPipe } from './split.pipe';
+import { ScullyLibModule } from '@scullyio/ng-lib';
 
 // App routes
 export const routes: Routes = [
@@ -78,7 +79,8 @@ export const routes: Routes = [
     CloudinaryModule.forRoot(cloudinary, config),
     HttpClientModule,
     RouterModule.forRoot(routes),
-    ScrollToModule.forRoot()
+    ScrollToModule.forRoot(),
+    ScullyLibModule
   ],
   exports: [RouterModule],
   providers: [

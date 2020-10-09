@@ -1,109 +1,128 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, RouterEvent, ActivatedRoute, ParamMap, Params } from '@angular/router';
+import {
+	Component,
+	OnInit
+} from '@angular/core';
+import {
+	Router,
+	RouterEvent,
+	ActivatedRoute,
+	ParamMap,
+	Params
+} from '@angular/router';
 
-import { ScrollToService } from '@nicky-lenaers/ngx-scroll-to';
+import {
+	ScrollToService
+} from '@nicky-lenaers/ngx-scroll-to';;
+import {
+  TweenLite,
+  Quad
+} from "gsap";
 import * as _ from 'underscore';
-import { DataService } from '../data.service';
+import {
+	DataService
+} from '../data.service';
 
 @Component({
-  selector: 'app-agenda',
-  templateUrl: './agenda.component.html',
-  styleUrls: ['./agenda.component.scss']
+	selector: 'app-agenda',
+	templateUrl: './agenda.component.html',
+	styleUrls: ['./agenda.component.scss']
 })
 export class AgendaComponent implements OnInit {
 
 	public stepId: string;
 	public nextStep: string;
 
-	public sections: any[];
-  public content: any;
+	public sections: any;
+	public content: any;
 
-  private stepIndex: number;
-  private fromOtherPage: boolean;
+	private stepIndex: number;
+	private fromOtherPage: boolean;
 
-  constructor(public _dataSvc: DataService, private _scrollToService: ScrollToService, private route: ActivatedRoute, private router: Router) { 
+	constructor(public _dataSvc: DataService, private _scrollToService: ScrollToService, private route: ActivatedRoute, private router: Router) {
 
-  	this._dataSvc.getFilteredDataForUrl('agenda', 'name%20key').subscribe(items => {
+		this.router.events.subscribe((val: RouterEvent) => {
 
-  		this.sections = items;
-	    this.setProgress();
+			this.fromOtherPage = false;
+			if (val.url === '/agenda' && val['urlAfterRedirects'] === '/agenda/introduction') {
 
-  	});
+				this.fromOtherPage = true;
+				this._scrollToService
+					.scrollTo({
+						target: 'top',
+						duration: 1
+					});
 
-  	this.router.events.subscribe((val: RouterEvent) => {
+			}
 
-  		this.fromOtherPage = false;
-  		if(val.url === '/agenda' && val['urlAfterRedirects'] === '/agenda/introduction') {
-
-  			this.fromOtherPage = true;
-		    this._scrollToService
-		      .scrollTo({
-		        target: 'top',
-		        duration: 1
-		      });
-
-  		}
-
-  	});
+		});
 
 		this.route.params.subscribe(params => {
 
-			if(this.fromOtherPage) return;
+			if (this.fromOtherPage) return;
 
-      this.stepId = params['step'];
+			this.stepId = params['step'];
 
-	    this._scrollToService
-	      .scrollTo({
-	        target: 'top',
-	        easing: 'easeOutQuad',
-	        duration: 1500
-	      });
+			this.getContent();
 
-			this._dataSvc.getDataForUrl('agenda/'+this.stepId).subscribe(response => {
+			this._scrollToService
+				.scrollTo({
+					target: 'top',
+					easing: 'easeOutQuad',
+					duration: 1500
+				});
 
-				this.content = response;
-		    this.setProgress();
-	    
-	    });
+		});
 
-    });
+	}
 
-  }
+	ngOnInit() {}
 
-  public getNextStep() {
+	async getContent() {
 
-  	if(!this.sections) return;
+		const items = await this._dataSvc.getFilteredDataForUrl('agenda', 'name%20key');
+		const response = await this._dataSvc.getDataForUrl('agenda/' + this.stepId);
 
-  	return this.sections[this.stepIndex+1];
+		this.sections = items;
+		this.content = response;
 
-  }
+		this.setProgress();
+	}
 
-  public changeStep(step) {
+	public getNextStep() {
 
-	  this.router.navigateByUrl(this.router.url.replace(this.stepId, step));
+		if (!this.sections) return;
+
+		return this.sections[this.stepIndex + 1];
+
+	}
+
+	public changeStep(step) {
+
+		this.router.navigateByUrl(this.router.url.replace(this.stepId, step));
 
 	}
 
 	private setProgress() {
-  	
-  	if(!this.sections) return;
-		
-		this.stepIndex = this.sections.findIndex((section) => { return section.key === this.stepId });
-		
+
+		if (!this.sections) return;
+
+		this.stepIndex = this.sections.findIndex((section) => {
+			return section.key === this.stepId
+		});
 		// Set progress bar    
 		let progress = document.getElementById('progress');
-		if(this.stepIndex > 0) {
-			let width = 20*(this.stepIndex-1);
-			let newWidth = (20*this.stepIndex)+1;
-			progress.style.width = width+1 + '%';
+		if (this.stepIndex > 0) {
+			let width = 20 * (this.stepIndex - 1);
+			let newWidth = (20 * this.stepIndex) + 1;
+			progress.style.width = width + 1 + '%';
 
-	    TweenLite.to(progress, 1, {width: newWidth+'%', delay:1.2, ease:Quad.easeOut})
+			TweenLite.to(progress, 1, {
+				width: newWidth + '%',
+				delay: 1.2,
+				ease: Quad.easeOut
+			})
 		}
 
 	}
-
-  ngOnInit() {
-
-  }
 
 }

@@ -13,15 +13,12 @@ export class PeopleComponent implements OnInit {
 
   constructor(private _dataSvc: DataService) { 
 
-    this._dataSvc.getDataForUrl('people').subscribe(response => {
-      
-      this.content = response[0].people;
-
-    });
-
   }
 
-  ngOnInit() {
+  async ngOnInit() {
+
+    const response = await this._dataSvc.getDataForUrl('people');
+    this.content = response[0].people;
   }
 
 }
