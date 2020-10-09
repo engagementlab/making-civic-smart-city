@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 
 import * as Rellax  from 'rellax';
-import * as ismobile from 'ismobilejs';
+import isMobile from 'ismobilejs';
 
 import { create as createDots } from '../dots';
 
@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
   	createDots(document.getElementById('dots-getstarted'), 3, 1, 200);
   	createDots(document.getElementById('dots-playbook'), 4, 2, 200, true);
 
-  	if(!ismobile.phone)
+  	if(!isMobile(window.navigator.userAgent).phone)
 		  new Rellax('.img');
 
   }

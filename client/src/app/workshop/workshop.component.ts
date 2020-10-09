@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as Rellax  from 'rellax';
-import * as ismobile from 'ismobilejs';
+import isMobile from 'ismobilejs';
 
 import { create as createDots } from '../dots';
 
@@ -15,7 +15,7 @@ export class WorkshopComponent implements OnInit {
 
   ngOnInit() {
     
-    if(ismobile.phone)
+    if(isMobile(window.navigator.userAgent).phone)
       return;
 
     createDots(document.getElementById('dots'), 4, 0, 200, true);

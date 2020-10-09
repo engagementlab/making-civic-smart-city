@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as Rellax  from 'rellax';
-import * as ismobile from 'ismobilejs';
+import isMobile from 'ismobilejs';
 
 import { DataService } from '../data.service';
 
@@ -23,7 +23,7 @@ export class AboutComponent implements OnInit {
 
   ngOnInit() {
 	  
-    if(!ismobile.phone)
+    if(!isMobile(window.navigator.userAgent).phone)
       new Rellax('.img');
     
   }
