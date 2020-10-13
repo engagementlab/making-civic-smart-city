@@ -36,8 +36,6 @@ import {
 export class DataService {
 
   public isLoading: Subject < boolean > = new Subject < boolean > ();
-  public whitepaperSubject: Subject < boolean > = new Subject < boolean > ();
-  public whitepaperUrl: string;
   private baseUrl: string;
 
   constructor(private http: HttpClient,
@@ -48,15 +46,6 @@ export class DataService {
     // this.baseUrl = (environment.production ? 'https://'+window.location.host : 'http://localhost:3000') + '/api/';
 
   }
-
-  public setWhitepaperUrl(url: string) {
-
-    this.whitepaperSubject.next(true);
-    this.whitepaperUrl = url;
-    this.whitepaperSubject.next(false);
-
-  }
-
 
   getData(url: string): Promise < unknown > {
 
