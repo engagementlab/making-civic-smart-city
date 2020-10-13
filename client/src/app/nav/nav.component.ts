@@ -51,14 +51,6 @@ export class NavComponent implements OnInit {
 
   async ngOnInit() {
 
-    // Get pdf url if needed
-    if (!this._dataSvc.whitepaperUrl) {
-      const item = await this._dataSvc.getFilteredDataForUrl('about', 'whitepaperPdf');
-
-      this._dataSvc.setWhitepaperUrl(item[0].whitepaperPdf.url);
-      this.whitepaperUrl = this._dataSvc.whitepaperUrl;
-    }
-
     // Get plays if needed
     if (!this._playsSvc.plays) {
       const response = await this._dataSvc.getFilteredDataForUrl('play', 'name%20blurb%20key');

@@ -20,15 +20,10 @@ export class HomeComponent implements OnInit {
 		"Question Data",
 		"Imagine The Possible"
 	];
-  public whitepaperUrl: string;
 
   constructor(private _dataSvc: DataService) { }
 
   ngOnInit() {
-    
-    this._dataSvc.whitepaperSubject.subscribe(value => {
-      this.whitepaperUrl = this._dataSvc.whitepaperUrl;
-    });
 
   	createDots(document.getElementById('dots'), 4, 1, 100, true);
   	createDots(document.getElementById('dots-getstarted'), 3, 1, 200);

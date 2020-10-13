@@ -29,7 +29,7 @@ var routes = {
 // Setup Route Bindings 
 // CORS
  router.all('/*', function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "http://localhost:4200");
+    res.header("Access-Control-Allow-Origin", "http://localhost:1864");
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, HEAD, PUT');
     res.header('Access-Control-Expose-Headers', 'Content-Length');
     res.header("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method");
