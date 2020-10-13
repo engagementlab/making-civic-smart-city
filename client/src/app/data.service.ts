@@ -93,8 +93,8 @@ export class DataService {
           this.transferState
             .getState < unknown[] > (url)
             .subscribe(res => {
-              resolve(res['data'])
-              return res['data'];
+              resolve(res)
+              return res;
             });
         } catch (error) {
           this.isLoading.next(false);

@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "scully": "scully",
-    "scully:build": "scully --sr --RSD --sge",
+    "scully:build": "scully --sr --RSD --sge --sb",
     "scully:serve": "scully serve"
   },
   "private": false,
