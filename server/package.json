@@ -18,7 +18,7 @@
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
     "json-fs-store": "^1.0.0",
-    "keystone": "4.0.0",
+    "keystone": "4.2.1",
     "keystone-slacker": "git://github.com/engagementgamelab/keystone-slacker.git",
     "keystone-storage-adapter-azure": "^1.1.0",
     "lodash": "^4.17.5",
